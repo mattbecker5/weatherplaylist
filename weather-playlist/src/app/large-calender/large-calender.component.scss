@@ -1,0 +1,45 @@
+/* hover over calendar */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    max-width: 480px;
+    font-size: 18px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.day:hover .dropdown-content {
+    display: block;
+}
+
+.desc {
+    font-size: 12px;
+    padding: 15px;
+    text-align: center;
+}
+/* end */
+
+.large-calendar {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #293250;
+    padding-bottom: 10px;
+    max-width: 780px;
+}
+  
+.large-calendar-day {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px 0px 0px 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
+
+.large-calendar-hover {
+    background-color: #ffdf80;
+    cursor: pointer;
+  }

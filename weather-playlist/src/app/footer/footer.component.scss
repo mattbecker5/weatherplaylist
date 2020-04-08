@@ -1,0 +1,37 @@
+/* Footer Here */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    bottom: 0px;
+    width: 100%;
+    height: auto;
+    padding-bottom: 15px;
+    background-color: #ffd55a;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    color: #293250;
+}
+
+.footer-left {
+    min-width: 100px;
+    max-width: 125px;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-grow: 1;
+    text-align: center;
+    color: #293250;
+}
+
+.footer-right {
+    width: auto;
+    flex-grow: 1;
+    margin-right: 20px;
+    font-size: 12px;
+}
+
+.footer-right a{
+    color:#293250;
+}
+
+/* End Footer Here */
