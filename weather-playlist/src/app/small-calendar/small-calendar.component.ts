@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CalendarMonth } from '../calendar-month';
+import { Component, OnInit, Input } from '@angular/core';
+import { CalendarMonth} from '../calendar-month';
+import { CalendarDay } from '../calendar-day';
 
 @Component({
   selector: 'app-small-calendar',
@@ -8,12 +9,14 @@ import { CalendarMonth } from '../calendar-month';
 })
 export class SmallCalendarComponent implements OnInit {
 
+  @Input() public currentCalendarDays: CalendarDay[];
   constructor() { }
 
   ngOnInit(): void {
 
     //app state
-    let currentCalendar = {};
+    let currentCalendar: CalendarMonth;
+    let currentCalendarDays: CalendarDay[];
     let smallCalendarCurrent = {};
     let largeCalendarCurrent = {};
     let events = {};
@@ -30,10 +33,10 @@ export class SmallCalendarComponent implements OnInit {
 
 
     //creates a new calandar based on given month and year
-    function createMonthArray(month, year){
+    function createMonthArray<CalendarMonth>(month, year): CalendarMonth{
         let totalDays = getDaysInMonth(month, year);
         let d = new Date();
-        let currentMonth: CalendarMonth;
+        let currentMonth;
         let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         let monthLong = ["January","February","March","April","May","June","July", "August","September","October","November","December"];
         let monthShort = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -41,11 +44,11 @@ export class SmallCalendarComponent implements OnInit {
         d.setFullYear(year);
         d.setMonth(month - 1);
 
-        currentMonth = {"monthNum": month, "monthLong":monthLong[d.getMonth()], "monthShort": monthShort[d.getMonth()], "days":[], "year": year};
+        currentMonth = new CalendarMonth(month, monthLong[d.getMonth()], monthShort[d.getMonth()], [], year);
         for (let i = 0; i < totalDays; i++) {
             d.setDate(i+1);
-            
-            currentMonth.days.push({"date":i+1, "day": weekDays[d.getDay()]})
+            let day = new CalendarDay(i+1, weekDays[d.getDay()]);
+            currentMonth.days.push(day);
         };
 
         return currentMonth;
@@ -53,7 +56,9 @@ export class SmallCalendarComponent implements OnInit {
 
     //the start of the app in time
     currentCalendar = createMonthArray(4, 2020);
+    currentCalendarDays = currentCalendar.days;
     console.log(currentCalendar);
-      }
+    console.log(currentCalendarDays)
+  }
 
 }

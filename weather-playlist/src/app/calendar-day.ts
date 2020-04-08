@@ -1,4 +1,3 @@
 export class CalendarDay {
-    date: Number;
-    day: String;
+    constructor(public date: Number, public day: String){}
 }
