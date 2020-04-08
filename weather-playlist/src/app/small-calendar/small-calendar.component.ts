@@ -45,7 +45,7 @@ export class SmallCalendarComponent implements OnInit {
         for (let i = 0; i < totalDays; i++) {
             d.setDate(i+1);
             
-            currentMonth.days.push({"date":i+1, "weekday": weekDays[d.getDay()]})
+            currentMonth.days.push({"date":i+1, "day": weekDays[d.getDay()]})
         };
 
         return currentMonth;
