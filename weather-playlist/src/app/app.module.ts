@@ -8,6 +8,10 @@ import { NavComponent } from './nav/nav.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { LargeCalenderComponent } from './large-calender/large-calender.component';
 import { FooterComponent } from './footer/footer.component';
+import { MediaPlayerComponent } from './media-player/media-player.component';
+import { MusicListComponent } from './music-list/music-list.component';
+import { MusicCardComponent } from './music-card/music-card.component';
+import { PickCategoryComponent } from './pick-category/pick-category.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { FooterComponent } from './footer/footer.component';
     NavComponent,
     CreateEventComponent,
     LargeCalenderComponent,
-    FooterComponent
+    FooterComponent,
+    MediaPlayerComponent,
+    MusicListComponent,
+    MusicCardComponent,
+    PickCategoryComponent
   ],
   imports: [
     BrowserModule,
