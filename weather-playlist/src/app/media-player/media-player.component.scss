@@ -1,0 +1,29 @@
+/* Search List */
+.search-generated-head {
+    color: #379863;
+    margin: 0px 0px 0px 20px;
+}
+
+.hover{
+    cursor: pointer;
+}
+
+.hoverSearch{
+    background-color: #2abc6b;
+    display: flex;
+    border: none;
+    padding: 10px 10px;
+    margin: 10px 200px 10px 10px;
+    flex: 0 0 250px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+}
+
+.hoverSearch-div1{
+    vertical-align: middle;
+    margin-top: 9px;
+    font-size: 20px;
+    width:500px;
+}
+
+
