@@ -1,4 +1,4 @@
 export class CalendarDay {
-    date: String;
+    date: Number;
     weekday: String;
 }

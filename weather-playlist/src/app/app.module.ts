@@ -13,6 +13,7 @@ import { MediaPlayerComponent } from './media-player/media-player.component';
 import { MusicListComponent } from './music-list/music-list.component';
 import { MusicCardComponent } from './music-card/music-card.component';
 import { PickCategoryComponent } from './pick-category/pick-category.component';
+import { SmallCalendarComponent } from './small-calendar/small-calendar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PickCategoryComponent } from './pick-category/pick-category.component';
     MediaPlayerComponent,
     MusicListComponent,
     MusicCardComponent,
-    PickCategoryComponent
+    PickCategoryComponent,
+    SmallCalendarComponent
   ],
   imports: [
     BrowserModule,
