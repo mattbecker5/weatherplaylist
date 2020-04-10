@@ -9,6 +9,12 @@ nav {
     
 }
 
+.search-song{
+    border-radius: 5px;
+    height: 18px;
+    width: 150px;
+}
+
 .nav-logo{
     min-width: 75px;
     max-width: 100px;
@@ -63,12 +69,4 @@ nav {
 .nav-links .active {
     background-color: #293250;
     color: white;
-}
-
-.search-song{
-    border-radius: 5px;
-    height: 18px;
-    width: 150px;
-    margin-right: 0px;
-    margin-top: 5px;
 }

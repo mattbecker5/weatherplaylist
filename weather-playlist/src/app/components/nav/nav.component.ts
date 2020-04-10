@@ -17,7 +17,9 @@ export class NavComponent implements OnInit {
 
   //fetch list of songs from api with search term
   fetchTrackList(term: string){
-    console.log(this.searchTerm);
+    console.log("Fetching track list from API");
+    
+    
   }
 
 }
