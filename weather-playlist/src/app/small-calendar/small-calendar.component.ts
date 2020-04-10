@@ -9,14 +9,15 @@ import { CalendarDay } from '../calendar-day';
 })
 export class SmallCalendarComponent implements OnInit {
 
-  @Input() public currentCalendarDays: CalendarDay[];
+  // @Input() public currentCalendarDays: CalendarDay[];
   constructor() { }
+
+  public currentCalendarDays: CalendarDay[];
 
   ngOnInit(): void {
 
     //app state
     let currentCalendar: CalendarMonth;
-    let currentCalendarDays: CalendarDay[];
     let smallCalendarCurrent = {};
     let largeCalendarCurrent = {};
     let events = {};
@@ -56,9 +57,9 @@ export class SmallCalendarComponent implements OnInit {
 
     //the start of the app in time
     currentCalendar = createMonthArray(4, 2020);
-    currentCalendarDays = currentCalendar.days;
+    this.currentCalendarDays = currentCalendar.days;
     console.log(currentCalendar);
-    console.log(currentCalendarDays)
+    console.log(this.currentCalendarDays);
   }
 
 }

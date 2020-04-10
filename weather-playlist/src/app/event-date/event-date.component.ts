@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CalendarDay } from '../calendar-day';
 
 @Component({
   selector: 'app-event-date',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventDateComponent implements OnInit {
 
+  @Input() public dayEvent: CalendarDay;
   constructor() { }
 
   ngOnInit(): void {
