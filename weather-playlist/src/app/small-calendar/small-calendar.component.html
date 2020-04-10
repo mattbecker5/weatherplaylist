@@ -7,6 +7,10 @@
     <div class="small-calendar-header">F</div>
     <div class="small-calendar-header">S</div>
 
+    <ng-container *ngFor="let bufferDay of monthBufferDays">
+        <app-event-date [dayEvent]="bufferDay"></app-event-date>
+    </ng-container>
+
     <ng-container *ngFor="let day of currentCalendarDays">
         <app-event-date [dayEvent]="day"></app-event-date>
     </ng-container>

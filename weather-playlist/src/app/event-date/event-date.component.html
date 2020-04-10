@@ -1,3 +1,5 @@
 <div class="small-calendar-dates">
-    {{dayEvent.date}}
+    <ng-container *ngIf="dayEvent.date != 0">
+        {{dayEvent.date}}
+    </ng-container>
 </div>
