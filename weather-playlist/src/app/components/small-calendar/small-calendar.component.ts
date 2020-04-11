@@ -12,6 +12,7 @@ export class SmallCalendarComponent implements OnInit {
   // @Input() public currentCalendarDays: CalendarDay[];
   constructor() { }
 
+  public currentMonth: CalendarMonth;
   public currentCalendarDays: CalendarDay[];
   public monthBufferDays: CalendarDay[];
 
@@ -20,9 +21,6 @@ export class SmallCalendarComponent implements OnInit {
     //app state
     let currentCalendar: CalendarMonth;
     let tempBufferDays = [];
-    let smallCalendarCurrent = {};
-    let largeCalendarCurrent = {};
-    let events = {};
 
     //creating calendar
 
@@ -54,13 +52,12 @@ export class SmallCalendarComponent implements OnInit {
             currentMonth.days.push(day);
         };
 
-        
-
         return currentMonth;
     };
 
     //the start of the app in time
     currentCalendar = createMonthArray(4, 2020);
+    this.currentMonth = currentCalendar;
 
     let numBufferDays = 0;
 

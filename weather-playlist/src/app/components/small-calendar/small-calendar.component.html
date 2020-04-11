@@ -13,11 +13,11 @@
     <div class="small-calendar-header">S</div>
     
     <ng-container *ngFor="let bufferDay of monthBufferDays">
-        <app-event-date [dayEvent]="bufferDay"></app-event-date>
+        <app-create-date [dayEvent]="bufferDay"></app-create-date>
     </ng-container>
 
     <ng-container *ngFor="let day of currentCalendarDays">
-        <app-event-date [dayEvent]="day"></app-event-date>
+        <app-create-date [dayEvent]="day"></app-create-date>
     </ng-container>   
 </div>
 
