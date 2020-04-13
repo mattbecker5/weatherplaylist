@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 })
 export class PickSelectedGenreService {
 
+  private pickedGenre: Genre[] = [];
 
   // Observable string sources
   private selectedGenresSource = new Subject<Genre[]>();
@@ -17,7 +18,10 @@ export class PickSelectedGenreService {
   constructor() { }
 
   // Service commands
-  public createGenreList(genres: Genre[]) {
-    this.selectedGenresSource.next(genres);
+  public createGenreList(genre: Genre) {
+    if(!this.pickedGenre.includes(genre)){
+      this.pickedGenre.push(genre);
+    }
+    this.selectedGenresSource.next(this.pickedGenre);
   }
 }
