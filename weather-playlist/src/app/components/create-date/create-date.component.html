@@ -1,4 +1,4 @@
-<div class="small-calendar-dates">
+<div class="small-calendar-dates" (click)="selectedDay()">
     <ng-container *ngIf="dayEvent.date != 0">
         {{dayEvent.date}}
     </ng-container>
