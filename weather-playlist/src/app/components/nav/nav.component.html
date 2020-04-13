@@ -10,7 +10,7 @@
         </ul>
     </div>
     <div class="searchSong-div"><input type="text" placeholder="Search.." class="search-song" (input)="searchTerm=$event.target.value">
-        <button (click)="onClick(searchTerm)"></button>
+        <button (click)="searchButton(searchTerm)"></button>
         <h4>Search Term: {{searchTerm}}</h4>
     </div>
 </nav>

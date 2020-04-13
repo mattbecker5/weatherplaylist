@@ -15,7 +15,7 @@ export class AppleMusicAPIService {
   constructor(private http: HttpClient) { }
 
 /** GET songs from the server */
-  getSongs (searchTerm: string): Observable<Song[]> {
+  public getSongs (searchTerm: string): Observable<Song[]> {
     return this.http.get<AppleMusicResponse>(this.applemusicURL + searchTerm)
       .pipe(
         map( reply => {
@@ -28,6 +28,7 @@ export class AppleMusicAPIService {
       );
   }
 
+  /* Handle Http operation that failed */ 
   private handleError<T>(operation = 'operation', result?: T){
     return(error:any): Observable<T> => {
       console.error(error);

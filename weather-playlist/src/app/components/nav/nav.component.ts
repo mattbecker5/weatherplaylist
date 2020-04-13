@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppleMusicAPIService } from 'src/app/services/apple-music-api.service';
 import { Song } from '../../models/song';
+import { GenerateMusicSearchService } from 'src/app/services/generate-music-search.service';
 
 @Component({
   selector: 'app-nav',
@@ -12,20 +13,20 @@ export class NavComponent implements OnInit {
   public searchTerm: string;
   songs: Song[] = [];
 
-  constructor(private appleMusicAPIService: AppleMusicAPIService) { }
+  constructor(private appleMusicAPIService: AppleMusicAPIService, private generateMusicSearch: GenerateMusicSearchService) { }
 
   ngOnInit(): void {
   }
 
-  private getAll(term: string) {
+  //function to call getAll() and pass the search term that user entered
+  public searchButton(term: string){
+    console.log("Searching for " + this.searchTerm); //logging to console
     this.appleMusicAPIService.getSongs(this.searchTerm)
-      .subscribe( songs => this.songs = songs );
+    .subscribe( songs => {
+      this.songs = songs;
+      this.generateMusicSearch.createSongList(this.songs);
       console.log(this.songs);
-  }
-
-  onClick(term: string){
-    this.getAll(this.searchTerm);
-    console.log("Searching for " + this.searchTerm);
+    });
   }
 
 }
