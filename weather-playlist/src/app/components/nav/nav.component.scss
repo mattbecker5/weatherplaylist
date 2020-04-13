@@ -9,11 +9,11 @@ nav {
     
 }
 
-.search-song{
-    border-radius: 5px;
-    height: 18px;
-    width: 150px;
-}
+// .search-song{
+//     border-radius: 5px;
+//     height: 18px;
+//     width: 150px;
+// }
 
 .searchSong-div{
     position: relative;
@@ -71,7 +71,7 @@ nav {
     color: white;
 }
 
-.nav-links .active {
+.nav-links li .active {
     background-color: #293250;
     color: white;
 }
