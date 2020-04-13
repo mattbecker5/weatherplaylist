@@ -6,10 +6,11 @@
         <ul>
             <li><a class="active" href="">Home</a></li>
             <li><a href="">Profile</a></li>
-            <li><input type="text" placeholder="Search.." class="search-song" (input)="searchTerm=$event.target.value">
-                <button (click)="fetchTrackList(searchTerm)"></button></li>
-            <li>Search Term: {{searchTerm}}</li>
             <li style="float:right"><a href=""><i class="fas fa-user-circle"></i> Login</a></li>
         </ul>
+    </div>
+    <div class="searchSong-div"><input type="text" placeholder="Search.." class="search-song" (input)="searchTerm=$event.target.value">
+        <button (click)="onClick(searchTerm)"></button>
+        <h4>Search Term: {{searchTerm}}</h4>
     </div>
 </nav>
