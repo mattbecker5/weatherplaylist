@@ -29,23 +29,6 @@ h3 {
     color: black;
 }
 
-/* Button Page 1 */
-.categories-div{
-    padding: 10px 20px;
-    margin: 10px;
-    flex: 0 0 250px;
-    background-color: #379863;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
-    flex-grow: 1;
-    color: white;
-}
-
-.category-head {
-    border-bottom: 1px solid black;
-    width: 100%;
-}
-
 .buttonSmall{
     font-size: 12px;
     border-radius: 5px;
@@ -107,10 +90,10 @@ h3 {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
-.create-event-container {
-    display: flex;
-    flex-wrap: wrap;
-}
+// .create-event-container {
+//     display: flex;
+//     flex-wrap: wrap;
+// }
 
 @media screen and (max-width: 768px) {
     .row, .navbar {   

@@ -12,7 +12,9 @@ import { SelectMonthYearService } from 'src/app/services/select-month-year.servi
 
 export class CreateEventComponent implements OnInit {
 
-  constructor(private createCalendar: CreateCalendarService, private selectMonthService: SelectMonthYearService) { }
+  constructor(private createCalendar: CreateCalendarService, private selectMonthService: SelectMonthYearService) { 
+  
+  }
 
   public currentMonth: CalendarMonth;
   private month: number;
@@ -23,7 +25,6 @@ export class CreateEventComponent implements OnInit {
     this.month = this.currentMonth.monthNum;
     this.year = this.currentMonth.year;
     console.log(this.currentMonth);
-    this.selectMonthService.selectMonth(this.currentMonth);
   }
 
   previousMonth(){
@@ -31,7 +32,6 @@ export class CreateEventComponent implements OnInit {
     this.month = this.month - 1;
     this.currentMonth = this.createCalendar.getNewMonth(this.month, this.year);
     this.selectMonthService.selectMonth(this.currentMonth);
-
   }
 
   nextMonth(){
