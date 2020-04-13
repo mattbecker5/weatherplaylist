@@ -24,4 +24,14 @@ export class PickSelectedGenreService {
     }
     this.selectedGenresSource.next(this.pickedGenre);
   }
+
+  public deleteGenre(genre: Genre){
+    let index;
+    for(let i = 0; i < this.pickedGenre.length; i++){
+      if(this.pickedGenre[i]==genre){
+          index = i;
+      }
+    }
+    this.pickedGenre.splice(index,1);
+  }
 }

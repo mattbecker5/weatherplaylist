@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Genre } from 'src/app/models/genre';
+import { PickSelectedGenreService } from 'src/app/services/pick-selected-genre.service';
 
 @Component({
   selector: 'app-pick-genre-button',
@@ -9,9 +10,13 @@ import { Genre } from 'src/app/models/genre';
 export class PickGenreButtonComponent implements OnInit {
   @Input() pickGenre: Genre;
 
-  constructor() { }
+  constructor(private pickSelectedGenreService: PickSelectedGenreService) { }
 
   ngOnInit(): void {
   }
 
+  delete(){
+    console.log("Deleting " + this.pickGenre.name);
+    this.pickSelectedGenreService.deleteGenre(this.pickGenre);
+  }
 }
