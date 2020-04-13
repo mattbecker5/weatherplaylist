@@ -11,7 +11,7 @@ export class PickCategoryComponent implements OnInit {
 
   private genresList = ["Rock", "Pop", "Jazz", "Country", "Blues", "Classical", "Funk", "Heavy Metal"];
   public genres: Genre[] = [];
-  public genresPick: Genre[] = [];
+  public pickGenres: Genre[] = [];
 
   constructor(private pickSelectedGenreService: PickSelectedGenreService) { 
     //populating genres array with genresList
@@ -22,7 +22,7 @@ export class PickCategoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pickSelectedGenreService.genresSelected$.subscribe( genres => this.genresPick = genres);
+    this.pickSelectedGenreService.genresSelected$.subscribe( genres => this.pickGenres = genres);
   }
 
 }
