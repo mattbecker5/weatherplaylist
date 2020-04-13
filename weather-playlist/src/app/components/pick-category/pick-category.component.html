@@ -9,14 +9,15 @@
         </div>
         <div class="buttons-holder" id="buttons-categories">
             <!-- Added with JQuery -->
-            <button id="button1" class="buttonDark buttonMed">Rock</button>
-            <button id="button2" class="buttonDark buttonMed">Pop</button> 
-            <button id="button3" class="buttonDark buttonMed">Jazz</button>
-            <button id="button4" class="buttonDark buttonMed">Country</button>
-            <button id="button5" class="buttonDark buttonMed">Blues</button>
-            <button id="button6"class="buttonDark buttonMed">Classical</button>
-            <button id="button7" class="buttonDark buttonMed">Funk</button>
-            <button id="button8" class="buttonDark buttonMed">Heavy Metal</button>
+            <!-- (click)="createGenreButton()" [genre]="genre" -->
+            <button id="button1" class="buttonDark buttonMed" [innerHTML]="button1HTML" (click)="createGenreButton(button1HTML)"></button>
+            <button id="button2" class="buttonDark buttonMed" [innerHTML]="button2HTML" (click)="createGenreButton(button2HTML)"></button> 
+            <button id="button3" class="buttonDark buttonMed" [innerHTML]="button3HTML" (click)="createGenreButton(button3HTML)"></button>
+            <button id="button4" class="buttonDark buttonMed" [innerHTML]="button4HTML" (click)="createGenreButton(button4HTML)"></button>
+            <button id="button5" class="buttonDark buttonMed" [innerHTML]="button5HTML" (click)="createGenreButton(button5HTML)"></button>
+            <button id="button6" class="buttonDark buttonMed" [innerHTML]="button6HTML" (click)="createGenreButton(button6HTML)"></button>
+            <button id="button7" class="buttonDark buttonMed" [innerHTML]="button7HTML" (click)="createGenreButton(button7HTML)"></button>
+            <button id="button8" class="buttonDark buttonMed" [innerHTML]="button8HTML" (click)="createGenreButton(button8HTML)"></button>
         </div>
     </div>
     <div class="categories-list-pick">
