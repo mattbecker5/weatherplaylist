@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppleMusicAPIService } from 'src/app/service/apple-music-api.service';
-import { Song } from '../../model/song';
+import { AppleMusicAPIService } from 'src/app/services/apple-music-api.service';
+import { Song } from '../../models/song';
 
 @Component({
   selector: 'app-nav',

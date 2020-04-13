@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Song } from '../model/song';
+import { Song } from '../models/song';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { AppleMusicResponse } from '../model/apple-music-response';
+import { AppleMusicResponse } from '../interfaces/apple-music-response';
 
 @Injectable({
   providedIn: 'root'

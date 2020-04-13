@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CalendarDay } from '../model/calendar-day';
+import { CalendarDay } from '../models/calendar-day';
 import { Subject } from 'rxjs';
 
 @Injectable({

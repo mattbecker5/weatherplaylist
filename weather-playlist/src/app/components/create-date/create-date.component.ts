@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CalendarDay } from '../../model/calendar-day';
-import { CalendarMonth } from 'src/app/model/calendar-month';
+import { CalendarDay } from '../../models/calendar-day';
+import { CalendarMonth } from 'src/app/models/calendar-month';
 
 @Component({
   selector: 'app-create-date',

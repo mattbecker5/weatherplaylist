@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MonthYear } from 'src/app/interfaces/month-year';
 import { CreateCalendarService } from 'src/app/services/create-calendar.service';
-import { CalendarMonth } from 'src/app/model/calendar-month';
+import { CalendarMonth } from 'src/app/models/calendar-month';
 import { SelectMonthYearService } from 'src/app/services/select-month-year.service';
 
 @Component({
