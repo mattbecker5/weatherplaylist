@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PickCategoryComponent implements OnInit {
 
-  public genre: string;
   public button1HTML: string = 'Rock';
   public button2HTML: string = 'Pop';
   public button3HTML: string = 'Jazz';
@@ -16,6 +15,7 @@ export class PickCategoryComponent implements OnInit {
   public button6HTML: string = 'Classical';
   public button7HTML: string = 'Funk';
   public button8HTML: string = 'Heavy Metal';
+  public buttonCreate;
 
   constructor() { }
 
@@ -24,5 +24,8 @@ export class PickCategoryComponent implements OnInit {
 
   public createGenreButton(genrePicked: string){
     console.log('Genre Selected: ' + genrePicked);
+    const button = this.buttonCreate.createElement('button');
+    console.log(this.buttonCreate);
+    
   }
 }
