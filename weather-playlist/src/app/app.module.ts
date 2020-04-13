@@ -16,6 +16,8 @@ import { MusicListComponent } from './components/music-list/music-list.component
 import { MusicCardComponent } from './components/music-card/music-card.component';
 import { PickCategoryComponent } from './components/pick-category/pick-category.component';
 import { SmallCalendarComponent } from './components/small-calendar/small-calendar.component';
+import { PickCategoryButtonComponent } from './components/pick-category-button/pick-category-button.component';
+import { PickGenreButtonComponent } from './components/pick-genre-button/pick-genre-button.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { SmallCalendarComponent } from './components/small-calendar/small-calend
     MusicListComponent,
     MusicCardComponent,
     PickCategoryComponent,
-    SmallCalendarComponent
+    SmallCalendarComponent,
+    PickCategoryButtonComponent,
+    PickGenreButtonComponent
   ],
   imports: [
     BrowserModule,

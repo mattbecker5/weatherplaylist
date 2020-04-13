@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Genre } from 'src/app/models/genre';
+import { PickSelectedGenreService } from 'src/app/services/pick-selected-genre.service';
 
 @Component({
   selector: 'app-pick-category',
@@ -7,25 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PickCategoryComponent implements OnInit {
 
-  public button1HTML: string = 'Rock';
-  public button2HTML: string = 'Pop';
-  public button3HTML: string = 'Jazz';
-  public button4HTML: string = 'Country';
-  public button5HTML: string = 'Blues';
-  public button6HTML: string = 'Classical';
-  public button7HTML: string = 'Funk';
-  public button8HTML: string = 'Heavy Metal';
-  public buttonCreate;
+  private genresList = ["Rock", "Pop", "Jazz", "Country", "Blues", "Classical", "Funk", "Heavy Metal"];
+  public genres: Genre[] = [];
+  public genresPick: Genre[] = [];
 
-  constructor() { }
+  constructor(private pickSelectedGenreService: PickSelectedGenreService) { 
+    //populating genres array with genresList
+    for(let i = 0; i < this.genresList.length; i++){
+      this.genres.push(new Genre(this.genresList[i]));
+      console.log();
+    }
+  }
 
   ngOnInit(): void {
+    this.pickSelectedGenreService.genresSelected$.subscribe( genres => this.genresPick = genres);
   }
 
-  public createGenreButton(genrePicked: string){
-    console.log('Genre Selected: ' + genrePicked);
-    const button = this.buttonCreate.createElement('button');
-    console.log(this.buttonCreate);
-    
-  }
 }
