@@ -25,6 +25,7 @@ export class CreateEventComponent implements OnInit {
     this.month = this.currentMonth.monthNum;
     this.year = this.currentMonth.year;
     console.log(this.currentMonth);
+    this.selectMonthService.selectMonth(this.currentMonth);
   }
 
   previousMonth(){
