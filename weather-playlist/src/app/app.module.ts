@@ -10,7 +10,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { CreateEventComponent } from './components/create-event/create-event.component';
 import { LargeCalenderComponent } from './components/large-calender/large-calender.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { EventDateComponent } from './components/event-date/event-date.component';
+import { CreateDateComponent } from './components/create-date/create-date.component';
 import { MediaPlayerComponent } from './components/media-player/media-player.component';
 import { MusicListComponent } from './components/music-list/music-list.component';
 import { MusicCardComponent } from './components/music-card/music-card.component';
@@ -25,7 +25,7 @@ import { SmallCalendarComponent } from './components/small-calendar/small-calend
     CreateEventComponent,
     LargeCalenderComponent,
     FooterComponent,
-    EventDateComponent,
+    CreateDateComponent,
     MediaPlayerComponent,
     MusicListComponent,
     MusicCardComponent,

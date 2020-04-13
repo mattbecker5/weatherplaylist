@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CalendarDay } from '../../model/calendar-day';
 
 @Component({
-  selector: 'app-event-date',
-  templateUrl: './event-date.component.html',
-  styleUrls: ['./event-date.component.scss']
+  selector: 'app-create-date',
+  templateUrl: './create-date.component.html',
+  styleUrls: ['./create-date.component.scss']
 })
-export class EventDateComponent implements OnInit {
+export class CreateDateComponent implements OnInit {
 
   @Input() public dayEvent: CalendarDay;
   constructor() { }
