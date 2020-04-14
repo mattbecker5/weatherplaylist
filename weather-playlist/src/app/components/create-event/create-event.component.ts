@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MonthYear } from 'src/app/interfaces/month-year';
 import { CreateCalendarService } from 'src/app/services/create-calendar.service';
 import { CalendarMonth } from 'src/app/models/calendar-month';
 import { SelectMonthYearService } from 'src/app/services/select-month-year.service';
+import { CalendarDay } from 'src/app/models/calendar-day';
+import { SelectDateService } from 'src/app/services/select-date.service';
 
 @Component({
   selector: 'app-create-event',
@@ -12,7 +13,7 @@ import { SelectMonthYearService } from 'src/app/services/select-month-year.servi
 
 export class CreateEventComponent implements OnInit {
 
-  constructor(private createCalendar: CreateCalendarService, private selectMonthService: SelectMonthYearService) { 
+  constructor(private createCalendar: CreateCalendarService, private selectMonthService: SelectMonthYearService, private selectDayService: SelectDateService) { 
   
   }
 
@@ -20,12 +21,18 @@ export class CreateEventComponent implements OnInit {
   private month: number;
   private year: number;
 
+  public selectedDay: CalendarDay;;
+
+
   ngOnInit(): void {
     this.currentMonth = this.createCalendar.getNewMonth(4,2020);
     this.month = this.currentMonth.monthNum;
     this.year = this.currentMonth.year;
     console.log(this.currentMonth);
     this.selectMonthService.selectMonth(this.currentMonth);
+
+    this.selectDayService.dateSelected$.subscribe(day => this.selectedDay = day);
+
   }
 
   previousMonth(){

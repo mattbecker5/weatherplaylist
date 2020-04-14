@@ -16,7 +16,7 @@ export class SelectDateService {
   constructor() { }
 
   // Service commands
-  selectDay(day: CalendarDay) {
+  setSelectedDay(day: CalendarDay) {
     this.selectedDateSource.next(day);
   }
 
