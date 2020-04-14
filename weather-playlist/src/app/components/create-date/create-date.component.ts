@@ -13,6 +13,7 @@ export class CreateDateComponent implements OnInit {
   @Input() public dayEvent: CalendarDay;
 
   public currentMonth: CalendarMonth;
+  public status: boolean = false;
 
   constructor(private selectDayService: SelectDateService) { }
 
@@ -23,6 +24,8 @@ export class CreateDateComponent implements OnInit {
   selectedCurrentDay() {
     console.log(this.dayEvent);
     this.selectDayService.setSelectedDay(this.dayEvent);
+    this.status = !this.status;
+    console.log("active")  
   }
 
 }

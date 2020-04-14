@@ -1,4 +1,4 @@
-<div class="small-calendar-dates" (click)="selectedCurrentDay()">
+<div class="small-calendar-dates" (click)="selectedCurrentDay()" [ngClass]="status ? 'active' : 'nornal'">
     <ng-container *ngIf="dayEvent.date != 0">
         {{dayEvent.date}}
     </ng-container>
