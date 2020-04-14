@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WeatherApiService } from './services/weather-api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  constructor(){
+  constructor(private weatherApi: WeatherApiService){
 
   }
 
   ngOnInit(){
-    
+    this.testApi();
+  }
+
+  //function to call getAll() and pass the search term that user entered
+  public testApi(){
+    this.weatherApi.getWeather().subscribe(weather => {
+      console.log(weather);
+    })
   }
 
 }
