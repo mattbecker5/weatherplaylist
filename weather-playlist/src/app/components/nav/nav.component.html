@@ -6,13 +6,16 @@
         <ul>
             <li><a class="active" href="">Home</a></li>
             <li><a href="">Profile</a></li>
-            <li style="float:right"><a href="">
+            <li><a href="">
                 <i class="fas fa-user-circle"></i> Login</a>
             </li>
         </ul>
     </div>
     <div class="searchSong-div">
         <input class="input-field" type="text" placeholder="Search.."  (input)="searchTerm=$event.target.value">
-        <button (click)="searchButton(searchTerm)">Search</button>
     </div>
+    <div class="searchSong-div-submit">
+        <button type="submit" (click)="searchButton(searchTerm)">Search</button>
+    </div>
+    
 </nav>

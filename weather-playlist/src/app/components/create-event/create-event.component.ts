@@ -21,7 +21,7 @@ export class CreateEventComponent implements OnInit {
   private month: number;
   private year: number;
 
-  public selectedDay: CalendarDay;;
+  public selectedDays: CalendarDay[] = [];
 
 
   ngOnInit(): void {
@@ -31,7 +31,10 @@ export class CreateEventComponent implements OnInit {
     console.log(this.currentMonth);
     this.selectMonthService.selectMonth(this.currentMonth);
 
-    this.selectDayService.dateSelected$.subscribe(day => this.selectedDay = day);
+    this.selectDayService.dateSelected$.subscribe(day => {
+      console.log(day);
+      this.selectedDays.push(day);
+    });
 
   }
 

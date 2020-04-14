@@ -20,6 +20,11 @@ nav {
     padding: 5px;
 }
 
+.searchSong-div-submit{
+    position: relative;
+    padding: 10px;
+}
+
 .nav-logo{
     min-width: 75px;
     max-width: 100px;
@@ -74,4 +79,31 @@ nav {
 .nav-links li .active {
     background-color: #293250;
     color: white;
+}
+
+.searchSong-div input {
+    margin-top: 10px;
+}
+
+.searchSong-div-submit button[type=submit]{
+    background-color: #293250;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+.searchSong-div input{
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 10px;
 }
