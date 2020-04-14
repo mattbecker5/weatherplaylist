@@ -5,6 +5,7 @@
     <div class="create-event-header-previous" (click)="previousMonth()"><h3>&lt;</h3></div>
     <div class="create-event-header-next" (click)="nextMonth()"><h3>&gt;</h3></div>
     <div class="create-event-header-month">{{currentMonth.monthLong}}, {{currentMonth.year}}</div>
+    <div class="create-event-header-date" *ngIf="selectedDay">On {{selectedDay.day}}, {{selectedDay.date}} </div>
 </div>
 
 <div class="create-event-container">

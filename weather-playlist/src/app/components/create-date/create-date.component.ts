@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CalendarDay } from '../../models/calendar-day';
 import { CalendarMonth } from 'src/app/models/calendar-month';
+import { SelectDateService } from 'src/app/services/select-date.service';
 
 @Component({
   selector: 'app-create-date',
@@ -13,14 +14,15 @@ export class CreateDateComponent implements OnInit {
 
   public currentMonth: CalendarMonth;
 
-  constructor() { }
+  constructor(private selectDayService: SelectDateService) { }
 
   ngOnInit(): void {
     // this.currentMonth = new CalendarMonth()
   }
 
-  selectedDay() {
+  selectedCurrentDay() {
     console.log(this.dayEvent);
+    this.selectDayService.setSelectedDay(this.dayEvent);
   }
 
 }
