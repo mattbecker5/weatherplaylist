@@ -21,6 +21,7 @@ import { PickGenreButtonComponent } from './components/pick-genre-button/pick-ge
 import { FeaturesComponent } from './components/features/features.component';
 import { FunctionalityComponent } from './components/functionality/functionality.component';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
+import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { EventDetailsComponent } from './components/event-details/event-details.
     PickGenreButtonComponent,
     FeaturesComponent,
     FunctionalityComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
+    SideNavbarComponent
   ],
   imports: [
     BrowserModule,
