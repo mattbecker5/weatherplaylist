@@ -19,14 +19,13 @@
   .event-container {
     display: flex;
     flex-wrap: wrap;
-    min-width: 300px;
+    min-width: 380px;
     background-color: yellowgreen;
   }
 
   .event-weather {
     background-color: #f1f1f1;
-    // max-width: 250px;
-    // min-width: 150px;
+    flex-grow: 1;
     margin: 10px;
     padding: 10px;
     text-align: center;
@@ -34,8 +33,7 @@
 
   .event-details {
     background-color: #f1f1f1;
-    // max-width: 300px;
-    // min-width: 200px;
+    flex-grow: 8;
     margin: 10px;
     padding: 20px;
   }
