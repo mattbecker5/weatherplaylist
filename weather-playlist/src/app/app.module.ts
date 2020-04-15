@@ -18,6 +18,8 @@ import { PickCategoryComponent } from './components/pick-category/pick-category.
 import { SmallCalendarComponent } from './components/small-calendar/small-calendar.component';
 import { PickCategoryButtonComponent } from './components/pick-category-button/pick-category-button.component';
 import { PickGenreButtonComponent } from './components/pick-genre-button/pick-genre-button.component';
+import { FeaturesComponent } from './components/features/features.component';
+import { FunctionalityComponent } from './components/functionality/functionality.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { PickGenreButtonComponent } from './components/pick-genre-button/pick-ge
     PickCategoryComponent,
     SmallCalendarComponent,
     PickCategoryButtonComponent,
-    PickGenreButtonComponent
+    PickGenreButtonComponent,
+    FeaturesComponent,
+    FunctionalityComponent
   ],
   imports: [
     BrowserModule,
