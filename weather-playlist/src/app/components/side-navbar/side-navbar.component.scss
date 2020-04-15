@@ -1,9 +1,13 @@
-.side {
-    flex: 30%;
-    background-color: #f1f1f1;
-    padding: 20px;
+a:link {
+    text-decoration: none;
 }
 
-.side h2 {
-    color: #637272;
+a:hover {
+    text-decoration: underline;
+}
+
+.links {
+    background-color: greenyellow;
+    padding: 8px;
+    margin: 15px;
 }

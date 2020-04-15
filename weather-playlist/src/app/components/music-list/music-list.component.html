@@ -4,9 +4,7 @@
         <h3>List of music generated from search</h3>
     </div>
     <div class="search-results">
-        <!-- Added with JQuery -->
         <!-- <img src="https://is5-ssl.mzstatic.com/image/thumb/Music118/v4/41/c0/1a/41c01a78-cdfa-0c06-4b9b-8e00bf07aaad/source/100x100bb.jpg" alt="Better Now" title="Better Now"> -->
-        <!-- <app-music-card *ngFor="let song for songs" [song]="song"></app-music-card> -->
         <ng-container *ngFor="let song of songs">
             <app-music-card [song]="song"></app-music-card>
         </ng-container>
