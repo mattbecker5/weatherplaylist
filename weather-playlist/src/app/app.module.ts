@@ -20,6 +20,7 @@ import { PickCategoryButtonComponent } from './components/pick-category-button/p
 import { PickGenreButtonComponent } from './components/pick-genre-button/pick-genre-button.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { FunctionalityComponent } from './components/functionality/functionality.component';
+import { EventDetailsComponent } from './components/event-details/event-details.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FunctionalityComponent } from './components/functionality/functionality
     PickCategoryButtonComponent,
     PickGenreButtonComponent,
     FeaturesComponent,
-    FunctionalityComponent
+    FunctionalityComponent,
+    EventDetailsComponent
   ],
   imports: [
     BrowserModule,
