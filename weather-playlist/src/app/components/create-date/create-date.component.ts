@@ -23,9 +23,16 @@ export class CreateDateComponent implements OnInit {
 
   selectedCurrentDay() {
     console.log(this.dayEvent);
-    this.selectDayService.setSelectedDay(this.dayEvent);
-    this.status = !this.status;
-    console.log("active")  
+    
+    if(this.status){
+      console.log("should remove");
+      this.status = false;
+      this.selectDayService.deleteSelectedDay(this.dayEvent);
+    } else {
+      console.log("should add");
+      this.status = true;
+      this.selectDayService.addSelectedDay(this.dayEvent);
+    }
   }
 
 }

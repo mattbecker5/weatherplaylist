@@ -33,20 +33,31 @@ export class CreateEventComponent implements OnInit {
 
     this.selectDayService.dateSelected$.subscribe(day => {
       console.log(day);
+      //add date
       this.selectedDays.push(day);
+    });
+
+    this.selectDayService.deleteSelected$.subscribe(day => {
+      console.log("removing and splicing");
+      //delete date
+      let index;
+      for(let i = 0; i < this.selectedDays.length; i++){
+        if(this.selectedDays[i]==day){
+            index = i;
+        }
+      }
+      this.selectedDays.splice(index,1);
     });
 
   }
 
   previousMonth(){
-    console.log("trying to change to pre month")
     this.month = this.month - 1;
     this.currentMonth = this.createCalendar.getNewMonth(this.month, this.year);
     this.selectMonthService.selectMonth(this.currentMonth);
   }
 
   nextMonth(){
-    console.log("tring to change to next month")
      this.month = this.month + 1
     this.currentMonth = this.createCalendar.getNewMonth(this.month, this.year);
     this.selectMonthService.selectMonth(this.currentMonth);
