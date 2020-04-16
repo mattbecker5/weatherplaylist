@@ -21,6 +21,7 @@ import { FeaturesComponent } from './components/features/features.component';
 import { FunctionalityComponent } from './components/functionality/functionality.component';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
+import { PickGenresNewuserComponent } from './components/pick-genres-newuser/pick-genres-newuser.component';
 import { WeatherDisplaySmallComponent } from './components/weather-display-small/weather-display-small.component';
 
 @NgModule({
@@ -43,6 +44,7 @@ import { WeatherDisplaySmallComponent } from './components/weather-display-small
     FunctionalityComponent,
     EventDetailsComponent,
     SideNavbarComponent,
+    PickGenresNewuserComponent,
     WeatherDisplaySmallComponent
   ],
   imports: [

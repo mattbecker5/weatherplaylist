@@ -1,0 +1,50 @@
+.genres-div{
+    padding: 10px 20px;
+    margin: 10px;
+    flex: 0 0 250px;
+    background-color: #379863;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    flex-grow: 1;
+    color: white;
+}
+
+.genre-head {
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+#genres-deck{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-right: 100px;
+    margin-bottom: 50px;
+}
+
+.genres-list-pick{
+    padding: 10px 20px;
+    margin: 10px;
+    flex: 0 0 250px;
+    background-color: #379863;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    flex-grow: 1;
+    color: white;
+}
+
+.genre-pick-head{
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+#genre-pick{
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
+
+.submit-button-hidden{
+    display: none;
+}
