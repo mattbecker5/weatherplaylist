@@ -2,12 +2,33 @@ a:link {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+.links:hover {
+    background-color: #1f2833;
+}
+
+// .links a:hover:not(.active) {
+//     background-color: #1f2833;
+//     color: white;
+// }
+
+// .links .active {
+//     background-color: #1f2833;
+//     color: white;
+// }
+
+.links a {
+    color: white;
 }
 
 .links {
-    background-color: greenyellow;
-    padding: 8px;
     margin: 15px;
+    background-color: #379863;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
 }
+
+// .sidenav-container {
+ 
+// }
+
