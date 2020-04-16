@@ -16,4 +16,8 @@ export class MusicListComponent implements OnInit {
     this.generateMusicSearch.songsSelected$.subscribe(songs => this.songs = songs);
   }
 
+  over(event: any) {
+    console.log('Hovering over ' + event.target.id);
+  }
+
 }
