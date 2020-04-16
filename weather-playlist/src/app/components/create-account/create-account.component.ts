@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-account',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateAccountComponent implements OnInit {
 
-  constructor() { }
+  public user: User;
+
+  constructor(private router: Router) { 
+    this.user =  new User('', '');
+  }
 
   ngOnInit(): void {
+  }
+
+  public createUser() {
+    console.log('Creating new user' , this.user);
+    this.router.navigate(['/home']); //after newUser is created redirect to home page
   }
 
 }
