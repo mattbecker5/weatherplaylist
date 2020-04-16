@@ -9,19 +9,10 @@ import { WeatherEvent } from './models/weather-event';
 })
 export class AppComponent {
   
-  constructor(private weatherApi: WeatherApiService){
+  constructor(){
 
   }
 
   ngOnInit(){
-    this.testApi();
   }
-
-  //function to call getAll() and pass the search term that user entered
-  public testApi(){
-    this.weatherApi.getWeather().subscribe(weather => {
-      console.log(weather);
-    })
-  }
-
 }

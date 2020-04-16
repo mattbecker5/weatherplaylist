@@ -14,8 +14,8 @@ export class WeatherApiService {
 
   constructor(private http: HttpClient) { }
 
-/** GET songs from the server */
-  public getWeather (): Observable<WeatherEvent> {
+  /** GET songs from the server */
+  public getWeatherByZip(): Observable<WeatherEvent> {
     return this.http.get<WeatherResponse>(this.weatherUrlApi)
       .pipe(
         map( reply => {
@@ -32,16 +32,33 @@ export class WeatherApiService {
       );
   }
 
+    /** GET songs from the server */
+    public getWeatherByLatLon(lat:string, lon:string): Observable<WeatherEvent> {
+      console.log("here");
+      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4f6b2e6b7dcccf97559cf33e7208bad0&units=imperial`;
+
+      return this.http.get<WeatherResponse>(url)
+        .pipe(
+          map( reply => {
+            // console.log(reply.coord.lon);
+            // let weather: WeatherEvent;
+  
+            let weather = new WeatherEvent(reply);
+            // weather = reply.results.map( weather => new WeatherEvent(weather) );
+            
+            // console.log(weather.coord.lon);
+            return weather;
+          }),
+          catchError(this.handleError<WeatherEvent>('getWeather'))
+        );
+    }
+
   /* Handle Http operation that failed */ 
   private handleError<T>(operation = 'operation', result?: T){
     return(error:any): Observable<T> => {
       console.error(error);
       return of(result as T);
     };
-
   }
 
-  // public sendGetRequest(){
-  //   return this.http.get(this.weatherUrlApi);
-  // }
 }
