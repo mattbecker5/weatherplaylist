@@ -1,0 +1,45 @@
+.login-account-icon {
+    padding: 0px;
+    color: #ccc;
+    min-width: 40px;
+    min-height: 40px;
+    text-align: center;
+}
+
+.login-account-icon-email{
+    position: absolute;
+    top: 169px;
+    left: 22px;
+    padding-top: 14px;
+}
+
+.login-account-icon-key{
+    position: absolute;
+    top: 225px;
+    left: 22px;
+    padding-top: 14px;
+}
+
+.login-account-container input {
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 35px;
+    margin-bottom: 10px;
+}
+
+.login-account-container input[type=submit]{
+    background-color: #379863;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+  }

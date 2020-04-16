@@ -12,10 +12,12 @@ export class NavComponent implements OnInit {
 
   public searchTerm: string;
   songs: Song[] = [];
+  public currentPath: string;
 
   constructor(private appleMusicAPIService: AppleMusicAPIService, private generateMusicSearch: GenerateMusicSearchService) { }
 
   ngOnInit(): void {
+    console.log(this.currentPath);
   }
 
   //function to call getAll() and pass the search term that user entered
@@ -29,4 +31,8 @@ export class NavComponent implements OnInit {
     });
   }
 
+  public getPath() {
+    this.currentPath = window.location.pathname;
+    return this.currentPath;
+  }
 }

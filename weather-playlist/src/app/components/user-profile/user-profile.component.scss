@@ -1,5 +1,11 @@
 .user-info-header {
+    border-bottom: 1px solid black;
+    width: 100%;
+    padding: 5px 0px 12px 0px; 
+}
 
+.user-info-div {
+    padding: 10px 0px 8px 0px; 
 }
 
 .user-search-header {
@@ -8,4 +14,14 @@
 
 .user-events-header {
     
+}
+
+.user-profile-outer-container {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #379863;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    flex-grow: 1;
+    color: white;
 }

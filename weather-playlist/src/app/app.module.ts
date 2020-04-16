@@ -23,6 +23,15 @@ import { EventDetailsComponent } from './components/event-details/event-details.
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
 import { WeatherDisplaySmallComponent } from './components/weather-display-small/weather-display-small.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ViewCreateAccountComponent } from './pages/view-create-account/view-create-account.component';
+import { ViewPickGenreNewuserComponent } from './pages/view-pick-genre-newuser/view-pick-genre-newuser.component';
+import { ViewHomeComponent } from './pages/view-home/view-home.component';
+import { LoginAccountComponent } from './components/login-account/login-account.component';
+import { ViewLoginAccountComponent } from './pages/view-login-account/view-login-account.component';
+import { ViewMusicappComponent } from './pages/view-musicapp/view-musicapp.component';
+import { ViewEventsDetailComponent } from './pages/view-events-detail/view-events-detail.component';
+import { ViewCreateEventComponent } from './pages/view-create-event/view-create-event.component';
+import { ViewProfilePageComponent } from './pages/view-profile-page/view-profile-page.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +54,16 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     EventDetailsComponent,
     SideNavbarComponent,
     WeatherDisplaySmallComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ViewCreateAccountComponent,
+    ViewPickGenreNewuserComponent,
+    ViewHomeComponent,
+    LoginAccountComponent,
+    ViewLoginAccountComponent,
+    ViewMusicappComponent,
+    ViewEventsDetailComponent,
+    ViewCreateEventComponent,
+    ViewProfilePageComponent
   ],
   imports: [
     BrowserModule,
