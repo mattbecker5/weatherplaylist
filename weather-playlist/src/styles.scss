@@ -61,7 +61,7 @@ h3 {
 }
 
 .side {
-    flex: 30%;
+    flex: 15%;
     background-color: #f1f1f1;
     padding: 20px;
 }
@@ -100,22 +100,26 @@ h3 {
 @media only screen and (max-width: 680px) {
     .row, .navbar {   
         flex-direction: column;
-        }
-    
-        .footer-left{
-            min-width: none;
-            max-width: none;
-            text-align: center;
-        }
-    
-        .footer-right{
-            margin: auto;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-        .event-container{
-            flex-direction: column-reverse;
-        }
+    }
+
+    .footer-left{
+        min-width: none;
+        max-width: none;
+        text-align: center;
+    }
+
+    .footer-right{
+        margin: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .event-container{
+        flex-direction: column-reverse;
+    }
+
+    .sidenav-container {
+        display: flex;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 650px and up) */
