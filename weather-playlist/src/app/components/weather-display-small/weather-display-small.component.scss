@@ -1,27 +1,31 @@
 .outer {
     display: flex;
-    background-color: #1e90ff;
     height: 75px;
     width: 150px;
 }
 
 .inner-left {
-    background-color: #f1f1f1;
+
     // margin: 10px;
     // padding: 20px;
     // font-size: 20px;
-    line-height: 75px;
+    line-height: 85px;
     text-align: center;
-    width: 50px;
+    width: 75px;
+    color: white;
+    font-size: 25px;
 }
 
 .inner-right{
-    background-color: #f1f1f1;
+
     margin: 10px;
-    padding: 20px;
+    // padding: 20px;
     width: 100px;
+    background-image: url("../../../assets/images/weather_icons/cloudy-night.png");
+    background-repeat: no-repeat;
+    
 }
 
-.temp{
-    color: darken($color: #4d58ab, $amount: 0);
-}
+// .temp{
+    
+// }
