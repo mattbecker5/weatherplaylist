@@ -24,6 +24,7 @@ import { EventDetailsComponent } from './components/event-details/event-details.
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
 import { PickGenresNewuserComponent } from './components/pick-genres-newuser/pick-genres-newuser.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
