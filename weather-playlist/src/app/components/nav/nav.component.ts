@@ -29,9 +29,4 @@ export class NavComponent implements OnInit {
     });
   }
 
-  // clearSearchInput(){
-  //    this.searchTerm = null;
-  //    console.log('test');
-  // }
-
 }

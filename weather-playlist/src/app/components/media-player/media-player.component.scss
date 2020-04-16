@@ -9,11 +9,11 @@
 
 .hoverSearch{
     background-color: #2abc6b;
+    position: relative;
     display: flex;
     border: none;
     padding: 10px 10px;
-    margin: 10px 200px 10px 10px;
-    flex: 0 0 250px;
+    margin: 10px 50px 10px 10px;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
 }
@@ -22,7 +22,14 @@
     vertical-align: middle;
     margin-top: 9px;
     font-size: 20px;
-    width:500px;
+}
+
+.hoverSearch-buttons-div {
+    display: flex;
+    margin-right: 12px;
+    position: absolute;
+    right: 0px;
+    top: 8px;
 }
 
 
