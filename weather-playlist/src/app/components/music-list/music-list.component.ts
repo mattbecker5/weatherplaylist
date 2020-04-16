@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GenerateMusicSearchService } from 'src/app/services/generate-music-search.service';
 import { Song } from 'src/app/models/song';
 
+
 @Component({
   selector: 'app-music-list',
   templateUrl: './music-list.component.html',
@@ -10,6 +11,7 @@ import { Song } from 'src/app/models/song';
 export class MusicListComponent implements OnInit {
 
   public songs: Song[] = [];
+  
   constructor(public generateMusicSearch: GenerateMusicSearchService) { }
 
   ngOnInit(): void {
