@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { CreateAccountComponent } from './components/create-account/create-account.component';
 import { NavComponent } from './components/nav/nav.component';
