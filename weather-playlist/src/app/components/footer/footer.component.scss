@@ -25,17 +25,34 @@ footer {
     // background-color: green;
 }
 
-.footer-right {
-    width: auto;
+.footer-middle {
+    min-width: 100px;
+    max-width: 350px;
+    // width: auto;
     flex-grow: 1;
     margin-right: 20px;
     margin-top: 0px;
-    font-size: 15px;
-    // background-color: blue;
+}
+
+.footer-middle a{
+    color:white;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footer-right {
+    min-width: 100px;
+    max-width: 350px;
+    // width: auto;
+    flex-grow: 1;
+    margin-right: 20px;
+    margin-top: 0px;
 }
 
 .footer-right a{
     color:white;
+    text-decoration: none;
+    font-size: 12px;
 }
 
 /* End Footer Here */
