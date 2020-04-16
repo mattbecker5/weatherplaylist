@@ -2,33 +2,22 @@ a:link {
     text-decoration: none;
 }
 
-.links:hover {
+.side-navbar-links:hover {
     background-color: #1f2833;
 }
 
-// .links a:hover:not(.active) {
-//     background-color: #1f2833;
-//     color: white;
-// }
-
-// .links .active {
-//     background-color: #1f2833;
-//     color: white;
-// }
-
-.links a {
+.side-navbar-links a {
     color: white;
+    font-size: 14px;
 }
 
-.links {
+.side-navbar-links {
     margin: 15px;
     background-color: #379863;
     text-align: center;
     padding: 12px;
     border-radius: 10px;
+    
 }
 
-// .sidenav-container {
- 
-// }
 

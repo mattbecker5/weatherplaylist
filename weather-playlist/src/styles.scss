@@ -110,7 +110,7 @@ h3 {
 
     .footer-right{
         margin: auto;
-        margin-left: 20px;
+        margin-left: 0px;
         margin-right: 20px;
     }
     .event-container{
@@ -119,6 +119,19 @@ h3 {
 
     .sidenav-container {
         display: flex;
+    }
+
+    .searchSong-div{
+        display: none;
+    }
+
+    .searchSong-div-submit{
+        display: none;
+    }
+
+    .side-navbar-links a {
+        color: orange;
+        font-size: 10px;
     }
 }
 
