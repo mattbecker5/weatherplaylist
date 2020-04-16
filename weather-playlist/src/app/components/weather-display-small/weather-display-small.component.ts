@@ -10,6 +10,7 @@ import { WeatherApiService } from 'src/app/services/weather-api.service';
 export class WeatherDisplaySmallComponent implements OnInit {
 
   public temp: number;
+  public icon: String;
 
   constructor(private weatherApi: WeatherApiService) { }
 
@@ -36,6 +37,7 @@ export class WeatherDisplaySmallComponent implements OnInit {
     this.weatherApi.getWeatherByLatLon(lat, lon).subscribe(weather => {
       console.log(weather);
       this.temp = Math.floor(weather.temp);
+      this.icon = weather.weatherIcon;
     })
   }
 
@@ -43,6 +45,7 @@ export class WeatherDisplaySmallComponent implements OnInit {
     this.weatherApi.getWeatherByZip().subscribe(weather => {
       console.log(weather);
       this.temp = Math.floor(weather.temp);
+      this.icon = weather.weatherIcon;
     })
   }
 
