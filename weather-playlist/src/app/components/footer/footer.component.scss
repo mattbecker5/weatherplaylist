@@ -6,11 +6,12 @@ footer {
     bottom: 0px;
     width: 100%;
     height: auto;
-    padding-bottom: 15px;
-    background-color: #ffd55a;
+    padding-bottom: 0px;
+    background-color: #379863;
     border: none;
     font-family: 'Lato', sans-serif;
-    color: #293250;
+    color: white;
+    position: fixed;
 }
 
 .footer-left {
@@ -20,18 +21,21 @@ footer {
     margin-right: 20px;
     flex-grow: 1;
     text-align: center;
-    color: #293250;
+    color: white;
+    // background-color: green;
 }
 
 .footer-right {
     width: auto;
     flex-grow: 1;
     margin-right: 20px;
-    font-size: 12px;
+    margin-top: 0px;
+    font-size: 15px;
+    // background-color: blue;
 }
 
 .footer-right a{
-    color:#293250;
+    color:white;
 }
 
 /* End Footer Here */
