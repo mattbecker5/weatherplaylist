@@ -20,9 +20,7 @@ export class CreateEventComponent implements OnInit {
   public currentMonth: CalendarMonth;
   private month: number;
   private year: number;
-
   public selectedDays: CalendarDay[] = [];
-
 
   ngOnInit(): void {
     this.currentMonth = this.createCalendar.getNewMonth(4,2020);
@@ -31,15 +29,15 @@ export class CreateEventComponent implements OnInit {
     console.log(this.currentMonth);
     this.selectMonthService.selectMonth(this.currentMonth);
 
+    //user selects day
     this.selectDayService.dateSelected$.subscribe(day => {
       console.log(day);
-      //add date
       this.selectedDays.push(day);
     });
 
+    //user un-selects day
     this.selectDayService.deleteSelected$.subscribe(day => {
-      console.log("removing and splicing");
-      //delete date
+      console.log("removing by splicing");
       let index;
       for(let i = 0; i < this.selectedDays.length; i++){
         if(this.selectedDays[i]==day){
@@ -51,12 +49,14 @@ export class CreateEventComponent implements OnInit {
 
   }
 
+  //user to previous changes month
   previousMonth(){
     this.month = this.month - 1;
     this.currentMonth = this.createCalendar.getNewMonth(this.month, this.year);
     this.selectMonthService.selectMonth(this.currentMonth);
   }
 
+  //user changes to next month 
   nextMonth(){
      this.month = this.month + 1
     this.currentMonth = this.createCalendar.getNewMonth(this.month, this.year);

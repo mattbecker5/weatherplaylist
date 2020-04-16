@@ -1,0 +1,27 @@
+.outer {
+    display: flex;
+    background-color: #1e90ff;
+    height: 75px;
+    width: 150px;
+}
+
+.inner-left {
+    background-color: #f1f1f1;
+    // margin: 10px;
+    // padding: 20px;
+    // font-size: 20px;
+    line-height: 75px;
+    text-align: center;
+    width: 50px;
+}
+
+.inner-right{
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    width: 100px;
+}
+
+.temp{
+    color: darken($color: #4d58ab, $amount: 0);
+}
