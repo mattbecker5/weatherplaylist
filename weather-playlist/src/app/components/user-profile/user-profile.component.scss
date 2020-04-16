@@ -1,22 +1,59 @@
 .user-info-header {
     border-bottom: 1px solid black;
     width: 100%;
-    padding: 5px 0px 12px 0px; 
+    padding: 5px 0px 12px 0px;
+    font-size: 18px; 
 }
 
 .user-info-div {
     padding: 10px 0px 8px 0px; 
+    font-size: 16px; 
+}
+
+.user-profile-info-container {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #379863;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    flex-grow: 1;
+    color: white;
 }
 
 .user-search-header {
-
+    border-bottom: 1px solid white;
+    width: 100%;
+    padding: 5px 0px 12px 0px;
+    font-size: 18px;
+    color: #2abc6b; 
 }
 
-.user-events-header {
+.user-search-div {
     
 }
 
-.user-profile-outer-container {
+.user-profile-search-container {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #1f2833;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    flex-grow: 1;
+    color: white;
+}
+
+.user-events-header {
+    border-bottom: 1px solid black;
+    width: 100%;
+    padding: 5px 0px 12px 0px;
+    font-size: 18px;
+}
+
+.user-events-div {
+
+}
+
+.user-profile-events-container {
     padding: 10px 20px;
     margin: 10px;
     background-color: #379863;
