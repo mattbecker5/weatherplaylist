@@ -17,7 +17,6 @@ export class NavComponent implements OnInit {
   constructor(private appleMusicAPIService: AppleMusicAPIService, private generateMusicSearch: GenerateMusicSearchService) { }
 
   ngOnInit(): void {
-    console.log(this.currentPath);
   }
 
   //function to call getAll() and pass the search term that user entered

@@ -1,18 +1,31 @@
+// .media-player-outer {
+//     max-width: 640px;
+// }
+
 .search-generated-head {
     color: #379863;
     margin: 0px 0px 0px 20px;
 }
 
-.hover{
+.media-player-play{
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
 }
 
-.hoverSearch{
+.media-player-pause {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.media-player-container{
     background-color: #2abc6b;
     position: relative;
     display: flex;
     border: none;
-    padding: 10px 10px;
+    padding: 10px 110px 10px 10px;
     margin: 10px 50px 10px 10px;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
@@ -22,14 +35,17 @@
     vertical-align: middle;
     margin-top: 9px;
     font-size: 20px;
+    width: auto;
 }
 
-.hoverSearch-buttons-div {
+.media-player-buttons {
     display: flex;
     margin-right: 12px;
     position: absolute;
     right: 0px;
     top: 8px;
+    width: 90px;
 }
+
 
 
