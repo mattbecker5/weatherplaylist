@@ -35,14 +35,14 @@ export class WeatherDisplaySmallComponent implements OnInit {
   public getWeatherByLatLon(lat: string, lon: string){
     this.weatherApi.getWeatherByLatLon(lat, lon).subscribe(weather => {
       console.log(weather);
-      this.temp = weather.temp;
+      this.temp = Math.floor(weather.temp);
     })
   }
 
   public getWeatherByZip(){
     this.weatherApi.getWeatherByZip().subscribe(weather => {
       console.log(weather);
-      this.temp = weather.temp;
+      this.temp = Math.floor(weather.temp);
     })
   }
 
