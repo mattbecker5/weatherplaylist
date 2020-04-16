@@ -6,6 +6,7 @@ export class WeatherEvent {
     weatherId: number;
     weatherMain: String;
     description: String;
+    weatherIcon: String;
     temp: number;
     pressure: number;
     humidity: number;
@@ -21,9 +22,10 @@ export class WeatherEvent {
         this.lon = weatherEvent.coord.lon;
         this.lat = weatherEvent.coord.lat;
 
-        this.weatherId = weatherEvent.weather.id;
-        this.weatherMain = weatherEvent.weather.main;
-        this.description = weatherEvent.weather.description;
+        this.weatherId = weatherEvent.weather[0].id;
+        this.weatherMain = weatherEvent.weather[0].main;
+        this.description = weatherEvent.weather[0].description;
+        this.weatherIcon = weatherEvent.weather[0].icon;
         
         this.temp = weatherEvent.main.temp;
         this.pressure = weatherEvent.main.pressure;

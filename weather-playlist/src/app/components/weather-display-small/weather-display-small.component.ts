@@ -15,7 +15,7 @@ export class WeatherDisplaySmallComponent implements OnInit {
 
   ngOnInit(): void {
     this.getLocation();
-    
+    // this.getWeatherByZip();
   }
 
   getLocation() {
@@ -31,12 +31,19 @@ export class WeatherDisplaySmallComponent implements OnInit {
     }
   }
 
-    //function to call getAll() and pass the search term that user entered
-    public getWeatherByLatLon(lat: string, lon: string){
-      this.weatherApi.getWeatherByLatLon(lat, lon).subscribe(weather => {
-        console.log(weather);
-        this.temp = weather.temp;
-      })
-    }
+  //function to call getAll() and pass the search term that user entered
+  public getWeatherByLatLon(lat: string, lon: string){
+    this.weatherApi.getWeatherByLatLon(lat, lon).subscribe(weather => {
+      console.log(weather);
+      this.temp = weather.temp;
+    })
+  }
+
+  public getWeatherByZip(){
+    this.weatherApi.getWeatherByZip().subscribe(weather => {
+      console.log(weather);
+      this.temp = weather.temp;
+    })
+  }
 
 }

@@ -19,7 +19,7 @@ export class WeatherApiService {
     return this.http.get<WeatherResponse>(this.weatherUrlApi)
       .pipe(
         map( reply => {
-          // console.log(reply.coord.lon);
+          console.log(reply);
           // let weather: WeatherEvent;
 
           let weather = new WeatherEvent(reply);
