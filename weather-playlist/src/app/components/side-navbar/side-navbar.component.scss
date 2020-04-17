@@ -1,25 +1,34 @@
 a:link {
     text-decoration: none;
-    display: block;
-    // background-color: yellowgreen;
 }
 
-.side-navbar-links:hover {
+.side-navbar-links a:hover {
     background-color: #1f2833;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 .side-navbar-links a {
     color: white;
     font-size: 14px;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sidenav-active {
+    background-color: #1f2833;
+    border-radius: 10px;
 }
 
 .side-navbar-links {
     margin: 15px;
     background-color: #379863;
     text-align: center;
-    padding: 12px;
-    border-radius: 10px; 
+    height: 40px;
+    border-radius: 10px;
 }
 
 
