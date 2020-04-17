@@ -20,7 +20,7 @@ export class CreateAccountComponent implements OnInit {
 
   public createUser() {
     console.log('Creating new user' , this.user);
-    this.router.navigate(['/home']); //after newUser is created redirect to home page
+    this.router.navigate(['/pick-genre-newuser']); //after newUser is created redirect to home page
   }
 
 }

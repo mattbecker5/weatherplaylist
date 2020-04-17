@@ -1,21 +1,23 @@
 <div class="event-outer-container">
-    <div class="left-carrot-div">
+    <div class="left-carrot-div" (click)="prevEvent()">
         <div class="left-carrot"><h2>&lt;</h2></div>
     </div>
     
     <div class="event-container">
         <div class="event-details">
-            Event: Davinci Contest
-            <br>Time: 8am-11am
-            <br>Location: UWF, Commons
-            <br>Weather: Sunny
+            Event: {{event.title}}
+            <br>Type: {{event.type}}
+            <br>Time: {{event.startTime}} - {{event.endTime}}
+            <br>Date: {{event.month}}/{{event.day}}/{{event.year}}
+            <!-- <br>Location: UWF, Commons -->
+            <!-- <br>Weather: Sunny -->
         </div>
         <div class="event-weather">
             Temperature: 95F
         </div>
     </div>
 
-    <div class="right-carrot-div">
+    <div class="right-carrot-div" (click)="nextEvent()">
         <div class="right-carrot"><h2>&gt;</h2></div>
     </div>
 </div>

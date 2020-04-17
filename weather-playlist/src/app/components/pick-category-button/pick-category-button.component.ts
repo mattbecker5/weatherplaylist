@@ -21,4 +21,9 @@ export class PickCategoryButtonComponent implements OnInit {
     this.pickSelectedGenreService.createGenreList(this.genre);
   }
 
+  // public enableButton(){
+  //   console.log('Genre Selected: ' + this.genre.name);    
+  //   this.pickSelectedGenreService.createGenreList(this.genre);
+  // }
+
 }
