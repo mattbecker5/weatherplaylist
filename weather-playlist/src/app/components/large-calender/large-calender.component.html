@@ -1,4 +1,8 @@
 <div class="large-calendar-header">
+    <h2>Selected Event: <span class="large-cal-date">April {{eventTitle}}, 2020</span></h2>
 </div>
 <div class="large-calendar">
+    <ng-container *ngFor="let day of calendarDays">
+        <app-large-calendar-card [dayEvent]="day"></app-large-calendar-card>
+    </ng-container>   
 </div>

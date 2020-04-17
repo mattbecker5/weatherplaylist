@@ -32,6 +32,7 @@ import { ViewMusicappComponent } from './pages/view-musicapp/view-musicapp.compo
 import { ViewEventsDetailComponent } from './pages/view-events-detail/view-events-detail.component';
 import { ViewCreateEventComponent } from './pages/view-create-event/view-create-event.component';
 import { ViewProfilePageComponent } from './pages/view-profile-page/view-profile-page.component';
+import { LargeCalendarCardComponent } from './components/large-calendar-card/large-calendar-card.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { ViewProfilePageComponent } from './pages/view-profile-page/view-profile
     ViewMusicappComponent,
     ViewEventsDetailComponent,
     ViewCreateEventComponent,
-    ViewProfilePageComponent
+    ViewProfilePageComponent,
+    LargeCalendarCardComponent
   ],
   imports: [
     BrowserModule,

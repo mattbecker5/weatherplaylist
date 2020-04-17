@@ -41,7 +41,7 @@ export class CreateCalendarService {
     currentMonth = new CalendarMonth(tempMonth, monthLong[d.getMonth()], monthShort[d.getMonth()], [], [], tempYear);
     for (let i = 0; i < totalDays; i++) {
         d.setDate(i+1);
-        let day = new CalendarDay(i+1, weekDays[d.getDay()]);
+        let day = new CalendarDay(i+1, weekDays[d.getDay()], []);
         currentMonth.days.push(day);
     };
 
@@ -80,7 +80,7 @@ export class CreateCalendarService {
 
     //finding all the buffer days needed for each month
     for (let i = 0; i < numBufferDays; i++) {
-        let day = new CalendarDay(0, "last month");
+        let day = new CalendarDay(0, "last month", []);
         tempBufferDays.push(day);
     };
 
