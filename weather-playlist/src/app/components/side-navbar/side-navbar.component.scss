@@ -1,16 +1,13 @@
 a:link {
     text-decoration: none;
+    display: block;
+    // background-color: yellowgreen;
 }
 
 .side-navbar-links:hover {
     background-color: #1f2833;
     cursor: pointer;
 }
-
-// .side-navbar-links a:hover {
-//     color: #2abc6b;
-//     cursor: pointer;
-// }
 
 .side-navbar-links a {
     color: white;
@@ -22,8 +19,7 @@ a:link {
     background-color: #379863;
     text-align: center;
     padding: 12px;
-    border-radius: 10px;
-    
+    border-radius: 10px; 
 }
 
 

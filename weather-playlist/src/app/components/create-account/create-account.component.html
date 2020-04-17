@@ -3,7 +3,6 @@
     <form (ngSubmit)="createUser()">
         <i class="fas fa-envelope create-account-icon create-account-icon-email"></i>
         <input class="input-field" type="text" name="email" placeholder="Email.." [(ngModel)]="user.email">
-        <div>{{user.email}}</div>
 
         <i class="fas fa-key create-account-icon create-account-icon-key"></i>
         <input class="input-field" type="text" name="password" placeholder="Password.." [(ngModel)]="user.password">
