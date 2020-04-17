@@ -10,13 +10,14 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class WeatherApiService {
 
-  private weatherUrlApi = "https://api.openweathermap.org/data/2.5/weather?zip=33903,us&appid=4f6b2e6b7dcccf97559cf33e7208bad0&units=imperial";
+  
 
   constructor(private http: HttpClient) { }
 
   /** GET songs from the server */
-  public getWeatherByZip(): Observable<WeatherEvent> {
-    return this.http.get<WeatherResponse>(this.weatherUrlApi)
+  public getWeatherByZip(zip: String): Observable<WeatherEvent> {
+    let weatherUrlApi = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=4f6b2e6b7dcccf97559cf33e7208bad0&units=imperial`;
+    return this.http.get<WeatherResponse>(weatherUrlApi)
       .pipe(
         map( reply => {
           console.log(reply);

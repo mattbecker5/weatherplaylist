@@ -22,6 +22,11 @@ export class CreateEventComponent implements OnInit {
   private year: number;
   public selectedDays: CalendarDay[] = [];
 
+  public title: String;
+  public startTime: String;
+  public endTime: String;
+  public type: String;
+
   ngOnInit(): void {
     this.currentMonth = this.createCalendar.getNewMonth(4,2020);
     this.month = this.currentMonth.monthNum;
@@ -61,5 +66,10 @@ export class CreateEventComponent implements OnInit {
      this.month = this.month + 1
     this.currentMonth = this.createCalendar.getNewMonth(this.month, this.year);
     this.selectMonthService.selectMonth(this.currentMonth);
+  }
+
+  submitEvent(title:String, startTime:String, endTime:String, type:String){
+    console.log("submited Values", type);
+    console.log(this.selectedDays)
   }
 }
