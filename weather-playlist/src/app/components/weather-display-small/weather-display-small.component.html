@@ -1,9 +1,17 @@
 <div class="outer">
-    <div class="inner-left">
-        {{temp}} &deg;
+    <div class="zip-input" [ngClass]="{'hide' : hideShowZip}">
+        <!-- *ngIf="getPath() === '/musicapp'" (input)=""-->
+        <input class="input-field" (input)="zip=$event.target.value" type="text" placeholder="Zip.." >
+    </div>
+    <div class="go-submit-zip-btn" [ngClass]="{'hide' : hideShowZip}">
+        <button type="submit" (click)="submitZip(zip)">Go</button>
     </div>
 
-    <div class="inner-right">
-        <img *ngIf="icon" src="../../../assets/images/weather_icons/{{icon}}.png">
+    <!-- [ngClass]="{'myCSSclass' : hideShowTemp}" -->
+    <div class="inner-left" [ngClass]="{'hide' : hideShowTemp}" (click)="OnClickTempAndClouds()">
+        {{temp}} &deg;
+    </div>
+    <div class="inner-right" [ngClass]="{'hide' : hideShowTemp}" (click)="OnClickTempAndClouds()">
+        <img *ngIf="icon"  src="../../../assets/images/weather_icons/{{icon}}.png">
     </div>
 </div>

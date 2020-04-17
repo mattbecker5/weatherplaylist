@@ -1,9 +1,14 @@
 /* Footer Here */
 
+
+
 footer {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: flex;
     flex-wrap: wrap;
-    bottom: 0px;
     width: 100%;
     height: auto;
     padding-bottom: 0px;
@@ -11,7 +16,8 @@ footer {
     border: none;
     font-family: 'Lato', sans-serif;
     color: white;
-    position: sticky;
+    flex-shrink: 0;
+    margin-top: auto;
 }
 
 .footer-left {

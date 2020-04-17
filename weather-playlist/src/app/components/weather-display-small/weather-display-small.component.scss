@@ -1,14 +1,36 @@
 .outer {
     display: flex;
     height: 75px;
-    width: 150px;
+    width: 175px;
 }
 
-.inner-left {
+.zip-input{
+    line-height: 75px;
+    padding-right: 8px;
+}
 
-    // margin: 10px;
-    // padding: 20px;
-    // font-size: 20px;
+.hide{
+    display: none;
+}
+
+.go-submit-zip-btn {
+    line-height: 75px;
+}
+
+.go-submit-zip-btn button[type=submit]{
+    background-color: #379863;
+    border: none;
+    color: white;
+    padding: 13px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+
+.inner-left {
     line-height: 85px;
     text-align: center;
     width: 75px;
@@ -24,4 +46,15 @@
 
 .inner-right img{
     height: 55px;
+}
+
+.zip-input input{
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 10px;
 }

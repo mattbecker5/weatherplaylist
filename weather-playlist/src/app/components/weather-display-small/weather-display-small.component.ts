@@ -9,8 +9,11 @@ import { WeatherApiService } from 'src/app/services/weather-api.service';
 })
 export class WeatherDisplaySmallComponent implements OnInit {
 
-  public temp: number;
+  public temp: String = "Add";
   public icon: String;
+  public hideShowTemp: boolean = false;
+  public hideShowZip: boolean = true;
+  public zip: string;
 
   constructor(private weatherApi: WeatherApiService) { }
 
@@ -36,17 +39,29 @@ export class WeatherDisplaySmallComponent implements OnInit {
   public getWeatherByLatLon(lat: string, lon: string){
     this.weatherApi.getWeatherByLatLon(lat, lon).subscribe(weather => {
       console.log(weather);
-      this.temp = Math.floor(weather.temp);
+      this.temp = Math.floor(weather.temp).toString();
       this.icon = weather.weatherIcon;
     })
   }
 
-  public getWeatherByZip(){
-    this.weatherApi.getWeatherByZip().subscribe(weather => {
+  public getWeatherByZip(zip: String){
+    this.weatherApi.getWeatherByZip(zip).subscribe(weather => {
       console.log(weather);
-      this.temp = Math.floor(weather.temp);
+      this.temp = Math.floor(weather.temp).toString();
       this.icon = weather.weatherIcon;
     })
+  }
+
+  public OnClickTempAndClouds(){
+    this.hideShowTemp = true;
+    this.hideShowZip = false;
+  }
+
+  public submitZip(inputZip: String){
+    this.hideShowTemp = false;
+    this.hideShowZip = true;
+    console.log(inputZip);
+    this.getWeatherByZip(inputZip);
   }
 
 }

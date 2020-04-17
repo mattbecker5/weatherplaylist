@@ -5,25 +5,34 @@
     <div class="create-event-header-previous" (click)="previousMonth()"><h3>&lt;</h3></div>
     <div class="create-event-header-next" (click)="nextMonth()"><h3>&gt;</h3></div>
     <div class="create-event-header-month">{{currentMonth.monthLong}}, {{currentMonth.year}}</div>
+
+    
+</div>
+<div class="create-event-numbers">    
     <ng-container *ngFor="let day of selectedDays">
         <div class="create-event-header-date">{{day.date}}</div>
     </ng-container>
-    
 </div>
-
 <div class="create-event-container">
-    
 
     <app-small-calendar></app-small-calendar>
     
     <div class="create-event">
         <form>
-            <input class="input-field" type="text" name="title" placeholder="Title">
-            <input class="input-field" type="text" name="startTime" placeholder="Start Time">
-            <input class="input-field" type="text" name="endTime" placeholder="End Time">
-            <input class="input-field" type="text" name="description" placeholder="Description">
-            <input class="input-field" type="text" name="location" placeholder="Location">
-            <input id="create-event-submit-btn" type="submit" value="Create">
+            <select (input)="type=$event.target.value" id="events" name="event-types" class="select-input">
+                <option value="work">Work</option>
+                <option value="school">School</option>
+                <option value="family">Family Event</option>
+                <option value="meeting">Meeting</option>
+                <option value="vaction">Vacation </option>
+                <option value="leisure">Leisure </option>
+                <option value="programming">Programming</option>
+            </select>
+            <input (input)="title=$event.target.value" class="input-field" type="text" name="title" placeholder="Title">
+            <input (input)="startTime=$event.target.value" class="input-field" type="text" name="startTime" placeholder="Start Time">
+            <input (input)="endTime=$event.target.value" class="input-field" type="text" name="endTime" placeholder="End Time">
+            <input (click)="submitEvent(title, startTime, endTime, type)" id="create-event-submit-btn" type="submit" value="Create">
         </form>
     </div>
+
 </div>
