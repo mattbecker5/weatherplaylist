@@ -7,7 +7,7 @@
         <div class="category-head"> 
             <h3>Pick Genres</h3>
         </div>
-        <div class="buttons-holder" id="buttons-categories">
+        <div class="buttons-holder" id="buttons-categories" (click)="enableSubmitButton()">
             <ng-container *ngFor="let genre of genres">
                 <app-pick-category-button [genre]="genre"></app-pick-category-button>
             </ng-container>
@@ -23,7 +23,7 @@
             </ng-container>
         </div>
         <div class="list-pick-submit">
-            <button type="button" id="submit-picked" class="buttonMed buttonDark submit-button-hidden">Submit</button>
+            <button type="button" id="submit-picked" class="buttonSubmit buttonDark submit-button-hidden">Submit</button>
         </div>
     </div>
 </div>

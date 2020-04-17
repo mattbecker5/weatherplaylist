@@ -156,6 +156,15 @@ ul {
         border-bottom: 1px solid black;
         width: auto;
     }
+
+    .buttonSubmit {
+        padding: 9px;
+        margin: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        border-radius: 5px;
+        border: none;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 650px and up) */
