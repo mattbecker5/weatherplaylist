@@ -4,6 +4,8 @@ import { CalendarMonth } from 'src/app/models/calendar-month';
 import { SelectMonthYearService } from 'src/app/services/select-month-year.service';
 import { CalendarDay } from 'src/app/models/calendar-day';
 import { SelectDateService } from 'src/app/services/select-date.service';
+import { UserEvent } from 'src/app/models/user-event';
+import { CreateEventService } from 'src/app/services/create-event.service';
 
 @Component({
   selector: 'app-create-event',
@@ -13,7 +15,12 @@ import { SelectDateService } from 'src/app/services/select-date.service';
 
 export class CreateEventComponent implements OnInit {
 
-  constructor(private createCalendar: CreateCalendarService, private selectMonthService: SelectMonthYearService, private selectDayService: SelectDateService) { 
+  constructor(
+    private createCalendar: CreateCalendarService, 
+    private selectMonthService: SelectMonthYearService, 
+    private selectDayService: SelectDateService,
+    private createEventService: CreateEventService
+    ) { 
   
   }
 
@@ -21,6 +28,7 @@ export class CreateEventComponent implements OnInit {
   private month: number;
   private year: number;
   public selectedDays: CalendarDay[] = [];
+  public userCreatedEvents: UserEvent[] = [];
 
   public title: String;
   public startTime: String;
@@ -68,8 +76,15 @@ export class CreateEventComponent implements OnInit {
     this.selectMonthService.selectMonth(this.currentMonth);
   }
 
+  //when user pressed the create button
   submitEvent(title:String, startTime:String, endTime:String, type:String){
-    console.log("submited Values", type);
-    console.log(this.selectedDays)
+
+    this.selectedDays.forEach(day => {
+      this.userCreatedEvents.push(new UserEvent(this.year, this.month, day.date, day.day, type, title, startTime, endTime));
+    });
+
+    this.createEventService.setEvent(this.userCreatedEvents);
+
+    console.log(this.userCreatedEvents);
   }
 }
