@@ -12,14 +12,14 @@ export class LoginAccountComponent implements OnInit {
   public user: User;
 
   constructor(private router: Router) {
-    this.user =  new User('', '');
+    // this.user =  new User('', '');
    }
 
   ngOnInit(): void {
   }
 
   public userLogin() {
-    console.log('Logging user in' , this.user);
+    // console.log('Logging user in' , this.user);
     this.router.navigate(['/home']); //after newUser is created redirect to home page
   }
 

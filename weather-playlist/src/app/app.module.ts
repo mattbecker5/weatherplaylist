@@ -33,6 +33,11 @@ import { ViewEventsDetailComponent } from './pages/view-events-detail/view-event
 import { ViewCreateEventComponent } from './pages/view-create-event/view-create-event.component';
 import { ViewProfilePageComponent } from './pages/view-profile-page/view-profile-page.component';
 import { LargeCalendarCardComponent } from './components/large-calendar-card/large-calendar-card.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+import { AuthGuard } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -65,13 +70,16 @@ import { LargeCalendarCardComponent } from './components/large-calendar-card/lar
     ViewEventsDetailComponent,
     ViewCreateEventComponent,
     ViewProfilePageComponent,
-    LargeCalendarCardComponent
+    LargeCalendarCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

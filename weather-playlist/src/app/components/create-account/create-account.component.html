@@ -2,10 +2,12 @@
 <div class="create-account-container">
     <form (ngSubmit)="createUser()">
         <i class="fas fa-envelope create-account-icon create-account-icon-email"></i>
-        <input class="input-field" type="text" name="email" placeholder="Email.." [(ngModel)]="user.email">
+        <!-- <input class="input-field" type="text" name="email" placeholder="Email.." [(ngModel)]="user.email"> -->
+        <input class="input-field" type="text" name="email" placeholder="Email..">
 
         <i class="fas fa-key create-account-icon create-account-icon-key"></i>
-        <input class="input-field" type="text" name="password" placeholder="Password.." [(ngModel)]="user.password">
+        <!-- <input class="input-field" type="text" name="password" placeholder="Password.." [(ngModel)]="user.password"> -->
+        <input class="input-field" type="text" name="password" placeholder="Password..">
         
         <input type="submit" value="submit">
     </form>

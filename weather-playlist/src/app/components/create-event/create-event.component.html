@@ -20,6 +20,7 @@
     <div class="create-event">
         <form>
             <select (input)="type=$event.target.value" id="events" name="event-types" class="select-input">
+                <option value="">Please Select</option>
                 <option value="work">Work</option>
                 <option value="school">School</option>
                 <option value="family">Family Event</option>
@@ -33,6 +34,10 @@
             <input (input)="endTime=$event.target.value" class="input-field" type="text" name="endTime" placeholder="End Time">
             <input (click)="submitEvent(title, startTime, endTime, type)" id="create-event-submit-btn" type="submit" value="Create">
         </form>
+        <div class="added-event-message" *ngIf="eventAdded">
+            Event Added!
+        </div>
     </div>
+
 
 </div>

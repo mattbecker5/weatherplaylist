@@ -34,6 +34,7 @@ export class CreateEventComponent implements OnInit {
   public startTime: String;
   public endTime: String;
   public type: String;
+  public eventAdded: Boolean = false;
 
   ngOnInit(): void {
     this.currentMonth = this.createCalendar.getNewMonth(4,2020);
@@ -71,20 +72,33 @@ export class CreateEventComponent implements OnInit {
 
   //user changes to next month 
   nextMonth(){
-     this.month = this.month + 1
+    this.month = this.month + 1
     this.currentMonth = this.createCalendar.getNewMonth(this.month, this.year);
     this.selectMonthService.selectMonth(this.currentMonth);
   }
 
   //when user pressed the create button
   submitEvent(title:String, startTime:String, endTime:String, type:String){
+    console.log('tried to save');
+    this.eventAdded = true;
 
     this.selectedDays.forEach(day => {
-      this.userCreatedEvents.push(new UserEvent(this.year, this.month, day.date, day.day, type, title, startTime, endTime));
+      let eventTest = {
+        year: this.year.toString(),
+        month: this.month.toString(),
+        day: day.date.toString(),
+        dayLong: day.day,
+        type: type,
+        title: title,
+        startTime: startTime,
+        endTime: endTime
+      }
+
+      // this.userCreatedEvents.push(new UserEvent(this.year.toString(), this.month.toString(), day.date.toString(), day.day, type, title, startTime, endTime));
+      this.userCreatedEvents.push(new UserEvent(eventTest));
     });
 
-    this.createEventService.setEvent(this.userCreatedEvents);
-
-    console.log(this.userCreatedEvents);
+    this.createEventService.createNewEvents(this.userCreatedEvents);
+    
   }
 }

@@ -1,21 +1,22 @@
 export class UserEvent {
-    year: number;
-    month: number;
-    day: number;
+    year: String;
+    month: String;
+    day: String;
     dayLong: String;
     type: String;
     title: String;
     startTime: String;
     endTime: String;
 
-    constructor(year:number, month:number, day:number, dayLong:String, type:String, title:String, startTime:String, endTime:String){
-        this.year =  year;
-        this.month = month;
-        this.day = day;
-        this.dayLong = dayLong;
-        this.type = type;
-        this.title = title;
-        this.startTime = startTime;
-        this.endTime = endTime;
+    // constructor(year:String, month:String, day:String, dayLong:String, type:String, title:String, startTime:String, endTime:String){
+    constructor(event){
+        this.year =  event.year;
+        this.month = event.month;
+        this.day = event.day;
+        this.dayLong = event.dayLong;
+        this.type = event.type;
+        this.title = event.title;
+        this.startTime = event.startTime;
+        this.endTime = event.endTime;
     }
 }
