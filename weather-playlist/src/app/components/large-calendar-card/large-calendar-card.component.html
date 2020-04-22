@@ -4,3 +4,10 @@
         {{dayEvent.date}}
     </ng-container>
 </div>
+
+<div class="popup-details" *ngIf="statusPopup">
+    <div class="popup-close" (click)="closePopup()">
+        X
+    </div>
+    some details here
+</div>
