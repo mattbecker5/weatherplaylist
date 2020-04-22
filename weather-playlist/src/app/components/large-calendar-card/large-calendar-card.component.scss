@@ -14,7 +14,7 @@
     width:320px;
     height:300px;
     margin:0 auto;
-    padding-top: 25px;
+    padding-top: 30px;
     padding-left: 5px;
     padding-right: 5px;
     padding-bottom: 5px;
@@ -31,7 +31,7 @@
 }
 
 .popup-close-btn{
-    background-color: rgb(193, 194, 191);
+    // background-color: rgb(193, 194, 191);
     width: 25px;
     height: 25px;
     text-align: center;
@@ -39,4 +39,58 @@
     position: absolute;
     right: 0px;
     top: 0px;
+}
+
+.event-details-outer{
+    position: relative;
+    background-color: #cccccc;
+    width: 290px;
+    height: 40px;
+}
+
+.event-details-icon{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: yellow;
+    width: 40px;
+    height: 40px;
+}
+.event-details-title{
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    background-color: rgb(0, 255, 64);
+    width: 210px;
+    height: 20px;
+    padding-left: 8px;
+}
+.event-details-start{
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    background-color: rgb(45, 39, 128);
+    width: 105px;
+    height: 20px;
+    padding-left: 8px;
+}
+.event-details-end{
+    position: absolute;
+    top: 20px;
+    left: 145px;
+    background-color: rgb(30, 131, 97);
+    width: 105px;
+    height: 20px;
+    padding-left: 8px;
+}
+.event-details-delete{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color:  rgb(139, 33, 47);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
 }
