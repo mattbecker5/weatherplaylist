@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { WeatherApiService } from './services/weather-api.service';
 import { WeatherEvent } from './models/weather-event';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { WeatherEvent } from './models/weather-event';
 })
 export class AppComponent {
   
-  constructor(){
+  constructor(public router: Router){
 
   }
 
