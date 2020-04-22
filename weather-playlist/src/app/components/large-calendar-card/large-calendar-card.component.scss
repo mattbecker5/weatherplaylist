@@ -4,6 +4,7 @@
     background-color: white;
     color: black;
     margin: 10px;
+    cursor: pointer;
 }
 
 .active {
@@ -39,6 +40,7 @@
     position: absolute;
     right: 0px;
     top: 0px;
+    cursor: pointer;
 }
 
 .event-details-outer{
@@ -56,6 +58,18 @@
 .event-title-font{
     color: white;
     font-size: 14px;
+}
+
+.header-date{
+    position: absolute;
+    top: 0px;
+    left:0px;
+    width: 300px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    // text-decoration: underline;
+    color:#1f2833;
 }
 
 .event-details-icon{
@@ -104,7 +118,9 @@
     width: 60px;
     height: 20px;
     padding-left: 8px;
-    font-size: 12px;
+    font-size: 10px;
+    line-height: 15px;
+    color: rgb(240, 240, 240);
 }
 .event-details-delete{
     position: absolute;
@@ -116,4 +132,5 @@
     text-align: center;
     line-height: 40px;
     color: white;
+    cursor: pointer;
 }

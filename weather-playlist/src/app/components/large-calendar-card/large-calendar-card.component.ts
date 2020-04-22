@@ -39,4 +39,8 @@ export class LargeCalendarCardComponent implements OnInit {
     // this.cd.detectChanges();
     console.log(this.statusPopup);
   }
+
+  public deleteEvent(){
+    console.log("trying to remove");
+  }
 }

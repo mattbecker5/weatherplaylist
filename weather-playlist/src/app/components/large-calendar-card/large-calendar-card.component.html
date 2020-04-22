@@ -6,10 +6,14 @@
 </div>
 
     <div class="popup-details" *ngIf="statusPopup">
+        <div class="header-date">
+            {{dayEvent.day}} {{dayEvent.date}}
+        </div>
         <div class="popup-close-btn" (click)="closePopup()">
             X
         </div>
         <ng-container *ngFor="let event of dayEvent.events">
+
             <div class="event-details-outer">
                 <div class="event-details-icon">
                     <img alt="{{event.type}}" src="../../../assets/images/events_icons/{{event.type}}.png">
@@ -23,7 +27,7 @@
                 <div class="event-details-end">
                     
                 </div>
-                <div class="event-details-delete">
+                <div class="event-details-delete" (click)="deleteEvent()">
                     X
                 </div>
             </div>
