@@ -10,8 +10,6 @@ import { UserService } from './user.service';
 })
 export class CreateEventService {
 
-    private userId: string;
-
     // Observable sources
     private getEventSource = new Subject<UserEvent[]>();
     // Observable streams
@@ -24,10 +22,8 @@ export class CreateEventService {
     // Observable streams
     public getSelectedDaySource$ = this.getSelectedDaySource.asObservable();
   
-    constructor(private firestore: AngularFirestore, public userService: UserService) { 
-      this.userService.user$.subscribe( data => {
-        this.userId = data.uid;
-      });
+    constructor(private firestore: AngularFirestore) { 
+
     }
   
     // Service commands
@@ -69,11 +65,11 @@ export class CreateEventService {
   }
 
   /** Gets all chirps in the system */
-  public getAllEvents(): Observable<UserEvent[]> {
+  public getAllEvents(uid:string): Observable<UserEvent[]> {
     
     return this.firestore
-      .collection('events')
-      .valueChanges({userId: this.userId}).pipe(
+      .collection('events', ref => ref.where('userId', '==', uid))
+      .valueChanges().pipe(
         map( events => events.map( eventObj => new UserEvent(eventObj) ))
       );
   }
