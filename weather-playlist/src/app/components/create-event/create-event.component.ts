@@ -6,6 +6,7 @@ import { CalendarDay } from 'src/app/models/calendar-day';
 import { SelectDateService } from 'src/app/services/select-date.service';
 import { UserEvent } from 'src/app/models/user-event';
 import { CreateEventService } from 'src/app/services/create-event.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-create-event',
@@ -19,7 +20,8 @@ export class CreateEventComponent implements OnInit {
     private createCalendar: CreateCalendarService, 
     private selectMonthService: SelectMonthYearService, 
     private selectDayService: SelectDateService,
-    private createEventService: CreateEventService
+    private createEventService: CreateEventService,
+    public userService: UserService
     ) { 
   
   }
@@ -91,14 +93,16 @@ export class CreateEventComponent implements OnInit {
         type: type,
         title: title,
         startTime: startTime,
-        endTime: endTime
+        endTime: endTime,
       }
 
       // this.userCreatedEvents.push(new UserEvent(this.year.toString(), this.month.toString(), day.date.toString(), day.day, type, title, startTime, endTime));
       this.userCreatedEvents.push(new UserEvent(eventTest));
     });
 
-    this.createEventService.createNewEvents(this.userCreatedEvents);
+    this.userService.user$.subscribe( data => {
+      this.createEventService.createNewEvents(this.userCreatedEvents, data.uid);
+    });
     
   }
 }

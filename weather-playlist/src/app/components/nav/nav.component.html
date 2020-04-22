@@ -22,16 +22,16 @@
                     <a routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Login</a>
                 </ng-template> -->
             </li>
-            <li *ngIf="userService.user$ | async as user">
-                <img class="avatar" src="{{user.photoURL}}" alt="{{user.displayName}}+ avatar" />
-            </li>
         </ul>
+    </div>
+    <div *ngIf="userService.user$ | async as user">
+        <img class="avatar" src="{{user.photoURL}}" alt="{{user.displayName}}+ avatar" />
     </div>
     <div>
         <app-weather-display-small></app-weather-display-small>
     </div>
     <div class="searchSong-div">
-        <input class="input-field" type="text" placeholder="Search.." (input)="searchTerm=$event.target.value"
+        <input class="input-field" type="text" placeholder="Search Music.." (input)="searchTerm=$event.target.value"
             *ngIf="getPath() === '/musicapp'">
     </div>
     <div class="searchSong-div-submit">

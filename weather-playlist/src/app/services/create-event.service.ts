@@ -34,12 +34,12 @@ export class CreateEventService {
       this.getSelectedDaySource.next(date);
     }
 
-    createNewEvents(events: UserEvent[]){
+    createNewEvents(events: UserEvent[], userId: string){
       events.forEach(event => {
         console.log("here to stay!!!");
         // this.firestore.collection('user-events').add(event);
 
-        this.firestore.collection('events').add({ // Break down the chirp to a JS object to save
+        this.firestore.collection('events').doc(userId).set({ // Break down the chirp to a JS object to save
           day:  event.day.toString(),
           dayLong: event.dayLong,
           endTime: event.endTime,
