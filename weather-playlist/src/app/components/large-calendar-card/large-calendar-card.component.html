@@ -4,28 +4,30 @@
         {{dayEvent.date}}
     </ng-container>
 </div>
-<ng-container *ngFor="let event of dayEvent.events">
+
     <div class="popup-details" *ngIf="statusPopup">
         <div class="popup-close-btn" (click)="closePopup()">
             X
         </div>
-        <div class="event-details-outer">
-            <div class="event-details-icon">
-                ICON
+        <ng-container *ngFor="let event of dayEvent.events">
+            <div class="event-details-outer">
+                <div class="event-details-icon">
+                    <img style="width: 40px; height: 40px;" alt="{{event.type}}" src="../../../assets/images/events_icons/{{event.type}}.png">
+                </div>
+                <div class="event-details-title">
+                    <span class="event-type-font">{{event.type}}</span>: <span class="event-title-font">{{event.title}}</span>
+                </div>
+                <div class="event-details-start">
+                    Time: {{event.startTime}} - {{event.endTime}}
+                </div>
+                <div class="event-details-end">
+                    
+                </div>
+                <div class="event-details-delete">
+                    X
+                </div>
             </div>
-            <div class="event-details-title">
-                {{event.type}}: {{event.title}}
-            </div>
-            <div class="event-details-start">
-                {{event.startTime}}
-            </div>
-            <div class="event-details-end">
-                {{event.endTime}}
-            </div>
-            <div class="event-details-delete">
-                X
-            </div>
-        </div>
+        </ng-container>
     </div>
-</ng-container>
+
 
