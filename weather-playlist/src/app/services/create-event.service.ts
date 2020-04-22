@@ -3,11 +3,14 @@ import { Subject, fromEvent, Observable } from 'rxjs';
 import { UserEvent } from '../models/user-event';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CreateEventService {
+
+    private userId: string;
 
     // Observable sources
     private getEventSource = new Subject<UserEvent[]>();
@@ -21,7 +24,11 @@ export class CreateEventService {
     // Observable streams
     public getSelectedDaySource$ = this.getSelectedDaySource.asObservable();
   
-    constructor(private firestore: AngularFirestore) { }
+    constructor(private firestore: AngularFirestore, public userService: UserService) { 
+      this.userService.user$.subscribe( data => {
+        this.userId = data.uid;
+      });
+    }
   
     // Service commands
     setEvent(event: UserEvent[]) {
@@ -39,7 +46,8 @@ export class CreateEventService {
         console.log("here to stay!!!");
         // this.firestore.collection('user-events').add(event);
 
-        this.firestore.collection('events').doc(userId).set({ // Break down the chirp to a JS object to save
+        this.firestore.collection('events').add({ // Break down the chirp to a JS object to save
+          userId: userId,
           day:  event.day.toString(),
           dayLong: event.dayLong,
           endTime: event.endTime,
@@ -62,9 +70,10 @@ export class CreateEventService {
 
   /** Gets all chirps in the system */
   public getAllEvents(): Observable<UserEvent[]> {
+    
     return this.firestore
       .collection('events')
-      .valueChanges().pipe(
+      .valueChanges({userId: this.userId}).pipe(
         map( events => events.map( eventObj => new UserEvent(eventObj) ))
       );
   }
