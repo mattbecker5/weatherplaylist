@@ -13,7 +13,6 @@ export class LargeCalendarCardComponent implements OnInit {
 
   @Input() public dayEvent: CalendarDay;
   public status: boolean = false;
-
   public currentMonth: CalendarMonth;
   public statusPopup: boolean = false;
   
@@ -40,5 +39,4 @@ export class LargeCalendarCardComponent implements OnInit {
     // this.cd.detectChanges();
     console.log(this.statusPopup);
   }
-
 }
