@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppleMusicAPIService } from 'src/app/services/apple-music-api.service';
 import { Song } from '../../models/song';
 import { GenerateMusicSearchService } from 'src/app/services/generate-music-search.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-nav',
@@ -14,7 +15,7 @@ export class NavComponent implements OnInit {
   songs: Song[] = [];
   public currentPath: string;
 
-  constructor(private appleMusicAPIService: AppleMusicAPIService, private generateMusicSearch: GenerateMusicSearchService) { }
+  constructor(private appleMusicAPIService: AppleMusicAPIService, private generateMusicSearch: GenerateMusicSearchService, public userService: UserService) { }
 
   ngOnInit(): void {
   }

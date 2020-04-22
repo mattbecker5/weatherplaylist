@@ -6,8 +6,24 @@
         <ul>
             <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
             <li><a routerLink="/profile-page" routerLinkActive="active">Profile</a></li>
+            <!-- <li *ngIf="userService.user$ | async; then authenticated else guest"> -->
             <li>
                 <a routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Login</a>
+
+                <!-- User logged in -->
+                <!-- <ng-template #authenticated>
+                    <div *ngIf="userService.user$ | async as user">
+                        <a routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Logout</a>
+                    </div>
+                </ng-template> -->
+
+                <!-- User NOT logged in -->
+                <!-- <ng-template #guest>
+                    <a routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Login</a>
+                </ng-template> -->
+            </li>
+            <li *ngIf="userService.user$ | async as user">
+                <img class="avatar" src="{{user.photoURL}}" alt="{{user.displayName}}+ avatar" />
             </li>
         </ul>
     </div>
@@ -15,10 +31,11 @@
         <app-weather-display-small></app-weather-display-small>
     </div>
     <div class="searchSong-div">
-        <input class="input-field" type="text" placeholder="Search.." (input)="searchTerm=$event.target.value" *ngIf="getPath() === '/musicapp'">
+        <input class="input-field" type="text" placeholder="Search.." (input)="searchTerm=$event.target.value"
+            *ngIf="getPath() === '/musicapp'">
     </div>
     <div class="searchSong-div-submit">
         <button type="submit" (click)="searchButton(searchTerm)" *ngIf="getPath() === '/musicapp'">Search</button>
     </div>
-    
+
 </nav>

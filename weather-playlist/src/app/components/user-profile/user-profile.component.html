@@ -2,9 +2,10 @@
     <div class="user-info-header">
         User Information
     </div>
-    <div class="user-info-div">
-        Name: Kelie Kan
-        <br>Email: kk60@students.uwf.edu
+    <div class="user-info-div" *ngIf="userService.user$ | async as user">
+        Name: {{user.displayName}}
+        <br>Email: {{user.email}}
+        <br>UID: {{user.uid}}
         <br>Top 3 genres: Pop, Country, Rock
     </div>
 </div>
