@@ -12,11 +12,12 @@ export class UserProfileComponent implements OnInit {
 
   public currentEvents: UserEvent[];
   public eventsTitle: String[] = [];
+  public eventsType: String[] = [];
 
   constructor(private createEventService: CreateEventService, public userService: UserService) { }
 
   ngOnInit(): void {
-    
+
     // Get all user's events and show past events created
     this.userService.user$.subscribe( data => {
       this.createEventService.getAllEvents(data.uid).subscribe(events => {
@@ -24,13 +25,16 @@ export class UserProfileComponent implements OnInit {
 
         for(let i = 0; i < this.currentEvents.length; i++){
           console.log(this.currentEvents[i].title);
+          console.log(this.currentEvents[i].type);
 
           if(this.eventsTitle.indexOf(this.currentEvents[i].title) !== -1){
             console.log("Event title exists");
           }
           else{
             this.eventsTitle.push(this.currentEvents[i].title);
+            this.eventsType.push(this.currentEvents[i].type);
           }
+
         }
       });
     }); 

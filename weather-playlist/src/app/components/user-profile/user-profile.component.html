@@ -26,8 +26,8 @@
     </div>
     <div class="user-events-div">
         <ul>
-            <li *ngFor="let title of eventsTitle">
-                {{ title }}
+            <li *ngFor="let title of eventsTitle; let i=index">
+                {{ title }} &nbsp;&nbsp;&nbsp;&nbsp; [{{ eventsType[i] }}]
             </li>
         </ul>
     </div>
