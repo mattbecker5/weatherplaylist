@@ -8,18 +8,19 @@ import { ViewMusicappComponent } from './pages/view-musicapp/view-musicapp.compo
 import { ViewEventsDetailComponent } from './pages/view-events-detail/view-events-detail.component';
 import { ViewCreateEventComponent } from './pages/view-create-event/view-create-event.component';
 import { ViewProfilePageComponent } from './pages/view-profile-page/view-profile-page.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 
 const routes: Routes = [
   { path:'', redirectTo:'/create-account', pathMatch:'full' },
   { path:'create-account', component: ViewCreateAccountComponent},
-  { path:'pick-genre-newuser', component: ViewPickGenreNewuserComponent},
-  { path:'home', component: ViewHomeComponent},
-  { path:'login-account', component: ViewLoginAccountComponent},
-  { path:'musicapp', component: ViewMusicappComponent},
-  { path:'events-detail', component: ViewEventsDetailComponent},
-  { path:'create-event', component: ViewCreateEventComponent},
-  { path:'profile-page', component: ViewProfilePageComponent},
+  { path:'pick-genre-newuser', component: ViewPickGenreNewuserComponent, canActivate: [AuthGuard]},
+  { path:'home', component: ViewHomeComponent, canActivate: [AuthGuard]},
+  { path:'login-account', component: ViewLoginAccountComponent, canActivate: [AuthGuard]},
+  { path:'musicapp', component: ViewMusicappComponent, canActivate: [AuthGuard]},
+  { path:'events-detail', component: ViewEventsDetailComponent, canActivate: [AuthGuard]},
+  { path:'create-event', component: ViewCreateEventComponent, canActivate: [AuthGuard]},
+  { path:'profile-page', component: ViewProfilePageComponent, canActivate: [AuthGuard]},
   { path: '**', redirectTo: '/create-account' }
 ];
 

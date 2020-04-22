@@ -81,7 +81,7 @@ import { AuthGuard } from './services/auth-guard.service';
     AngularFirestoreModule,
     AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
