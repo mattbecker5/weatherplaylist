@@ -6,22 +6,23 @@
         <ul>
             <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
             <li><a routerLink="/profile-page" routerLinkActive="active">Profile</a></li>
-            <!-- <li *ngIf="userService.user$ | async; then authenticated else guest"> -->
-            <li>
-                <a routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Login</a>
-
-                <!-- User logged in -->
-                <!-- <ng-template #authenticated>
-                    <div *ngIf="userService.user$ | async as user">
-                        <a routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Logout</a>
-                    </div>
-                </ng-template> -->
-
-                <!-- User NOT logged in -->
-                <!-- <ng-template #guest>
-                    <a routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Login</a>
-                </ng-template> -->
+            <li *ngIf="userService.user$ | async; then authenticated else guest">
+                <!-- template will replace this div -->
             </li>
+
+            <!-- User logged in -->
+            <ng-template #authenticated>
+                <li>
+                    <a *ngIf="userService.user$ | async as user" routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Logout</a>
+                </li>
+            </ng-template>
+
+            <!-- User NOT logged in -->
+            <ng-template #guest>
+                <li>
+                    <a routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Login</a>
+                </li>
+            </ng-template>
         </ul>
     </div>
     <div *ngIf="userService.user$ | async as user">

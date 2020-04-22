@@ -1,15 +1,27 @@
-<h2><i class="fas fa-user-circle"></i> Login Account</h2>
-<div class="login-account-container">
-    <form (ngSubmit)="userLogin()">
-        <i class="fas fa-envelope login-account-icon login-account-icon-email"></i>
-        <input class="input-field" type="text" name="search" placeholder="Email..">
-        <!-- <input class="input-field" type="text" name="search" placeholder="Email.." [(ngModel)]="user.email"> -->
-
-        <i class="fas fa-key login-account-icon login-account-icon-key"></i>
-        <!-- <input class="input-field" type="text" name="search" placeholder="Password.." [(ngModel)]="user.password"> -->
-        <input class="input-field" type="text" name="search" placeholder="Password..">
-
-        <input type="submit" value="Submit">
-    </form>
-    <button (click)="userService.signOut()">Logout</button>
+<div class="login-account-container" *ngIf="userService.user$ | async; then authenticated else guest">
+    <!-- template will replace this div -->
 </div>
+
+<!-- User logged in -->
+<ng-template #authenticated>
+    <h2><i class="fas fa-user-circle"></i> Logout Account</h2>
+    <div class="login-account-container">
+        <button class="" (click)="userService.signOut()">Logout</button>
+    </div>
+</ng-template>
+
+<!-- User NOT logged in -->
+<ng-template #guest>
+    <h2><i class="fas fa-user-circle"></i> Login Account</h2>
+    <div class="login-account-container">
+        <form (ngSubmit)="userLogin()">
+            <i class="fas fa-envelope login-account-icon login-account-icon-email"></i>
+            <input class="input-field" type="text" name="search" placeholder="Email..">
+    
+            <i class="fas fa-key login-account-icon login-account-icon-key"></i>
+            <input class="input-field" type="text" name="search" placeholder="Password..">
+    
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</ng-template>
