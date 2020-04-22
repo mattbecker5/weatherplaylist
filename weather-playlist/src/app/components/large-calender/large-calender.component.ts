@@ -18,6 +18,7 @@ export class LargeCalenderComponent implements OnInit {
   public eventTitle: String;
   public currentEvents: UserEvent[];
   public events: Observable<UserEvent[]>;
+
   
 
   constructor(private createEventService: CreateEventService, private createCalendar: CreateCalendarService) { }
@@ -32,8 +33,6 @@ export class LargeCalenderComponent implements OnInit {
     // });
     
   }
-
-
 
   populateEventsTable(){
     // let currentMonth: CalendarMonth = this.createCalendar.getNewMonth(4,2020);
