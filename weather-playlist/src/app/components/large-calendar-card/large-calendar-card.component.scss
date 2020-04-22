@@ -74,6 +74,8 @@
     width: 210px;
     height: 20px;
     padding-left: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .event-details-start{
     position: absolute;
