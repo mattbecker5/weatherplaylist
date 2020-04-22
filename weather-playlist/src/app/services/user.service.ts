@@ -45,7 +45,7 @@ export class UserService {
   /** Signs the user out of Google */
   async signOut() {
     await this.afAuth.signOut();
-    this.router.navigate(['/']);
+    this.router.navigate(['create-account']);
   }
 
   /**
