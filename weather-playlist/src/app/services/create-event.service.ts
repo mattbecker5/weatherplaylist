@@ -74,8 +74,10 @@ export class CreateEventService {
       );
   }
 
-  getSnapShotEvents() {
-    return this.firestore.collection('events').snapshotChanges();
-  }
+  // public(uid:)
+
+  // public getSnapShotEvents() {
+  //   return this.firestore.collection('events').snapshotChanges();
+  // }
 
 }

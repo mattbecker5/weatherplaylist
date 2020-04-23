@@ -83,7 +83,7 @@ export class CreateEventComponent implements OnInit {
   submitEvent(title:String, startTime:String, endTime:String, type:String){
     console.log('tried to save');
     this.eventAdded = true;
-
+    
     this.selectedDays.forEach(day => {
       let eventTest = {
         year: this.year.toString(),
