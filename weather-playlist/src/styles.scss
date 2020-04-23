@@ -166,11 +166,14 @@ ul {
         border-radius: 5px;
         border: none;
     }
+    .side-navbar-links a {
+        line-height: 10px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 650px and up) */
 @media only screen and (min-width: 680px) {
-    
+   
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -182,8 +185,7 @@ ul {
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
+@media only screen and (min-width: 992px) { 
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
