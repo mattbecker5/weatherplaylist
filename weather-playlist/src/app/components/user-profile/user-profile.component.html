@@ -15,19 +15,22 @@
         Search History
     </div>
     <div class="user-search-div">
-        Billie Eilish
-        <br>Post Malone
+        <ul style="margin-top: 0px;">
+            <li *ngFor="let history of allHistory">
+                {{ history.term }}
+            </li>
+        </ul>
     </div>
 </div>
 
-<div class="user-profile-events-container">
+<div class="user-profile-events-container" *ngIf="currentEvents?.length > 0">
     <div class="user-events-header">
         Past Events
     </div>
     <div class="user-events-div">
-        <ul>
+        <ul style="margin-top: 0px;">
             <li *ngFor="let title of eventsTitle; let i=index">
-                {{ title }} &nbsp;&nbsp;&nbsp;&nbsp; [{{ eventsType[i] }}]
+                {{ title }} &nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #1f2833;">[{{ eventsType[i] }}]</span>
             </li>
         </ul>
     </div>

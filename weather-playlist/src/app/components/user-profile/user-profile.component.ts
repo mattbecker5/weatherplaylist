@@ -2,6 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CreateEventService } from 'src/app/services/create-event.service';
 import { UserService } from 'src/app/services/user.service';
 import { UserEvent } from 'src/app/models/user-event';
+import { DatabaseService } from 'src/app/services/database.service';
+import { SearchHistory } from 'src/app/models/search-history';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user-profile',
@@ -10,11 +13,16 @@ import { UserEvent } from 'src/app/models/user-event';
 })
 export class UserProfileComponent implements OnInit {
 
+  public allHistory: SearchHistory[];
   public currentEvents: UserEvent[];
-  public eventsTitle: String[] = [];
   public eventsType: String[] = [];
+  public eventsTitle: String[] = [];
 
-  constructor(private createEventService: CreateEventService, public userService: UserService) { }
+  constructor(
+    private createEventService: CreateEventService, 
+    public userService: UserService,
+    private database: DatabaseService
+    ) { }
 
   ngOnInit(): void {
 
@@ -22,6 +30,10 @@ export class UserProfileComponent implements OnInit {
     this.userService.user$.subscribe( data => {
       this.createEventService.getAllEvents(data.uid).subscribe(events => {
         this.currentEvents = events;
+
+        if(this.currentEvents.length === 0){
+          console.log("No events found in database");
+        }
 
         for(let i = 0; i < this.currentEvents.length; i++){
           console.log(this.currentEvents[i].title);
@@ -34,9 +46,15 @@ export class UserProfileComponent implements OnInit {
             this.eventsTitle.push(this.currentEvents[i].title);
             this.eventsType.push(this.currentEvents[i].type);
           }
-
         }
       });
+
+      this.database.getSearchHistory(data.uid).subscribe( history => {
+        this.allHistory = history;
+        console.log(this.allHistory);
+      })
     }); 
+
+
   }
 }

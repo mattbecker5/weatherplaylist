@@ -3,7 +3,6 @@ import { Subject, fromEvent, Observable } from 'rxjs';
 import { UserEvent } from '../models/user-event';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
-import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +41,7 @@ export class CreateEventService {
         console.log("here to stay!!!");
         // this.firestore.collection('user-events').add(event);
 
-        this.firestore.collection('events').add({ // Break down the chirp to a JS object to save
+        this.firestore.collection('events').add({ // Break down the event to a JS object to save
           userId: userId,
           day:  event.day.toString(),
           dayLong: event.dayLong,
@@ -64,7 +63,7 @@ export class CreateEventService {
     return this.firestore.collection('events').snapshotChanges();
   }
 
-  /** Gets all chirps in the system */
+  /** Gets all events in the system */
   public getAllEvents(uid:string): Observable<UserEvent[]> {
     
     return this.firestore
