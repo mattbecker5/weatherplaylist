@@ -3,9 +3,9 @@
         User Information
     </div>
     <div class="user-info-div" *ngIf="userService.user$ | async as user">
-        Name: {{user.displayName}}
-        <br>Email: {{user.email}}
-        <br>UID: {{user.uid}}
+        Name: {{ user.displayName }}
+        <br>Email: {{ user.email }}
+        <br>UID: {{ user.uid }}
         <br>Top 3 genres: Pop, Country, Rock
     </div>
 </div>
@@ -25,9 +25,10 @@
         Past Events
     </div>
     <div class="user-events-div">
-        Client side class
-        <br>Server side class
-        <br>Secure software class
-        <br>Cyber war gaming class
+        <ul>
+            <li *ngFor="let title of eventsTitle; let i=index">
+                {{ title }} &nbsp;&nbsp;&nbsp;&nbsp; [{{ eventsType[i] }}]
+            </li>
+        </ul>
     </div>
 </div>
