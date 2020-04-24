@@ -14,6 +14,10 @@ export class EventDetailsComponent implements OnInit {
   public events: UserEvent[] = [];
   public event: UserEvent;
 
+  public date: string;
+  public month: string;
+  public year: string;
+
   constructor(private database: DatabaseService, private userService: UserService) { }
 
   ngOnInit(): void {
@@ -31,12 +35,9 @@ export class EventDetailsComponent implements OnInit {
     this.event = new UserEvent(eventTest);
 
     this.userService.user$.subscribe( data => {
-      this.database.getAllEvents(data.uid).subscribe( events => {
+      this.database.getEventsByDay('2020', '4', '27', data.uid).subscribe( events => {
         this.events = events;
-
-        for(let i = 0; i < this.events.length; i++){
-          console.log("Printing events" + this.events[i].title);
-        }
+        console.log(this.events);
       });
     });
 
