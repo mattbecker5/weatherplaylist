@@ -20,7 +20,7 @@ export class LargeCalendarCardComponent implements OnInit {
   constructor(
     private createEventService: CreateEventService, 
     private cd: ChangeDetectorRef,
-    private database: DatabaseService,
+    private database: DatabaseService
     ) { }
 
   ngOnInit(): void {

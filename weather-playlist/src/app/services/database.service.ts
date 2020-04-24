@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { SearchHistory } from '../models/search-history';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { UserEvent } from '../models/user-event';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,17 @@ export class DatabaseService {
       });
     });
   }
+
+  /** Gets all events in the system */
+  public getAllEvents(uid:string): Observable<UserEvent[]> {
+    
+    return this.firestore
+      .collection('events', ref => ref.where('userId', '==', uid))
+      .valueChanges().pipe(
+        map( events => events.map( eventObj => new UserEvent(eventObj) ))
+      );
+  }
+
 
 
 }

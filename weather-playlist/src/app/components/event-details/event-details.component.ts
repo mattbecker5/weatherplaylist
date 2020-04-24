@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserEvent } from 'src/app/models/user-event';
 import { User } from 'src/app/models/user';
+import { DatabaseService } from 'src/app/services/database.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-event-details',
@@ -9,9 +11,10 @@ import { User } from 'src/app/models/user';
 })
 export class EventDetailsComponent implements OnInit {
 
+  public events: UserEvent[] = [];
   public event: UserEvent;
 
-  constructor() { }
+  constructor(private database: DatabaseService, private userService: UserService) { }
 
   ngOnInit(): void {
     let eventTest = {
@@ -27,7 +30,15 @@ export class EventDetailsComponent implements OnInit {
 
     this.event = new UserEvent(eventTest);
 
-    // this.event = new UserEvent("2020","4","23",'','Class','Davinci Contest','8am','11am');
+    this.userService.user$.subscribe( data => {
+      this.database.getAllEvents(data.uid).subscribe( events => {
+        this.events = events;
+
+        for(let i = 0; i < this.events.length; i++){
+          console.log("Printing events" + this.events[i].title);
+        }
+      });
+    });
 
   }
 
@@ -37,5 +48,9 @@ export class EventDetailsComponent implements OnInit {
 
   public nextEvent(){
     console.log('Loading next event');
+  }
+
+  public getDate(){
+    console.log('Got date of day');
   }
 }
