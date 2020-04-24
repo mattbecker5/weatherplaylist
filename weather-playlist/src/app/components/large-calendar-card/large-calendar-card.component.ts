@@ -46,6 +46,6 @@ export class LargeCalendarCardComponent implements OnInit {
 
   public deleteEvent(uid: string){
     console.log("trying to remove: " + uid);
-    this.database.deleteUserEvent(uid)
+    this.database.deleteUserEvent(uid);
   }
 }
