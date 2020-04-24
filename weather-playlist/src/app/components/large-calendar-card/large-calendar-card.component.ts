@@ -40,7 +40,7 @@ export class LargeCalendarCardComponent implements OnInit {
     console.log(this.statusPopup);
   }
 
-  public deleteEvent(){
-    console.log("trying to remove");
+  public deleteEvent(uid: Event){
+    console.log("trying to remove: " + uid);
   }
 }
