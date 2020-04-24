@@ -81,6 +81,8 @@ export class CreateEventComponent implements OnInit {
 
   //when user pressed the create button
   submitEvent(title:String, startTime:String, endTime:String, type:String){
+
+    
     console.log('tried to save');
     this.eventAdded = true;
     
