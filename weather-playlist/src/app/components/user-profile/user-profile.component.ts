@@ -14,6 +14,7 @@ import { Observable } from 'rxjs';
 export class UserProfileComponent implements OnInit {
 
   public allHistory: SearchHistory[];
+  public searchHistory: String[] = [];
   public currentEvents: UserEvent[];
   public eventsType: String[] = [];
   public eventsTitle: String[] = [];
@@ -51,8 +52,19 @@ export class UserProfileComponent implements OnInit {
 
       this.database.getSearchHistory(data.uid).subscribe( history => {
         this.allHistory = history;
-        console.log(this.allHistory);
-      })
+        console.log("Loading search history");
+
+        for(let i = 0; i < this.allHistory.length; i++){
+          console.log(this.allHistory[i].term);
+
+          if(this.searchHistory.indexOf(this.allHistory[i].term) !== -1){
+            console.log("Search term exists");
+          }
+          else{
+            this.searchHistory.push(this.allHistory[i].term);
+          }
+        }
+      });
     }); 
 
 
