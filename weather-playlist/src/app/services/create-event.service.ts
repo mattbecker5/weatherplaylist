@@ -3,11 +3,7 @@ import { Subject, fromEvent, Observable } from 'rxjs';
 import { UserEvent } from '../models/user-event';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
-<<<<<<< HEAD
 import { v4 as uuidv4 } from 'uuid';
-import { UserService } from './user.service';
-=======
->>>>>>> d402e2afebb3ab53e7c1b07f6638a40da23e4353
 
 @Injectable({
   providedIn: 'root'
