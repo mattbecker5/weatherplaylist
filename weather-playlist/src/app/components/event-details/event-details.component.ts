@@ -26,9 +26,7 @@ export class EventDetailsComponent implements OnInit {
     }
 
     this.event = new UserEvent(eventTest);
-
     // this.event = new UserEvent("2020","4","23",'','Class','Davinci Contest','8am','11am');
-
   }
 
   public prevEvent(){

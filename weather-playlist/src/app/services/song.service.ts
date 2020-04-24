@@ -5,18 +5,18 @@ import { Song } from '../models/song';
 @Injectable({
   providedIn: 'root'
 })
-export class MediaPlayerGetTitleService {
+export class SongService {
 
   // Observable string sources
-  private selectedTitleSource = new Subject<Song>();
+  private selectedSong = new Subject<Song>();
 
   // Observable string streams
-  public titleSelected$ = this.selectedTitleSource.asObservable();
+  public songSelected$ = this.selectedSong.asObservable();
 
   constructor() { }
 
   // Service commands
-  public getSongTitles(title: Song) {
-    this.selectedTitleSource.next(title);
+  public setSong(song: Song) {
+    this.selectedSong.next(song);
   }
 }
