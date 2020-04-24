@@ -1,13 +1,12 @@
-<div class="media-player-container">
-    <div class="hoverSearch-div1">Title: {{trackName}}</div>
+<div class="media-player-container" *ngIf="song">
+    <div class="hoverSearch-div1" *ngIf="song">Title: {{song.trackName}}</div>
     <div class="media-player-buttons">
-        <audio controls>
-            <!-- {{song.previewUrl}} -->
-            <source src="" type="audio/ogg">
-            <source src="" type="audio/mpeg">
+        <audio controls *ngIf="song">
+            <source src="{{song.previewUrl}}" type="audio/ogg">
+            <source src="{{song.previewUrl}}" type="audio/mpeg">
           Your browser does not support the audio element.
           </audio>
-        <div><img class="media-player-play" src="../../assets/images/playButton.svg" alt="Icon of music bar"></div>
-        <div><img class="media-player-pause" src="../../assets/images/pauseButton.svg" alt="Icon of music bar"></div>
+        <!-- <div><img class="media-player-play" src="../../assets/images/playButton.svg" alt="Icon of music bar"></div>
+        <div><img class="media-player-pause" src="../../assets/images/pauseButton.svg" alt="Icon of music bar"></div> -->
     </div>
 </div>

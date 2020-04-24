@@ -35,6 +35,5 @@ export class AppleMusicAPIService {
       console.error(error);
       return of(result as T);
     };
-
   }
 }

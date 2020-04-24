@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Song } from 'src/app/models/song';
-import { MediaPlayerGetTitleService } from 'src/app/services/media-player-get-title.service';
+import { SongService } from 'src/app/services/song.service';
 
 @Component({
   selector: 'app-music-card',
@@ -11,12 +11,12 @@ export class MusicCardComponent implements OnInit {
 
   @Input() song: Song;
 
-  constructor(public mediaPlayerGetTitleService: MediaPlayerGetTitleService) { }
+  constructor(public songService: SongService) { }
 
   ngOnInit(): void {
   }
 
   public over() {
-    this.mediaPlayerGetTitleService.getSongTitles(this.song);
+    this.songService.setSong(this.song);
   }
 }
