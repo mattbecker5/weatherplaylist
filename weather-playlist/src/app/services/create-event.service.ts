@@ -3,6 +3,7 @@ import { Subject, fromEvent, Observable } from 'rxjs';
 import { UserEvent } from '../models/user-event';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
+import { v4 as uuidv4 } from 'uuid';
 import { UserService } from './user.service';
 
 @Injectable({
@@ -39,11 +40,9 @@ export class CreateEventService {
 
     createNewEvents(events: UserEvent[], userId: string){
       events.forEach(event => {
-        console.log("here to stay!!!");
-        // this.firestore.collection('user-events').add(event);
-
         this.firestore.collection('events').add({ // Break down the chirp to a JS object to save
           userId: userId,
+          eventId: uuidv4(),
           day:  event.day.toString(),
           dayLong: event.dayLong,
           endTime: event.endTime,
@@ -53,11 +52,8 @@ export class CreateEventService {
           type: event.type,
           year: event.year.toString()
         });
-
       });
-
-
-      return "created events"
+      return "thanks, events created"
   }
 
   getEvents() {
@@ -73,11 +69,5 @@ export class CreateEventService {
         map( events => events.map( eventObj => new UserEvent(eventObj) ))
       );
   }
-
-  // public(uid:)
-
-  // public getSnapShotEvents() {
-  //   return this.firestore.collection('events').snapshotChanges();
-  // }
 
 }
