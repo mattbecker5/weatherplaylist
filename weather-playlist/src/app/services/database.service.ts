@@ -26,8 +26,16 @@ export class DatabaseService {
       .valueChanges().pipe(
         map( history => history.map( searchObj => new SearchHistory(searchObj) ))
       );
-    
-  
+  }
+
+  public deleteUserEvent(eventId: string){
+    let event = this.firestore.collection('events', ref => ref.where('eventId', '==', eventId));
+    event.get().subscribe(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        doc.ref.delete();
+        console.log("completed delete")
+      });
+    });
   }
 
 

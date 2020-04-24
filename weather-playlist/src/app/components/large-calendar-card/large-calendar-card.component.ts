@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ChangeDetectorRef} from '@angular/core';
 import { CalendarDay } from 'src/app/models/calendar-day';
 import { CalendarMonth } from 'src/app/models/calendar-month';
 import { CreateEventService } from 'src/app/services/create-event.service';
-import { UserEvent } from 'src/app/models/user-event';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-large-calendar-card',
@@ -17,7 +17,11 @@ export class LargeCalendarCardComponent implements OnInit {
   public statusPopup: boolean = false;
   
   
-  constructor(private createEventService: CreateEventService, private cd: ChangeDetectorRef) { }
+  constructor(
+    private createEventService: CreateEventService, 
+    private cd: ChangeDetectorRef,
+    private database: DatabaseService,
+    ) { }
 
   ngOnInit(): void {
     // console.log(this.dayEvent);
@@ -40,7 +44,8 @@ export class LargeCalendarCardComponent implements OnInit {
     console.log(this.statusPopup);
   }
 
-  public deleteEvent(uid: Event){
+  public deleteEvent(uid: string){
     console.log("trying to remove: " + uid);
+    this.database.deleteUserEvent(uid);
   }
 }

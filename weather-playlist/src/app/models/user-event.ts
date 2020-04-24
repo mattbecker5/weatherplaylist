@@ -8,6 +8,7 @@ export class UserEvent {
     startTime: String;
     endTime: String;
     userId: String;
+    eventId: String;
 
     // constructor(year:String, month:String, day:String, dayLong:String, type:String, title:String, startTime:String, endTime:String){
     constructor(event){
@@ -20,5 +21,6 @@ export class UserEvent {
         this.startTime = event.startTime;
         this.endTime = event.endTime;
         this.userId = event.userId;
+        this.eventId = event.eventId;
     }
 }
