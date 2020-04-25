@@ -50,7 +50,6 @@ export class DatabaseService {
   }
 
   public getEventsByDay(year: string, month: string, day: string, uid: string): Observable<UserEvent[]> {
-    console.log("Day: " + year + "/" + month + "/" + day);
     return this.firestore
       .collection('events', ref => ref.where('userId', '==', uid).where('year', '==', year).where('month', '==', month).where('day', '==', day))
       .valueChanges().pipe(

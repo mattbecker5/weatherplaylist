@@ -12,7 +12,8 @@ import { UserService } from 'src/app/services/user.service';
 export class EventDetailsComponent implements OnInit {
 
   public events: UserEvent[] = [];
-  public event: UserEvent;
+  public currentEvent: UserEvent;
+  public eventNum = 0;
 
   public date: string = "";
   public month: string = "";
@@ -21,36 +22,39 @@ export class EventDetailsComponent implements OnInit {
   constructor(private database: DatabaseService, private userService: UserService) { }
 
   ngOnInit(): void {
-    let eventTest = {
-      year: "2020",
-      month: "4",
-      day: "23",
-      dayLong: "",
-      type: "class",
-      title: "Davinci Contest",
-      startTime: "8am",
-      endTime: "11am"
-    }
-
-    this.event = new UserEvent(eventTest);
 
   }
 
   public prevEvent(){
     console.log('Loading previous event');
+    if(this.eventNum > 0){
+      this.eventNum = this.eventNum - 1;
+      this.getCurrentEvent();
+    }
   }
 
   public nextEvent(){
     console.log('Loading next event');
+    if(this.eventNum < (this.events.length-1)){
+      this.eventNum = this.eventNum + 1;
+      this.getCurrentEvent();
+    }
+    console.log('Length: ' + this.events.length + 'EventNum: ' + this.eventNum);
   }
 
   public getDateForEvents(date: string, month: string, year: string){
-    console.log(year + "/" + month + "/" + date);
+    console.log("Getting event for current day");
     this.userService.user$.subscribe( data => {
       this.database.getEventsByDay(year, month, date, data.uid).subscribe( events => {
         this.events = events;
         console.log(this.events);
+        this.currentEvent = this.events[this.eventNum];
       });
     });
+  }
+
+  public getCurrentEvent(){
+    this.currentEvent = this.events[this.eventNum];
+    console.log("Current: " + this.currentEvent);
   }
 }
