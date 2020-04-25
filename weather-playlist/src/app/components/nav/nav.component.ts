@@ -5,6 +5,7 @@ import { GenerateMusicSearchService } from 'src/app/services/generate-music-sear
 import { UserService } from 'src/app/services/user.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import { SearchHistory } from 'src/app/models/search-history';
+import { AppleMusicNewService } from 'src/app/services/apple-music-new.service';
 
 @Component({
   selector: 'app-nav',

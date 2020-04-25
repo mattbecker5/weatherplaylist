@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Song } from 'src/app/models/song';
 import { SongService } from 'src/app/services/song.service';
+import { AppleMusicNewService } from 'src/app/services/apple-music-new.service';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-music-card',
@@ -11,12 +13,22 @@ export class MusicCardComponent implements OnInit {
 
   @Input() song: Song;
 
-  constructor(public songService: SongService) { }
+  private startPosition = 0;
+  constructor(
+    public songService: SongService, 
+    private appleNew: AppleMusicNewService,
+    private app: AppComponent
+    ) {}
 
   ngOnInit(): void {
   }
 
   public over() {
     this.songService.setSong(this.song);
+  }
+
+  public onClickSong(){
+    this.app.musicGlobal.playSongByid(this.song.trackId.toString(), this.startPosition);
+    console.log(this.song.trackId);
   }
 }

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
-declare const MusicKit:any;
+// declare const MusicKit:any;
 
 @Injectable({
   providedIn: 'root'
@@ -11,71 +10,83 @@ export class AppleMusicNewService {
 
   private jwtToken = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkwyUzlSNEEyRzMifQ.eyJpYXQiOjE1ODc3NTYyMDUsImV4cCI6MTYwMzMwODIwNSwiaXNzIjoiWkZIQjlVNURIOSJ9.zsGtXrqpSnvd3d4F63jJiNvTWiYrFEN7O8UCr_BXKhQ0impJVzW-T3qsvCagryj8UM8XSBgggNITckmTX08-Dw";
   
+  // let playbackState: MusicKit.PlaybackStates = music.playbackState;
+  // let player: MusicKit.Player = music.player;
 
-  constructor(private http: HttpClient) { 
-    // this.getGenres();
+  private music: MusicKit.MusicKitInstance;
+
+  constructor() {
+    //this stuff only get called once in the app: Its a Singleton!
+    let appConfig: MusicKit.AppConfiguration = {
+      build: '1.0',
+      icon: 'icon.png',
+      name: 'music-weather-playlist',
+      version: '1.0.0',
+    };
+
+    this.music = MusicKit.configure({
+      app: appConfig,
+      developerToken: this.jwtToken,
+      storefrontId: 'us',
+      declarativeMarkup: true,
+      bitrate: MusicKit.PlaybackBitrate.HIGH,
+    });
+
+    this.music = MusicKit.getInstance();
+
   }
 
-  public getAppleApi(){
-  //   let music: MusicKit.MusicKitInstance;
+  public playSongByid(songId: string, startPosition: number){
 
-  //   let appConfig: MusicKit.AppConfiguration = {
-  //     build: '1.0',
-  //     icon: 'icon.png',
-  //     name: 'music-weather-playlist',
-  //     version: '1.0.0',
-  //   };
+    // let music = this.getAppleApi();
+    let player: MusicKit.Player = this.music.player;
 
-  //   music = MusicKit.configure({
-  //     app: appConfig,
-  //     developerToken: this.jwtToken,
-  //     storefrontId: 'us',
-  //     declarativeMarkup: true,
-  //     bitrate: MusicKit.PlaybackBitrate.HIGH,
-  //   });
+    // let url = 'https://itunes.apple.com/us/album/hamilton-original-broadway-cast-recording/1025210938';
 
-  //   let api: MusicKit.API = music.api;
-  //   let playbackState: MusicKit.PlaybackStates = music.playbackState;
-  //   let player: MusicKit.Player = music.player;
+    const items = [new MusicKit.MediaItem({attributes:"", id:songId, type:"song"})];
 
-    
+    this.music.setQueue({items}).then(queue => {
+      if (queue.nextPlayableItem) {
+        console.log(queue.nextPlayableItem.title);
+      }
+      if (queue.previousPlayableItem) {
+        console.log(queue.previousPlayableItem);
+      }
+    });
 
+    // Playback Controls
+    this.music.play();
+    this.music.pause();
+  }
 
-  //   // api.charts(['1']).then(data => {
-  //   //   console.log('the data'+data);
-  //   // });
-   
-  //   let url = 'https://itunes.apple.com/us/album/hamilton-original-broadway-cast-recording/1025210938';
+  public getGenreById(id:string){
 
-  //   music.setQueue({ url: url }).then(function(queue) {
-  //     // Queue is instantiated and set on music player.
-  //     // queue.play();
+    // let music = this.getAppleApi();
+    let api: MusicKit.API = this.music.api;
 
-  //   });
+    api.genre(id).then(reply => {
+      console.log(reply);
+    });
+  }
 
-  //   // https://api.music.apple.com/v1/catalog/{storefront}/genres
+  public getChartsByTypeAndGenre(type:string[], genre:string){
+    // let music = this.getAppleApi();
+    // let api: MusicKit.API = music.api;
 
-  //   // let results = music.api.search('james brown', { limit: 2, types: 'artists,albums' });
-  //   // let results = music.api.search('genres');
-  //   // console.log(results); 
+    this.music.api.charts(type, { limit: 30, genre: genre }).then(reply => {
+      console.log(reply);
+    });
+  }
 
-  //   // Playback Controls
-  //   music.play();
-  //   // music.pause();
-  //   // music.stop();
+  public searchByTerm(term:string){
+    // let music = this.getAppleApi();
+    let results = this.music.api.search('post', { limit: 30, types: 'artists,albums' });
+    console.log(results); 
+  }
 
-  //   api.genre('15').then(reply => {
-  //     console.log(reply);
-  //   });
-
-  //   // api.charts(['rap','country']).then(reply => {
-  //   //   console.log(reply);
-  //   // });
-    
-  // }
-
-  // /** GET songs from the server */
-  // public getGenres(){
-    
+  public stopPlaying(){
+    // let music = this.getAppleApi();
+    let player: MusicKit.Player = this.music.player;
+    player.stop();
   }
 }
