@@ -13,69 +13,69 @@ export class AppleMusicNewService {
   
 
   constructor(private http: HttpClient) { 
-    this.getGenres();
+    // this.getGenres();
   }
 
   public getAppleApi(){
-    let music: MusicKit.MusicKitInstance;
+  //   let music: MusicKit.MusicKitInstance;
 
-    let appConfig: MusicKit.AppConfiguration = {
-      build: '1.0',
-      icon: 'icon.png',
-      name: 'music-weather-playlist',
-      version: '1.0.0',
-    };
+  //   let appConfig: MusicKit.AppConfiguration = {
+  //     build: '1.0',
+  //     icon: 'icon.png',
+  //     name: 'music-weather-playlist',
+  //     version: '1.0.0',
+  //   };
 
-    music = MusicKit.configure({
-      app: appConfig,
-      developerToken: this.jwtToken,
-      storefrontId: 'us',
-      declarativeMarkup: true,
-      bitrate: MusicKit.PlaybackBitrate.HIGH,
-    });
+  //   music = MusicKit.configure({
+  //     app: appConfig,
+  //     developerToken: this.jwtToken,
+  //     storefrontId: 'us',
+  //     declarativeMarkup: true,
+  //     bitrate: MusicKit.PlaybackBitrate.HIGH,
+  //   });
 
-    let api: MusicKit.API = music.api;
-    let playbackState: MusicKit.PlaybackStates = music.playbackState;
-    let player: MusicKit.Player = music.player;
+  //   let api: MusicKit.API = music.api;
+  //   let playbackState: MusicKit.PlaybackStates = music.playbackState;
+  //   let player: MusicKit.Player = music.player;
 
     
 
 
-    // api.charts(['1']).then(data => {
-    //   console.log('the data'+data);
-    // });
+  //   // api.charts(['1']).then(data => {
+  //   //   console.log('the data'+data);
+  //   // });
    
-    let url = 'https://itunes.apple.com/us/album/hamilton-original-broadway-cast-recording/1025210938';
+  //   let url = 'https://itunes.apple.com/us/album/hamilton-original-broadway-cast-recording/1025210938';
 
-    music.setQueue({ url: url }).then(function(queue) {
-      // Queue is instantiated and set on music player.
-      // queue.play();
+  //   music.setQueue({ url: url }).then(function(queue) {
+  //     // Queue is instantiated and set on music player.
+  //     // queue.play();
 
-    });
+  //   });
 
-    // https://api.music.apple.com/v1/catalog/{storefront}/genres
+  //   // https://api.music.apple.com/v1/catalog/{storefront}/genres
 
-    // let results = music.api.search('james brown', { limit: 2, types: 'artists,albums' });
-    // let results = music.api.search('genres');
-    // console.log(results); 
+  //   // let results = music.api.search('james brown', { limit: 2, types: 'artists,albums' });
+  //   // let results = music.api.search('genres');
+  //   // console.log(results); 
 
-    // Playback Controls
-    music.play();
-    // music.pause();
-    // music.stop();
+  //   // Playback Controls
+  //   music.play();
+  //   // music.pause();
+  //   // music.stop();
 
-    api.genre('15').then(reply => {
-      console.log(reply);
-    });
+  //   api.genre('15').then(reply => {
+  //     console.log(reply);
+  //   });
 
-    // api.charts(['rap','country']).then(reply => {
-    //   console.log(reply);
-    // });
+  //   // api.charts(['rap','country']).then(reply => {
+  //   //   console.log(reply);
+  //   // });
     
-  }
+  // }
 
-  /** GET songs from the server */
-  public getGenres(){
+  // /** GET songs from the server */
+  // public getGenres(){
     
   }
 }
