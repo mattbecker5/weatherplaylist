@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { WeatherApiService } from './services/weather-api.service';
 import { WeatherEvent } from './models/weather-event';
 import { Router } from '@angular/router';
+import { AppleMusicNewService } from './services/apple-music-new.service';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,11 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   
-  constructor(public router: Router){
+  constructor(public router: Router, private appleNew: AppleMusicNewService){
 
   }
 
   ngOnInit(){
+    this.appleNew.getAppleApi();
   }
 }
