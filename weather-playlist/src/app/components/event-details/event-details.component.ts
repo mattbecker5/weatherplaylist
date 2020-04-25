@@ -14,9 +14,9 @@ export class EventDetailsComponent implements OnInit {
   public events: UserEvent[] = [];
   public event: UserEvent;
 
-  public date: string;
-  public month: string;
-  public year: string;
+  public date: string = "";
+  public month: string = "";
+  public year: string = "";
 
   constructor(private database: DatabaseService, private userService: UserService) { }
 
@@ -34,13 +34,6 @@ export class EventDetailsComponent implements OnInit {
 
     this.event = new UserEvent(eventTest);
 
-    this.userService.user$.subscribe( data => {
-      this.database.getEventsByDay('2020', '4', '27', data.uid).subscribe( events => {
-        this.events = events;
-        console.log(this.events);
-      });
-    });
-
   }
 
   public prevEvent(){
@@ -51,7 +44,13 @@ export class EventDetailsComponent implements OnInit {
     console.log('Loading next event');
   }
 
-  public getDate(){
-    console.log('Got date of day');
+  public getDateForEvents(date: string, month: string, year: string){
+    console.log(year + "/" + month + "/" + date);
+    this.userService.user$.subscribe( data => {
+      this.database.getEventsByDay(year, month, date, data.uid).subscribe( events => {
+        this.events = events;
+        console.log(this.events);
+      });
+    });
   }
 }
