@@ -1,6 +1,8 @@
 <div class="details-outer">
     <div class="title-header">
-        <h2><i class="fas fa-calendar-day" style="color: #1f2833; font-size: 22px; margin-right: 5px; margin-bottom: 2px;"></i>Event details of day</h2>
+        <h2><i class="fas fa-calendar-day"
+                style="color: #1f2833; font-size: 22px; margin-right: 5px; margin-bottom: 2px;"></i>Event details of day
+        </h2>
     </div>
     <div class="header-outer">
         <div class="header-date-div">
@@ -37,7 +39,7 @@
                 <option value="29">29</option>
                 <option value="30">30</option>
                 <option value="31">31</option>
-              </select>
+            </select>
         </div>
         <div class="event-details-border-left"></div>
         <div>
@@ -55,7 +57,7 @@
                 <option value="10">October</option>
                 <option value="11">November</option>
                 <option value="12">December</option>
-              </select>
+            </select>
         </div>
         <div class="event-details-border-middle"></div>
         <div>
@@ -72,50 +74,65 @@
                 <option value="2028">2028</option>
                 <option value="2029">2029</option>
                 <option value="2030">2030</option>
-              </select>
+            </select>
         </div>
         <div class="event-details-border-right"></div>
         <div>
-            <input (click)="getDateForEvents(date,month,year)" type="submit" value="Submit" class="event-details-select-input-submit">
+            <input (click)="getDateForEvents(date,month,year)" type="submit" value="Submit"
+                class="event-details-select-input-submit">
         </div>
     </div>
 
     <div class="event-outer-container">
         <div class="left-carrot-div" (click)="prevEvent()">
-            <div class="left-carrot"><h2>&lt;</h2></div>
+            <div class="left-carrot">
+                <h2>&lt;</h2>
+            </div>
         </div>
-        
+    
         <div class="event-container">
-            <div class="event-details" *ngIf="currentEvent; then eventsExist else noEvents">
-                <!-- template will replace this div -->
-            </div>
-
-             <!-- User logged in -->
-             <ng-template #eventsExist>
-                <div class="event-details">
-                    Event: &nbsp;&nbsp;{{currentEvent.title}}
-                    <br>Type: &nbsp;&nbsp;{{currentEvent.type}}
-                    <br>Time: &nbsp;&nbsp;{{currentEvent.startTime}} - {{currentEvent.endTime}}
-                    <br>Day: &nbsp;&nbsp;{{currentEvent.dayLong}}
-                    <!-- <br>Date: {{currentEvent.month}}/{{currentEvent.day}}/{{currentEvent.year}} -->
+            <div class="card">
+                <div *ngIf="currentEvent; then eventsExist else noEvents">
+                    <!-- template will replace this div -->
                 </div>
-            </ng-template>
-
-            <!-- User NOT logged in -->
-            <ng-template #noEvents>
-                <div class="event-details">
-                    No events for day yet.
-                    <br>Please pick a day you would like to get more details of.
-                </div>
-            </ng-template>
-
-            <div class="event-weather">
-                Temperature: 95F
+                <ng-template #eventsExist>
+                    <div class="card__face__f card__face--front event-details">
+                        Event: &nbsp;&nbsp;{{currentEvent.title}}
+                        <br>Type: &nbsp;&nbsp;{{currentEvent.type}}
+                        <br>Time: &nbsp;&nbsp;{{currentEvent.startTime}} - {{currentEvent.endTime}}
+                        <br>Day: &nbsp;&nbsp;{{currentEvent.dayLong}}
+                        <div class="event-weather-front">
+                            Temperature: 95F
+                        </div>
+                    </div>
+                    <div class="card__face__b card__face--back event-details">
+                        Event: &nbsp;&nbsp;{{currentEvent.title}}
+                        <br>Type: &nbsp;&nbsp;{{currentEvent.type}}
+                        <br>Time: &nbsp;&nbsp;{{currentEvent.startTime}} - {{currentEvent.endTime}}
+                        <br>Day: &nbsp;&nbsp;{{currentEvent.dayLong}}
+                        <div class="event-weather-back">
+                            Temperature: 95F
+                        </div>
+                    </div>
+                </ng-template>
+    
+                <ng-template #noEvents>
+                    <div class="no-event-details">
+                        No events for day yet.
+                        <br>Please pick a day you would like to get more details of.
+                    </div>
+                    <div class="event-weather">
+                        Temperature: 95F
+                    </div>
+                </ng-template>
             </div>
         </div>
-
+    
         <div class="right-carrot-div" (click)="nextEvent()">
-            <div class="right-carrot"><h2>&gt;</h2></div>
+            <div class="right-carrot">
+                <h2>&gt;</h2>
+            </div>
         </div>
     </div>
+    
 </div>
