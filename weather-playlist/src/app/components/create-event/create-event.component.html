@@ -18,7 +18,7 @@
     <app-small-calendar></app-small-calendar>
     
     <div class="create-event">
-        <form>
+        <form id="myForm">
             <select (input)="type=$event.target.value" id="events" name="event-types" class="select-input">
                 <option value="">Select type:</option>
                 <option value="work">Work</option>
