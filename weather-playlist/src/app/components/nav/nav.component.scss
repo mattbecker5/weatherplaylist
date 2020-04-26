@@ -108,9 +108,55 @@ nav {
     margin-top: 12px;
 }
 
+.hamburger-menu-button {
+    background-color: #1f2833;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 10px 0px 0px 5px;
+    display: none;
+}
+
+.drop-down-menu {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+.drop-down-menu li {
+    display: block;
+    color: white;
+    // text-align: center;
+    padding: 10px 0px 10px 15px;
+    text-decoration: none;
+    // line-height: 60px;
+}
+
+.drop-down-menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.drop-down-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #1f2833;
+    top: 0;
+    width: 100%;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 680px) {
     
+    .hamburger-menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
     .searchSong-div{
         display: none;
     }
@@ -121,4 +167,18 @@ nav {
     .avatar {
         display: none;
     }
+}
+
+/* Small devices (portrait tablets and large phones, 650px and up) */
+@media only screen and (min-width: 322px) and (max-width: 680px){
+    .nav-logo{
+        margin: 0px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 650px and up) */
+@media only screen and (min-width: 680px) {
+   .drop-down-menu{
+       display: none;
+   }
 }

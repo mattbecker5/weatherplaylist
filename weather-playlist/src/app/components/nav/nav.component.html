@@ -2,6 +2,10 @@
     <div class="nav-logo">
         <img src="../../assets/images/logo_180x180.png" class="logo" alt="">
     </div>
+    <button class="hamburger-menu-button" (click)="showHideMenu()">
+        <i class="fas fa-bars" style="color: white; font-size: 22px; margin-right: 5px;"></i>
+    </button>
+    
     <div class="nav-links">
         <ul>
             <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
@@ -40,3 +44,27 @@
     </div>
 
 </nav>
+
+<div class="drop-down-menu" *ngIf="hideShowMenu">
+    <ul>
+        <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/profile-page" routerLinkActive="active">Profile</a></li>
+        <li *ngIf="userService.user$ | async; then authenticated else guest">
+            <!-- template will replace this div -->
+        </li>
+
+        <!-- User logged in -->
+        <ng-template #authenticated>
+            <li>
+                <a *ngIf="userService.user$ | async as user" routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Logout</a>
+            </li>
+        </ng-template>
+
+        <!-- User NOT logged in -->
+        <ng-template #guest>
+            <li>
+                <a routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Login</a>
+            </li>
+        </ng-template>
+    </ul>
+</div>

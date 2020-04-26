@@ -14,6 +14,7 @@ import { AppleMusicNewService } from 'src/app/services/apple-music-new.service';
 })
 export class NavComponent implements OnInit {
 
+  public hideShowMenu: boolean = false;
   public searchTerm: string;
   songs: Song[] = [];
   public currentPath: string;
@@ -49,5 +50,9 @@ export class NavComponent implements OnInit {
   public getPath() {
     this.currentPath = window.location.pathname;
     return this.currentPath;
+  }
+
+  public showHideMenu(){
+    this.hideShowMenu = !this.hideShowMenu;
   }
 }

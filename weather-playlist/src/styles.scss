@@ -103,8 +103,25 @@ ul {
     flex-wrap: wrap;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 680px) {
+/* Iphone 5 (phones, 321px and down) */
+@media only screen and (max-width: 321px) {
+
+    .side {
+        flex: 15%;
+        min-height: auto;
+        background-color: #f1f1f1;
+        padding: 15px 0px 15px 15px;
+    }
+
+    .main {
+        flex: 70%;
+        background-color: white;
+        padding: 15px 12px 15px 15px;
+    }
+}
+
+/* Extra small devices (phones, 322px and up, 680px and down) */
+@media only screen and (min-width: 322px) and (max-width: 680px) {
     .row, .navbar {   
         flex-direction: column;
     }

@@ -24,15 +24,16 @@ a:link {
 }
 
 .side-navbar-links {
-    margin: 15px;
+    margin: 10px;
     background-color: #379863;
     text-align: center;
     height: 40px;
     border-radius: 10px;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+
+/* Iphone 5 (phones, 321px and down) */
+@media only screen and (max-width: 321px) {
     .side-navbar-links a {
         line-height: 10px;
         font-size: 10px;
@@ -41,6 +42,22 @@ a:link {
 
     .sidenav-container {
         display: flex;
+        width: auto;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 322px) and (max-width: 680px) {
+    .side-navbar-links a {
+        line-height: 10px;
+        font-size: 10px;
+        padding: 13px 5px 0px 5px;
+    }
+
+    .sidenav-container {
+        display: flex;
+        width: auto;
+        // padding-left: 20px;
     }
 
 }
