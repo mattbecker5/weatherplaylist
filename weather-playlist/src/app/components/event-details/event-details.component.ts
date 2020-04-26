@@ -25,6 +25,7 @@ export class EventDetailsComponent implements OnInit {
 
   }
 
+  // left carrot to view previous events
   public prevEvent(){
 
     let element = document.getElementsByClassName('card');
@@ -36,9 +37,10 @@ export class EventDetailsComponent implements OnInit {
       this.eventNum = this.eventNum - 1;
       this.getCurrentEvent();
     }
-    
+
   }
 
+  // right carrot to view next events
   public nextEvent(){
 
     let element = document.getElementsByClassName('card');
@@ -53,6 +55,7 @@ export class EventDetailsComponent implements OnInit {
     console.log('Length: ' + this.events.length + 'EventNum: ' + this.eventNum);
   }
 
+  //get events for user by the date given
   public getDateForEvents(date: string, month: string, year: string){
     console.log("Getting event for current day");
     this.userService.user$.subscribe( data => {
@@ -64,6 +67,7 @@ export class EventDetailsComponent implements OnInit {
     });
   }
 
+  //keeping track of where the user's at for the event details to navigate
   public getCurrentEvent(){
     this.currentEvent = this.events[this.eventNum];
     console.log("Current: " + this.currentEvent);
