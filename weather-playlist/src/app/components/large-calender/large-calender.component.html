@@ -1,6 +1,6 @@
 <div class="large-calendar-header-outer">
     <div class="large-calendar-header" (click)="populateEventsTable()">
-        <h2>Selected Event: <span class="large-cal-date">{{calendarMonth.monthLong}}, {{year}}</span></h2>
+        <h2>Selected Event: <span class="large-cal-date" *ngIf="calendarMonth">{{calendarMonth.monthLong}}, {{year}}</span></h2>
     </div>
     <div class="large-calendar-header-previous" (click)="previousMonth()"><h2>&lt;</h2></div> 
     <div class="large-calendar-header-next" (click)="nextMonth()"><h2>&gt;</h2></div>
