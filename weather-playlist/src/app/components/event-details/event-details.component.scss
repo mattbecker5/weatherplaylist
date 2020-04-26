@@ -135,28 +135,20 @@
 
 .event-weather-front, .event-weather-back {
   flex-grow: 1;
-  margin: 20px 0px 0px 0px;
+  background-color: red;
+  margin: 0px 10px 0px 0px;
   padding: 10px 20px;
   text-align: center;
-}
-
-// .event-details {
-//   flex-grow: 8;
-//   margin: 5px 10px;
-//   padding: 10px 20px 0px 20px;
-// }
-
-.event-details{
-  background-color: red;
 }
 
 .no-event-details{
   padding: 8px 8px 8px 8px;
 }
 
-// .event-details {
-//   padding: 20px 0px 0px 20px;
-// }
+.event-details {
+  padding: 10px 0px 0px 10px;
+  margin: 0px 0px 0px 0px;
+}
 
 // right carrots for previous events
 .right-carrot {
@@ -258,16 +250,14 @@
   .event-weather-front, .event-weather {
     border-top: 1px solid black;
     width: auto;
+    margin-top: 20px;
   }
 
   .event-weather-back {
     border-top: 1px solid white;
     width: auto;
+    margin-top: 20px;
   }
-
-  // .event-details {
-  //   padding: 10px 0px 0px 10px;
-  // }
 
   .event-details-border-left{
     margin-left: 3px;
@@ -317,12 +307,12 @@
   .event-weather-front, .event-weather {
       border-top: 1px solid black;
       width: auto;
-      margin-top: 50px;
+      margin-top: 40px;
   }
 
   .event-weather-back {
     border-top: 1px solid white;
     width: auto;
-    margin-top: 50px;
+    margin-top: 40px;
   }
 } 
