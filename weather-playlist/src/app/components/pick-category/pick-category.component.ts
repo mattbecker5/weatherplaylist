@@ -9,7 +9,7 @@ import { PickSelectedGenreService } from 'src/app/services/pick-selected-genre.s
 })
 export class PickCategoryComponent implements OnInit {
 
-  private genresList = ["Rock", "Pop", "Jazz", "Country", "Blues", "Classical", "Funk", "Heavy Metal"];
+  private genresList = ["R&B/Soul", "Rock", "Pop", "Jazz", "Country", "Blues", "Classical", "Funk", "Heavy Metal"];
   public genres: Genre[] = [];
   public pickGenres: Genre[] = [];
 
