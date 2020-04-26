@@ -66,21 +66,21 @@ export class CreateEventComponent implements OnInit {
   }
 
   //user to previous changes month
-  previousMonth(){
+  public previousMonth(){
     this.month = this.month - 1;
     this.currentMonth = this.createCalendar.getNewMonth(this.month, this.year);
     this.selectMonthService.selectMonth(this.currentMonth);
   }
 
   //user changes to next month 
-  nextMonth(){
+  public nextMonth(){
     this.month = this.month + 1
     this.currentMonth = this.createCalendar.getNewMonth(this.month, this.year);
     this.selectMonthService.selectMonth(this.currentMonth);
   }
 
   //when user pressed the create button
-  submitEvent(title:String, startTime:String, endTime:String, type:String){
+  public submitEvent(title:String, startTime:String, endTime:String, type:String){
 
     
     console.log('tried to save');
@@ -107,4 +107,7 @@ export class CreateEventComponent implements OnInit {
     });
     
   }
+
+
+
 }

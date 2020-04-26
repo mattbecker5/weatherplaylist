@@ -48,3 +48,31 @@
     cursor: pointer;
 }
 
+.large-calendar-header {
+    display: table;
+}
+
+.large-calendar-header-outer{
+    display: table;
+}
+
+.large-calendar-header-previous{
+    display: table-cell;
+    padding: 0px 15px 0px 15px;
+    cursor: pointer;
+}
+
+.large-calendar-header-previous h2:hover{
+    color: #ffd55a;
+}
+
+.large-calendar-header-next{
+    display: table-cell;
+    padding: 0px 15px 0px 15px;
+    cursor: pointer;
+}
+
+.large-calendar-header-next h2:hover{
+    color: #ffd55a;
+}
+
