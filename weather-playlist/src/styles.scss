@@ -124,26 +124,6 @@ ul {
         margin-left: 0px;
         margin-right: 20px;
     }
-    .event-container{
-        flex-direction: column-reverse;
-    }
-
-    .sidenav-container {
-        display: flex;
-    }
-
-    .searchSong-div{
-        display: none;
-    }
-
-    .searchSong-div-submit{
-        display: none;
-    }
-
-    .side-navbar-links a {
-        color: orange;
-        font-size: 10px;
-    }
 
     .buttonSubmit {
         padding: 9px;
@@ -153,13 +133,7 @@ ul {
         border-radius: 5px;
         border: none;
     }
-    .side-navbar-links a {
-        line-height: 10px;
-    }
 
-    .avatar {
-        display: none;
-    }
 }
 
 /* Small devices (portrait tablets and large phones, 650px and up) */

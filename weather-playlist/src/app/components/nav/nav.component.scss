@@ -107,3 +107,18 @@ nav {
     margin-left: .5em;
     margin-top: 12px;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 680px) {
+    
+    .searchSong-div{
+        display: none;
+    }
+
+    .searchSong-div-submit{
+        display: none;
+    }
+    .avatar {
+        display: none;
+    }
+}
