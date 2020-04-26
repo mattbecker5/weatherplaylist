@@ -59,10 +59,10 @@ export class AppleMusicNewService {
     
     this.music.setQueue({items}).then(queue => {
       if (queue.nextPlayableItem) {
-        console.log(queue.nextPlayableItem.title);
+        // console.log(queue.nextPlayableItem.title);
       }
       if (queue.previousPlayableItem) {
-        console.log(queue.previousPlayableItem);
+        // console.log(queue.previousPlayableItem);
       }
       this.music.play();
     });
@@ -83,7 +83,7 @@ export class AppleMusicNewService {
   public getGenreById(id:string){
     let api: MusicKit.API = this.music.api;
     api.genre(id).then(reply => {
-      console.log(reply);
+      // console.log(reply);
     });
   }
 

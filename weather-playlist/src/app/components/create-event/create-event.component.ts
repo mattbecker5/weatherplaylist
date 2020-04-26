@@ -42,18 +42,18 @@ export class CreateEventComponent implements OnInit {
     this.currentMonth = this.createCalendar.getNewMonth(4,2020);
     this.month = this.currentMonth.monthNum;
     this.year = this.currentMonth.year;
-    console.log(this.currentMonth);
+    // console.log(this.currentMonth);
     this.selectMonthService.selectMonth(this.currentMonth);
 
     //user selects day
     this.selectDayService.dateSelected$.subscribe(day => {
-      console.log(day);
+      // console.log(day);
       this.selectedDays.push(day);
     });
 
     //user un-selects day
     this.selectDayService.deleteSelected$.subscribe(day => {
-      console.log("removing by splicing");
+      // console.log("removing by splicing");
       let index;
       for(let i = 0; i < this.selectedDays.length; i++){
         if(this.selectedDays[i]==day){

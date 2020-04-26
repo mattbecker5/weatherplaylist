@@ -16,7 +16,7 @@ export class PickGenreButtonComponent implements OnInit {
   }
 
   delete(){
-    console.log("Deleting " + this.pickGenre.name);
+    // console.log("Deleting " + this.pickGenre.name);
     this.pickSelectedGenreService.deleteGenre(this.pickGenre);
   }
 }

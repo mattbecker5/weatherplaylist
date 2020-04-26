@@ -29,10 +29,10 @@ export class EventDetailsComponent implements OnInit {
   public prevEvent(){
 
     let element = document.getElementsByClassName('card');
-    console.log(element[0].classList);
+    // console.log(element[0].classList);
     element[0].classList.toggle('is-flipped');
 
-    console.log('Loading previous event');
+    // console.log('Loading previous event');
     if(this.eventNum > 0){
       this.eventNum = this.eventNum - 1;
       this.getCurrentEvent();
@@ -44,24 +44,24 @@ export class EventDetailsComponent implements OnInit {
   public nextEvent(){
 
     let element = document.getElementsByClassName('card');
-    console.log(element[0].classList);
+    // console.log(element[0].classList);
     element[0].classList.toggle('is-flipped');
 
-    console.log('Loading next event');
+    // console.log('Loading next event');
     if(this.eventNum < (this.events.length-1)){
       this.eventNum = this.eventNum + 1;
       this.getCurrentEvent();
     }
-    console.log('Length: ' + this.events.length + 'EventNum: ' + this.eventNum);
+    // console.log('Length: ' + this.events.length + 'EventNum: ' + this.eventNum);
   }
 
   //get events for user by the date given
   public getDateForEvents(date: string, month: string, year: string){
-    console.log("Getting event for current day");
+    // console.log("Getting event for current day");
     this.userService.user$.subscribe( data => {
       this.database.getEventsByDay(year, month, date, data.uid).subscribe( events => {
         this.events = events;
-        console.log(this.events);
+        // console.log(this.events);
         this.currentEvent = this.events[this.eventNum];
       });
     });

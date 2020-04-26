@@ -9,8 +9,7 @@ import { PickSelectedGenreService } from 'src/app/services/pick-selected-genre.s
 })
 export class PickCategoryComponent implements OnInit {
 
-  private genresList = [{name:"R&B/Soul", id:15}, 
-                        {name:"New Rock", id:13}, 
+  private genresList = [{name:"R&B/Soul", id:15},  
                         {name:"Latino", id:12},
                         {name:"Pop", id:14}, 
                         {name:"Jazz", id:11},
@@ -34,7 +33,7 @@ export class PickCategoryComponent implements OnInit {
     //populating genres array with genresList
     for(let i = 0; i < this.genresList.length; i++){
       this.genres.push(new Genre(this.genresList[i].name, this.genresList[i].id));
-      console.log();
+      // console.log();
     }
   }
 
@@ -43,9 +42,9 @@ export class PickCategoryComponent implements OnInit {
   }
 
   public enableSubmitButton(){
-    console.log("Enabling submit genre button");
+    // console.log("Enabling submit genre button");
     let element = document.getElementById('submit-picked');
-    console.log(element);
+    // console.log(element);
     element.classList.remove('submit-button-hidden');
   }
 }

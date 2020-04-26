@@ -34,7 +34,7 @@ export class DatabaseService {
     event.get().subscribe(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
         doc.ref.delete();
-        console.log("completed delete")
+        // console.log("completed delete")
       });
     });
   }

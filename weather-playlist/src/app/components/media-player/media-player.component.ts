@@ -19,10 +19,10 @@ export class MediaPlayerComponent implements OnInit {
 
   ngOnInit(): void {
     this.songService.songSelected$.subscribe(track => {
-      console.log('the sonngggg: ' + track.trackViewUrl);
+      // console.log('the sonngggg: ' + track.trackViewUrl);
       this.song = track;
-      console.log('Track: ' + this.song.trackName);
-      console.log('preview url: ' + this.song.previewUrl);
+      // console.log('Track: ' + this.song.trackName);
+      // console.log('preview url: ' + this.song.previewUrl);
     });
   }
 

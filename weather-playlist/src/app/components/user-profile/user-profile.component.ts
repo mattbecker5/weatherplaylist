@@ -33,15 +33,15 @@ export class UserProfileComponent implements OnInit {
         this.currentEvents = events;
 
         if(this.currentEvents.length === 0){
-          console.log("No events found in database");
+          // console.log("No events found in database");
         }
 
         for(let i = 0; i < this.currentEvents.length; i++){
-          console.log(this.currentEvents[i].title);
-          console.log(this.currentEvents[i].type);
+          // console.log(this.currentEvents[i].title);
+          // console.log(this.currentEvents[i].type);
 
           if(this.eventsTitle.indexOf(this.currentEvents[i].title) !== -1){
-            console.log("Event title exists");
+            // console.log("Event title exists");
           }
           else{
             this.eventsTitle.push(this.currentEvents[i].title);
@@ -52,13 +52,13 @@ export class UserProfileComponent implements OnInit {
 
       this.database.getSearchHistory(data.uid).subscribe( history => {
         this.allHistory = history;
-        console.log("Loading search history");
+        // console.log("Loading search history");
 
         for(let i = 0; i < this.allHistory.length; i++){
-          console.log(this.allHistory[i].term);
+          // console.log(this.allHistory[i].term);
 
           if(this.searchHistory.indexOf(this.allHistory[i].term) !== -1){
-            console.log("Search term exists");
+            // console.log("Search term exists");
           }
           else{
             this.searchHistory.push(this.allHistory[i].term);
