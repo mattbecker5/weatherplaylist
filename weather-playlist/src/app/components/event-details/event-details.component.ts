@@ -26,6 +26,11 @@ export class EventDetailsComponent implements OnInit {
   }
 
   public prevEvent(){
+
+    let element = document.getElementsByClassName('card');
+    console.log(element[0].classList);
+    element[0].classList.toggle('is-flipped');
+
     console.log('Loading previous event');
     if(this.eventNum > 0){
       this.eventNum = this.eventNum - 1;
@@ -34,6 +39,10 @@ export class EventDetailsComponent implements OnInit {
   }
 
   public nextEvent(){
+    let element = document.getElementsByClassName('card');
+    console.log(element[0].classList);
+    element[0].classList.toggle('is-flipped');
+
     console.log('Loading next event');
     if(this.eventNum < (this.events.length-1)){
       this.eventNum = this.eventNum + 1;

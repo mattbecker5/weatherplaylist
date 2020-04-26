@@ -4,13 +4,14 @@
 }
 
 .event-outer-container {
-    display: flex;
-    flex-wrap: nowrap;
-    max-width: 630px;
-    border-radius: 5px;
-    max-height: 230px;
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 630px;
+  border-radius: 5px;
+  max-height: 230px;
 }
 
+//header for choosing a date for event details
 .header-outer{
   display: flex;
   flex-wrap: nowrap;
@@ -23,19 +24,16 @@
 }
 
 .event-details-border-left{
-  // margin-left: 40px;
   margin-right: 25px;
   border-left: 1px solid black;
 }
 
 .event-details-border-middle{
-  // margin-left: 120px;
   margin-right: 25px;
   border-right: 1px solid black;
 }
 
 .event-details-border-right{
-  // margin-left: 120px;
   margin-right: 25px;
   border-right: 1px solid black;
 }
@@ -45,16 +43,12 @@
   background-color:#1f2833;
   color: white;
   border: none;
-  // color:#293250;
   text-decoration: none;
   font-family: 'Ubuntu', sans-serif;
   cursor: pointer;
   font-size: 15px;
   width: 80px;
   height: 45px;
-  // border: #ccc;
-  // border-style: solid;
-  // border-width: 2px;
 }
 
 .event-details-select-input-date {
@@ -106,6 +100,7 @@
   margin-right: 25px;
 }
 
+// left carrots for previous events
 .left-carrot-div{
   background-color: #1f2833;
   height: auto;
@@ -130,36 +125,32 @@
   cursor: pointer;
 }
 
-.event-container {
-  display: flex;
-  flex-wrap: wrap;
-  // min-width: 380px;
-  width: auto;
-  height: 180px;
-  background-color: #379863; //379863
-  border-radius: 5px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-  // position: relative;
-}
-
+//weather details styling
 .event-weather {
-  // background-color: #f1f1f1;
   flex-grow: 1;
   margin: 5px 10px;
   padding: 10px 20px;
   text-align: center;
-  // position: absolute;
-  // bottom: 10px;
-  // right: 50px;
+}
+
+.event-weather-front, .event-weather-back {
+  flex-grow: 1;
+  background-color: red;
+  margin: 0px 10px 0px 0px;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.no-event-details{
+  padding: 8px 8px 8px 8px;
 }
 
 .event-details {
-  // background-color: #f1f1f1;
-  flex-grow: 8;
-  margin: 5px 10px;
-  padding: 10px 20px 0px 20px;
+  padding: 10px 0px 0px 10px;
+  margin: 0px 0px 0px 0px;
 }
 
+// right carrots for previous events
 .right-carrot {
   width: 100px;
   margin: 10px;
@@ -184,10 +175,67 @@
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
+//scene
+.event-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 180px;
+  background-color: #379863; //#379863
+  border-radius: 5px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  perspective: 600px;
+}
+
+// flip card css
+.card {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face__f {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: black;
+  // text-align: center;
+  font-weight: bold;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card__face__b {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  // text-align: center;
+  font-weight: bold;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  background: #379863;
+  border-radius: 5px;
+}
+
+.card__face--back {
+  background: #1f2833;
+  border-radius: 5px;
+  transform: rotateY(180deg);
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 680px) {
   .header-outer{
-    // max-width: auto;
     width: 98%;
   }
 
@@ -199,20 +247,16 @@
     max-width: 30px;
   }
 
-  .event-container {
-    height: 120%;
-  }
-
-  .event-weather {
-    border-bottom: 1px solid black;
+  .event-weather-front, .event-weather {
+    border-top: 1px solid black;
     width: auto;
+    margin-top: 20px;
   }
 
-  .event-details {
-    padding-top: 0px;
-    padding-bottom: 8px;
-    padding-right: 0px;
-    padding-left: 5px;
+  .event-weather-back {
+    border-top: 1px solid white;
+    width: auto;
+    margin-top: 20px;
   }
 
   .event-details-border-left{
@@ -255,6 +299,20 @@
     width: auto;
     margin-right: 2px;
   }
-
 }
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  .event-weather-front, .event-weather {
+      border-top: 1px solid black;
+      width: auto;
+      margin-top: 40px;
+  }
+
+  .event-weather-back {
+    border-top: 1px solid white;
+    width: auto;
+    margin-top: 40px;
+  }
+} 

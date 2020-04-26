@@ -31,12 +31,4 @@ export class PickCategoryComponent implements OnInit {
     console.log(element);
     element.classList.remove('submit-button-hidden');
   }
-
-  public submitButton(){
-    console.log("Enabling submit genre button");
-    let element = document.getElementById('submit-picked');
-    console.log(element);
-    element.classList.remove('submit-button-hidden');
-  }
-
 }
