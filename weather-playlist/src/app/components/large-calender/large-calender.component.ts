@@ -20,19 +20,39 @@ export class LargeCalenderComponent implements OnInit {
   public currentEvents: UserEvent[];
   public events: Observable<UserEvent[]>;
 
-  
+  public month: number;
+  public year: number;
 
-  constructor(private createEventService: CreateEventService, private createCalendar: CreateCalendarService, public userService: UserService) { }
+  
+  constructor(
+    private createEventService: CreateEventService, 
+    private createCalendar: CreateCalendarService, 
+    public userService: UserService
+    ) { }
 
   ngOnInit(): void {
 
     this.populateEventsTable();
+    this.month = 4;
+    this.year = 2020;
 
     // this.createEventService.getAllEvents().subscribe(events => {
     //   this.currentEvents = events;
     //   console.log(events);
     // });
     
+  }
+
+  //user to previous changes month
+  previousMonth(){
+    this.month = this.month - 1;
+    this.populateEventsTable();
+  }
+
+  //user changes to next month 
+  nextMonth(){
+    this.month = this.month + 1;
+    this.populateEventsTable();
   }
 
   populateEventsTable(){
@@ -44,7 +64,7 @@ export class LargeCalenderComponent implements OnInit {
       this.createEventService.getAllEvents(data.uid).subscribe(events => {
         console.log("trying to populate");
       //populating the large calendar with month
-        let currentMonth: CalendarMonth = this.createCalendar.getNewMonth(4,2020);
+        let currentMonth: CalendarMonth = this.createCalendar.getNewMonth(this.month, this.year);
         this.currentEvents = events
         //console.log(this.currentEvents);
         
