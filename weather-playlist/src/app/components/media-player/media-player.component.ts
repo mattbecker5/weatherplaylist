@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Song } from 'src/app/models/song';
 import { SongService } from 'src/app/services/song.service';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-media-player',
@@ -11,7 +12,10 @@ export class MediaPlayerComponent implements OnInit {
 
   public song: Song; //song that was passed in from mediaPlayerService
 
-  constructor(public songService: SongService) { }
+  constructor(
+    public songService: SongService,
+    private app: AppComponent
+    ) {}
 
   ngOnInit(): void {
     this.songService.songSelected$.subscribe(track => {
@@ -20,6 +24,14 @@ export class MediaPlayerComponent implements OnInit {
       console.log('Track: ' + this.song.trackName);
       console.log('preview url: ' + this.song.previewUrl);
     });
+  }
+
+  public playSong(){
+    this.app.musicGlobal.play();
+  }
+
+  public pauseSong(){
+    this.app.musicGlobal.pause();
   }
 
 }

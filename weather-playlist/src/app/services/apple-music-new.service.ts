@@ -33,18 +33,28 @@ export class AppleMusicNewService {
     });
 
     this.music = MusicKit.getInstance();
-
   }
 
   public playSongByid(songId: string, startPosition: number){
 
     // let music = this.getAppleApi();
     let player: MusicKit.Player = this.music.player;
+    let mediaItem = this.music
+    player.stop();
+
+    // let nowPlayingItem: MusicKit.MediaItem;
+    // nowPlayingItem = player.nowPlayingItem;
+
+    // const item: MusicKit.MediaItem = new MusicKit.MediaItem({
+    //   attributes:"", 
+    //   id:songId, 
+    //   type:"song"
+    // });
 
     // let url = 'https://itunes.apple.com/us/album/hamilton-original-broadway-cast-recording/1025210938';
 
     const items = [new MusicKit.MediaItem({attributes:"", id:songId, type:"song"})];
-
+    
     this.music.setQueue({items}).then(queue => {
       if (queue.nextPlayableItem) {
         console.log(queue.nextPlayableItem.title);
@@ -52,40 +62,41 @@ export class AppleMusicNewService {
       if (queue.previousPlayableItem) {
         console.log(queue.previousPlayableItem);
       }
+      this.music.play();
     });
 
-    // Playback Controls
+    // // Playback Controls
+    
+    // this.music.pause();
+  }
+
+  public play(){
     this.music.play();
+  }
+
+  public pause(){
     this.music.pause();
   }
 
   public getGenreById(id:string){
-
-    // let music = this.getAppleApi();
     let api: MusicKit.API = this.music.api;
-
     api.genre(id).then(reply => {
       console.log(reply);
     });
   }
 
   public getChartsByTypeAndGenre(type:string[], genre:string){
-    // let music = this.getAppleApi();
-    // let api: MusicKit.API = music.api;
-
     this.music.api.charts(type, { limit: 30, genre: genre }).then(reply => {
       console.log(reply);
     });
   }
 
   public searchByTerm(term:string){
-    // let music = this.getAppleApi();
     let results = this.music.api.search('post', { limit: 30, types: 'artists,albums' });
     console.log(results); 
   }
 
   public stopPlaying(){
-    // let music = this.getAppleApi();
     let player: MusicKit.Player = this.music.player;
     player.stop();
   }
