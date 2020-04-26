@@ -73,7 +73,7 @@ export class LargeCalenderComponent implements OnInit {
           for(let j = 0; j < this.currentEvents.length; j++){
             
             //console.log(this.currentEvents[j].day);
-            if(currentMonth.days[i].date.toString() === this.currentEvents[j].day){
+            if(currentMonth.days[i].date.toString() === this.currentEvents[j].day && currentMonth.monthNum.toString() === this.currentEvents[j].month){
               console.log("found");
               console.log(this.currentEvents[j]);
               currentMonth.days[i].events.push(this.currentEvents[j])
