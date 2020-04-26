@@ -35,7 +35,7 @@ export class WeatherApiService {
 
     /** GET songs from the server */
     public getWeatherByLatLon(lat:string, lon:string): Observable<WeatherEvent> {
-      console.log("here");
+      // console.log("here");
       let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4f6b2e6b7dcccf97559cf33e7208bad0&units=imperial`;
 
       return this.http.get<WeatherResponse>(url)

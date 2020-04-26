@@ -29,6 +29,6 @@ export class MusicCardComponent implements OnInit {
 
   public onClickSong(){
     this.app.musicGlobal.playSongByid(this.song.trackId.toString(), this.startPosition);
-    console.log(this.song.trackId);
+    // console.log(this.song.trackId);
   }
 }

@@ -32,16 +32,16 @@ export class LargeCalendarCardComponent implements OnInit {
 
   public selectedDay(){
     this.statusPopup = !this.statusPopup;
-    console.log(this.dayEvent.events.length);
+    // console.log(this.dayEvent.events.length);
     this.createEventService.setSelectedEvent(this.dayEvent.date);
   }
 
   public closePopup(){
-    console.log(this.statusPopup);
-    console.log("trying to close")
+    // console.log(this.statusPopup);
+    // console.log("trying to close")
     this.statusPopup = !this.statusPopup;
     // this.cd.detectChanges();
-    console.log(this.statusPopup);
+    // console.log(this.statusPopup);
   }
 
   public deleteEvent(uid: string){

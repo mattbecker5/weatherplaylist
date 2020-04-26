@@ -27,18 +27,18 @@ export class WeatherDisplaySmallComponent implements OnInit {
       navigator.geolocation.getCurrentPosition(position => {
       let latitude = position.coords.latitude;
       let longitude = position.coords.longitude;
-      console.log(latitude, longitude);
+      // console.log(latitude, longitude);
       this.getWeatherByLatLon(latitude.toString(), longitude.toString());
       } );
     } else { 
-      console.log("Geolocation is not supported by this browser.")
+      // console.log("Geolocation is not supported by this browser.")
     }
   }
 
   //function to call getAll() and pass the search term that user entered
   public getWeatherByLatLon(lat: string, lon: string){
     this.weatherApi.getWeatherByLatLon(lat, lon).subscribe(weather => {
-      console.log(weather);
+      // console.log(weather);
       this.temp = Math.floor(weather.temp).toString();
       this.icon = weather.weatherIcon;
     })
@@ -46,7 +46,7 @@ export class WeatherDisplaySmallComponent implements OnInit {
 
   public getWeatherByZip(zip: String){
     this.weatherApi.getWeatherByZip(zip).subscribe(weather => {
-      console.log(weather);
+      // console.log(weather);
       this.temp = Math.floor(weather.temp).toString();
       this.icon = weather.weatherIcon;
     })
@@ -60,7 +60,7 @@ export class WeatherDisplaySmallComponent implements OnInit {
   public submitZip(inputZip: String){
     this.hideShowTemp = false;
     this.hideShowZip = true;
-    console.log(inputZip);
+    // console.log(inputZip);
     this.getWeatherByZip(inputZip);
   }
 

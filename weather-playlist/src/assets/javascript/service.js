@@ -1,6 +1,6 @@
 
 function getWeatherTest() {
-    console.log("started");
+    // console.log("started");
     fetch("http://dataservice.accuweather.com/locations/v1/adminareas/1", {
     "method": "POST",
 	"headers": {
@@ -9,12 +9,12 @@ function getWeatherTest() {
 	"body": {}
     })
     .then(response => {
-        console.log("data");
-        console.log(response);
+        // console.log("data");
+        // console.log(response);
     })
     .catch(err => {
-        console.log("error");
-        console.log(err);
+        // console.log("error");
+        // console.log(err);
     });
 }
 
@@ -35,7 +35,7 @@ function testApi(){
     }
     
     $.ajax(settings).done(function (response) {
-        console.log(response);
+        // console.log(response);
     });
 }
 
@@ -50,7 +50,7 @@ function fetchTrackList(searchTerm) {
       return reply.json() // Parse the JSON reply into a native object
     })
     .then( (reply) => {
-        console.log(reply);
+        // console.log(reply);
     //   if(reply && reply.results && reply.results.length) { // If we have results
     //     return renderSearchResults(reply) 
     //   } else {
@@ -59,7 +59,7 @@ function fetchTrackList(searchTerm) {
     //   }
     })
     .catch( error => {
-        console.log(error);
+        // console.log(error);
       //renderError(error);
     });
 }

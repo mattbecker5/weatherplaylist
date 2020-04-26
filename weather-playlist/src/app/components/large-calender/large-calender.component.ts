@@ -62,20 +62,20 @@ export class LargeCalenderComponent implements OnInit {
     //getting the saved events -- soon will change to firebase database
     this.userService.user$.subscribe( data => {
       this.createEventService.getAllEvents(data.uid).subscribe(events => {
-        console.log("trying to populate");
+        // console.log("trying to populate");
       //populating the large calendar with month
         let currentMonth: CalendarMonth = this.createCalendar.getNewMonth(this.month, this.year);
         this.currentEvents = events
         //console.log(this.currentEvents);
         
         for(let i = 0; i < currentMonth.days.length; i++){
-          console.log(this.currentEvents.length);
+          // console.log(this.currentEvents.length);
           for(let j = 0; j < this.currentEvents.length; j++){
             
             //console.log(this.currentEvents[j].day);
             if(currentMonth.days[i].date.toString() === this.currentEvents[j].day && currentMonth.monthNum.toString() === this.currentEvents[j].month){
-              console.log("found");
-              console.log(this.currentEvents[j]);
+              // console.log("found");
+              // console.log(this.currentEvents[j]);
               currentMonth.days[i].events.push(this.currentEvents[j])
               // this.calendarDays.push(calDay);
             }
