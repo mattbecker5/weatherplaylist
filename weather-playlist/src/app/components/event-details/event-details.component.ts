@@ -36,9 +36,11 @@ export class EventDetailsComponent implements OnInit {
       this.eventNum = this.eventNum - 1;
       this.getCurrentEvent();
     }
+    
   }
 
   public nextEvent(){
+
     let element = document.getElementsByClassName('card');
     console.log(element[0].classList);
     element[0].classList.toggle('is-flipped');
