@@ -29,12 +29,14 @@
             </ng-template>
         </ul>
     </div>
-    <div *ngIf="userService.user$ | async as user">
+    <div class="avatar-div" *ngIf="userService.user$ | async as user">
         <img class="avatar" src="{{user.photoURL}}" alt="{{user.displayName}}+ avatar" />
     </div>
-    <div>
+
+    <div class="weather-display">
         <app-weather-display-small></app-weather-display-small>
     </div>
+
     <div class="searchSong-div">
         <input class="input-field" type="text" placeholder="Search Music.." (input)="searchTerm=$event.target.value"
             *ngIf="getPath() === '/musicapp'">

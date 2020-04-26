@@ -54,5 +54,6 @@ export class NavComponent implements OnInit {
 
   public showHideMenu(){
     this.hideShowMenu = !this.hideShowMenu;
+    console.log("Drop down menu" + this.hideShowMenu);
   }
 }

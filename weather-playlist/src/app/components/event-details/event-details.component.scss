@@ -1,3 +1,7 @@
+// .details-outer{
+//   width: auto;
+// }
+
 .title-header{
   color: #379863;
   margin: 0px 0px 0px 20px;
@@ -303,6 +307,13 @@
   // .event-container{
   //   flex-direction: column-reverse;
   // }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 321px){
+  .details-outer{
+    width: 100%;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */

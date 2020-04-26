@@ -150,6 +150,16 @@ ul {
         border-radius: 5px;
         border: none;
     }
+}
+
+/* Small devices (portrait tablets and large phones, 681px and up ,769px and down) */
+@media only screen and (min-width: 681px) and (max-width: 769px) {
+    .side {
+        flex: 15%;
+        min-height: auto;
+        background-color: #f1f1f1;
+        padding: 20px;
+    }
 
 }
 

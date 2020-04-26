@@ -23,7 +23,7 @@ nav {
     min-width: 75px;
     max-width: 100px;
     flex-grow: 1;
-    margin: auto;
+    margin: 0px 10px 0px 10px;
 }
 
 .nav-logo img{
@@ -146,8 +146,13 @@ nav {
     width: 100%;
 }
 
-/* Extra small devices (phones, 600px and down) */
+/* Extra small devices (phones, 680px and down) */
 @media only screen and (max-width: 680px) {
+
+    .weather-display{
+        position: absolute;
+        right: 0px;
+    }
     
     .hamburger-menu-button {
         display: block;
@@ -169,10 +174,22 @@ nav {
     }
 }
 
-/* Small devices (portrait tablets and large phones, 650px and up) */
+/* Small devices (portrait tablets and large phones, 680px and up, 770 and down) */
+@media only screen and (min-width: 680px) and (max-width: 770px){
+    .avatar-div {
+        display: none;
+    }
+}
+
+/*  Extra small devices (phones, 322px and up, 680px and down) */
 @media only screen and (min-width: 322px) and (max-width: 680px){
-    .nav-logo{
-        margin: 0px;
+
+    .nav-logo {
+        
+    }
+
+    .nav-logo img {
+        margin: 0px 0px 0px 0px;
     }
 }
 
