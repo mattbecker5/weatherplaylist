@@ -20,7 +20,7 @@ export class PickCategoryComponent implements OnInit {
                         {name:"Hip-Hop/Rap", id:18},
                         {name:"Alternative", id:20},
                         {name:"Rock", id:21},
-                        {name:"Christian & Gospel", id:22},
+                        {name:"Christian", id:22},
                         {name:"Reggae", id:24},
                         {name:"Country", id:6}, 
                         {name:"Blues", id:2},
