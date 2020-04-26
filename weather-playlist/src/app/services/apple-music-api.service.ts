@@ -19,10 +19,8 @@ export class AppleMusicAPIService {
     return this.http.get<AppleMusicResponse>(this.applemusicURL + searchTerm)
       .pipe(
         map( reply => {
-          console.log(reply);
           let songs: Song[] = [];
           songs = reply.results.map( song => new Song(song) );
-          console.log(songs);
           return songs;
         }),
         catchError(this.handleError<Song[]>('getSongs', []))

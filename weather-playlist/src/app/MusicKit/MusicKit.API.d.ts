@@ -90,7 +90,7 @@ declare namespace MusicKit {
      * @param parameters A query parameters object that is serialized and passed
      * directly to the Apple Music API.
      */
-    charts(types: string[], parameters?: QueryParameters): Promise<Resource[]>;
+    charts(types: string[], parameters?: QueryParameters): Promise<AppleSong>;
     /**
      * Fetch a curator using its identifier.
      *
@@ -258,6 +258,10 @@ declare namespace MusicKit {
 
   interface Resource {
     [key: string]: any;
+  }
+
+  interface AppleSong {
+    songs: any[];
   }
 
   type AddToLibraryParameters = any;

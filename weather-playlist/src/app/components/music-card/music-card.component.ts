@@ -15,9 +15,9 @@ export class MusicCardComponent implements OnInit {
 
   private startPosition = 0;
   constructor(
+    private app: AppComponent,
     public songService: SongService, 
-    private appleNew: AppleMusicNewService,
-    private app: AppComponent
+    private appleNew: AppleMusicNewService
     ) {}
 
   ngOnInit(): void {
