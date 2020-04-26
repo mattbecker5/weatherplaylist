@@ -5,6 +5,7 @@ export class Song {
     artworkUrl100: string;
     previewUrl: string;
     trackViewUrl: string;
+    currentIndex: number;
 
     constructor(song:any){
         this.trackId = song.trackId;
@@ -13,5 +14,6 @@ export class Song {
         this.artworkUrl100 = song.artworkUrl100;
         this.previewUrl = song.previewUrl;
         this.trackViewUrl = song.trackViewUrl;
+        this.currentIndex = song.currentIndex;
     }
 }

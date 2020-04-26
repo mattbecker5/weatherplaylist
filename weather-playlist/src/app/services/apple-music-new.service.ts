@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { AppleMusicSong } from '../models/apple-music-song';
 import { AppleMusicChart } from '../models/apple-music-chart';
+import { Song } from '../models/song';
 // declare const MusicKit:any;
 
 @Injectable({
@@ -11,10 +12,6 @@ import { AppleMusicChart } from '../models/apple-music-chart';
 export class AppleMusicNewService {
 
   private jwtToken = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkwyUzlSNEEyRzMifQ.eyJpYXQiOjE1ODc3NTYyMDUsImV4cCI6MTYwMzMwODIwNSwiaXNzIjoiWkZIQjlVNURIOSJ9.zsGtXrqpSnvd3d4F63jJiNvTWiYrFEN7O8UCr_BXKhQ0impJVzW-T3qsvCagryj8UM8XSBgggNITckmTX08-Dw";
-  
-  // let playbackState: MusicKit.PlaybackStates = music.playbackState;
-  // let player: MusicKit.Player = music.player;
-
   private music: MusicKit.MusicKitInstance;
 
   constructor() {
@@ -37,39 +34,28 @@ export class AppleMusicNewService {
     this.music = MusicKit.getInstance();
   }
 
-  public playSongByid(songId: string, startPosition: number){
-
-    // let music = this.getAppleApi();
+  public playSongByIndex(songId: string, index: number){
     let player: MusicKit.Player = this.music.player;
-    let mediaItem = this.music
-    player.stop();
+    player.changeToMediaAtIndex(index);
+  }
 
-    // let nowPlayingItem: MusicKit.MediaItem;
-    // nowPlayingItem = player.nowPlayingItem;
+  public setSongsToQueue(itemsObj: Song[]){
 
-    // const item: MusicKit.MediaItem = new MusicKit.MediaItem({
-    //   attributes:"", 
-    //   id:songId, 
-    //   type:"song"
-    // });
+      let items: MusicKit.MediaItem[] = [];
 
-    // let url = 'https://itunes.apple.com/us/album/hamilton-original-broadway-cast-recording/1025210938';
+      itemsObj.forEach(song => {
+        items.push(new MusicKit.MediaItem({attributes:"", id:song.trackId.toString(), type:"song"}))
+      });
 
-    const items = [new MusicKit.MediaItem({attributes:"", id:songId, type:"song"})];
-    
-    this.music.setQueue({items}).then(queue => {
-      if (queue.nextPlayableItem) {
-        // console.log(queue.nextPlayableItem.title);
-      }
-      if (queue.previousPlayableItem) {
-        // console.log(queue.previousPlayableItem);
-      }
-      this.music.play();
-    });
-
-    // // Playback Controls
-    
-    // this.music.pause();
+        this.music.setQueue({items}).then(queue => {
+          if (queue.nextPlayableItem) {
+            // console.log(queue.nextPlayableItem.title);
+          }
+          if (queue.previousPlayableItem) {
+            // console.log(queue.previousPlayableItem);
+          }
+          this.music.play();
+        });
   }
 
   public play(){

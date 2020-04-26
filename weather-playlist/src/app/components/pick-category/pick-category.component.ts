@@ -33,7 +33,6 @@ export class PickCategoryComponent implements OnInit {
     //populating genres array with genresList
     for(let i = 0; i < this.genresList.length; i++){
       this.genres.push(new Genre(this.genresList[i].name, this.genresList[i].id));
-      // console.log();
     }
   }
 
@@ -42,9 +41,7 @@ export class PickCategoryComponent implements OnInit {
   }
 
   public enableSubmitButton(){
-    // console.log("Enabling submit genre button");
     let element = document.getElementById('submit-picked');
-    // console.log(element);
     element.classList.remove('submit-button-hidden');
   }
 }
