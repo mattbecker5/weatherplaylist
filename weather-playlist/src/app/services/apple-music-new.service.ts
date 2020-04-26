@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { AppleMusicSong } from '../models/apple-music-song';
+import { AppleMusicChart } from '../models/apple-music-chart';
 // declare const MusicKit:any;
 
 @Injectable({
@@ -85,9 +87,12 @@ export class AppleMusicNewService {
     });
   }
 
-  public getChartsByTypeAndGenre(type:string[], genre:string){
-    this.music.api.charts(type, { limit: 30, genre: genre }).then(reply => {
-      console.log(reply);
+  public getChartsByTypeAndGenre(type:string[], genre:string): Promise<any>{
+    return this.music.api.charts(type, { limit: 30, genre: genre }).then(results => {
+      // console.log(results.songs[0]);
+      let songs: AppleMusicChart[] = [];
+      songs = results.songs.map( song => new AppleMusicChart(song) );
+      return songs;
     });
   }
 
