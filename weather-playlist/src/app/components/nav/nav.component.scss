@@ -21,9 +21,9 @@ nav {
 
 .nav-logo{
     min-width: 75px;
-    max-width: 100px;
+    max-width: 90px;
     flex-grow: 1;
-    margin: 0px 10px 0px 10px;
+    margin: 0px 0px 0px 10px;
 }
 
 .nav-logo img{
@@ -115,6 +115,7 @@ nav {
     text-decoration: none;
     margin: 10px 0px 0px 5px;
     display: none;
+    padding: 0px;
 }
 
 .drop-down-menu {
