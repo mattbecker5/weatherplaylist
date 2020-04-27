@@ -72,4 +72,8 @@ export class MediaPlayerComponent implements OnInit {
     this.app.musicGlobal.previous();
   }
 
+  public volumeChanged(e){
+    console.log('volume', e);
+    this.app.musicGlobal.setVolume(e);
+  }
 }

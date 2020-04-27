@@ -7,6 +7,7 @@
     </div>
     
     <div class="media-player-buttons">
+        <input type="range" min="0" max="1" step="0.05" value=".5" (input)="volumeChanged($event.target.value)"/>
         <span (click)="previousSong()"><i class="fas fa-step-backward" style="color: white; font-size: 20px; margin-right: 3px;"></i></span>
         <span (click)="playSong()" *ngIf="!playOrPause"><i class="fas fa-play" style="color: white; font-size: 20px; margin-right: 3px;"></i></span>
         <span (click)="pauseSong()" *ngIf="playOrPause"><i class="fas fa-pause" style="color: white; font-size: 20px; margin-right: 3px;"></i></span>

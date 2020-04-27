@@ -29,7 +29,7 @@ export class AppleMusicNewService {
     });
 
     this.music = MusicKit.getInstance();
-
+    this.setVolume(.5);
 
   }
 
