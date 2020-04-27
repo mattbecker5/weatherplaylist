@@ -3,15 +3,15 @@
     <div class="hoverSearch-div1" >
         <i class="fas fa-headphones-alt" style="color: #1f2833; margin-right: 5px;"></i>
         <span class="title-hoverSearch">Playing now: &nbsp;</span>
-        <span data-apple-music-now-playing="title"></span>
+        <span data-apple-music-now-playing="title" class="titleText"></span>
     </div>
     
     <div class="media-player-buttons">
-        <input type="range" min="0" max="1" step="0.05" value=".5" (input)="volumeChanged($event.target.value)"/>
-        <span (click)="previousSong()"><i class="fas fa-step-backward" style="color: white; font-size: 20px; margin-right: 3px;"></i></span>
-        <span (click)="playSong()" *ngIf="!playOrPause"><i class="fas fa-play" style="color: white; font-size: 20px; "></i></span>
-        <span (click)="pauseSong()" *ngIf="playOrPause"><i class="fas fa-pause" style="color: white; font-size: 20px; "></i></span>
-        <span (click)="nextSong()"><i class="fas fa-step-forward" style="color: white; font-size: 20px; margin-right: 3px;"></i></span>
+        <div><input class="volumeSlider" type="range" min="0" max="1" step="0.05" value=".5" (input)="volumeChanged($event.target.value)"/></div>
+        <div (click)="previousSong()"><i class="fas fa-step-backward"></i></div>
+        <div (click)="playSong()" *ngIf="!playOrPause"><i class="fas fa-play"></i></div>
+        <div (click)="pauseSong()" *ngIf="playOrPause"><i class="fas fa-pause"></i></div>
+        <div (click)="nextSong()"><i class="fas fa-step-forward"></i></div>
         
 
         <!-- <button class="button" (click)="playSong()"><i class="fas fa-play" style="color: #1f2833; font-size: 22px; margin-right: 3px;"></i></button> -->
