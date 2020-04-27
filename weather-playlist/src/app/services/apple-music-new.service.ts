@@ -1,7 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-import { AppleMusicSong } from '../models/apple-music-song';
 import { AppleMusicChart } from '../models/apple-music-chart';
 import { Song } from '../models/song';
 // declare const MusicKit:any;
@@ -32,6 +29,12 @@ export class AppleMusicNewService {
     });
 
     this.music = MusicKit.getInstance();
+
+
+  }
+
+  public getAholdOfMediaState(){
+    return this.music;
   }
 
   public playSongById(songId: number){

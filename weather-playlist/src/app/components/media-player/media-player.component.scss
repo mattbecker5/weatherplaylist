@@ -1,3 +1,19 @@
+.active{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.normal{
+    display: none;
+}
+
+.active img {
+    width: 40px;
+    height: 40px;
+}
+
 .media-player-play{
     cursor: pointer;
     width: 40px;

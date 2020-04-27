@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectorRef} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { CalendarDay } from 'src/app/models/calendar-day';
 import { CalendarMonth } from 'src/app/models/calendar-month';
 import { CreateEventService } from 'src/app/services/create-event.service';
@@ -19,7 +19,6 @@ export class LargeCalendarCardComponent implements OnInit {
   
   constructor(
     private createEventService: CreateEventService, 
-    private cd: ChangeDetectorRef,
     private database: DatabaseService
     ) { }
 

@@ -1,12 +1,13 @@
-<div class="media-player-container" *ngIf="song">
+<div class="media-player-container">
+    <span [ngClass]="loadingIcon ? 'active' : 'normal'"><img src="../../../assets/images/loading_icon.gif"></span>
     <div class="hoverSearch-div1" >
         <i class="fas fa-headphones-alt" style="color: #1f2833; font-size: 22px; margin-right: 3px;"></i>
         Playing now:
         <span data-apple-music-now-playing="title"></span>
     </div>
     <div class="media-player-buttons">
-        <span (click)="playSong()" *ngIf="playOrPause"><i class="fas fa-play" style="color: white; font-size: 22px; margin-right: 3px;"></i></span>
-        <span (click)="pauseSong()" *ngIf="!playOrPause"><i class="fas fa-pause" style="color: white; font-size: 22px; margin-right: 3px;"></i></span>
+        <span (click)="playSong()" *ngIf="!playOrPause"><i class="fas fa-play" style="color: white; font-size: 22px; margin-right: 3px;"></i></span>
+        <span (click)="pauseSong()" *ngIf="playOrPause"><i class="fas fa-pause" style="color: white; font-size: 22px; margin-right: 3px;"></i></span>
         <span (click)="previousSong()"><i class="fas fa-step-backward" style="color: white; font-size: 22px; margin-right: 3px;"></i></span>
         <span (click)="nextSong()"><i class="fas fa-step-forward" style="color: white; font-size: 22px; margin-right: 3px;"></i></span>
         
