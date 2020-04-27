@@ -34,7 +34,7 @@
     display: flex;
     margin-right: 12px;
     position: absolute;
-    right: 0px;
+    right: 5px;
     top: 3px;
     // width: 300px;
 }
@@ -89,6 +89,22 @@
     // background: url(../../../assets/images/playButton.png);
     width: 45px;
     height: 45px;
+}
+
+/* Extra small devices (phones, 680px and down) */
+@media only screen and (max-width: 680px) {
+    // mobile-playing-text
+    .hoverSearch-div1{
+        margin-top: 7px;
+    }
+
+    .media-player-container{
+
+    }
+
+    .media-player-buttons span {
+        margin: 14px 5px 0px 0px;
+    }
 }
 
 

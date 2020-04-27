@@ -8,8 +8,8 @@
     
     <div class="nav-links">
         <ul>
-            <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-            <li><a routerLink="/profile-page" routerLinkActive="active">Profile</a></li>
+            <li><a routerLink="/home" routerLinkActive="active"><i class="fas fa-home" style="font-size: 18px; margin-right: 3px;"></i>Home</a></li>
+            <li><a routerLink="/profile-page" routerLinkActive="active"><i class="far fa-id-badge" style="font-size: 18px; margin-right: 3px;"></i>Profile</a></li>
             <li *ngIf="userService.user$ | async; then authenticated else guest">
                 <!-- template will replace this div -->
             </li>
@@ -49,8 +49,8 @@
 
 <div class="drop-down-menu" *ngIf="hideShowMenu">
     <ul>
-        <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-        <li><a routerLink="/profile-page" routerLinkActive="active">Profile</a></li>
+        <li><a routerLink="/home" routerLinkActive="active"><i class="fas fa-home" style="font-size: 18px; margin-right: 5px;"></i>Home</a></li>
+        <li><a routerLink="/profile-page" routerLinkActive="active"><i class="far fa-id-badge" style="font-size: 18px; margin-right: 5px;"></i>Profile</a></li>
         <li *ngIf="userService.user$ | async; then authenticated else guest">
             <!-- template will replace this div -->
         </li>

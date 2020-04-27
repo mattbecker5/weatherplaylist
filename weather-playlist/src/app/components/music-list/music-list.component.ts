@@ -18,7 +18,9 @@ export class MusicListComponent implements OnInit {
 
   public songs: Song[] = [];
   public pickGenres: Genre[] = [];
+
   public song: Song;
+
   
   constructor(
     public app: AppComponent,
@@ -32,6 +34,7 @@ export class MusicListComponent implements OnInit {
     // Getting title for song from songService
     this.songService.songSelected$.subscribe(track => {
     this.song = track;
+
     });
 
     // Generating song from search

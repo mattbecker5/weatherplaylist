@@ -11,6 +11,7 @@ import { AppComponent } from 'src/app/app.component';
 export class MediaPlayerComponent implements OnInit {
 
   public song: Song; //song that was passed in from mediaPlayerService
+  public playOrPause: boolean = false;
 
   constructor(
     public songService: SongService,
@@ -19,7 +20,6 @@ export class MediaPlayerComponent implements OnInit {
 
   ngOnInit(): void {
     this.songService.songSelected$.subscribe(track => {
-      // console.log('the sonngggg: ' + track.trackViewUrl);
       this.song = track;
       // console.log('Track: ' + this.song.trackName);
       // console.log('preview url: ' + this.song.previewUrl);
@@ -28,10 +28,12 @@ export class MediaPlayerComponent implements OnInit {
 
   public playSong(){
     this.app.musicGlobal.play();
+    this.playOrPause = false;
   }
 
   public pauseSong(){
     this.app.musicGlobal.pause();
+    this.playOrPause = true;
   }
 
   public nextSong(){
