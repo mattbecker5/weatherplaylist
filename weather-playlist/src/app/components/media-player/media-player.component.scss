@@ -91,5 +91,17 @@
     height: 45px;
 }
 
+/* Extra small devices (phones, 680px and down) */
+@media only screen and (max-width: 680px) {
+    // mobile-playing-text
+    .hoverSearch-div1{
+        margin-top: 5px;
+    }
+
+    .media-player-container{
+        
+    }
+}
+
 
 

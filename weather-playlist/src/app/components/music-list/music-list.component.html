@@ -1,15 +1,24 @@
 
 <div class="search-header">
-    <h2>List of music generated</h2>
+    <h2>
+        <i class="far fa-list-alt" style="color: #1f2833; font-size: 22px; margin-right: 2px;"></i>
+        List of music generated
+    </h2>
 </div>
 <div class="search-div">
     <div class="search-div-header">
         <div class="title-header">
-            <h3>Title: 
+            <h3>
+                Title: 
                 <span *ngIf="song">{{song.trackName}}</span>
             </h3>
         </div>
-        <div class="details-header"><h3>Details: </h3></div>
+        <div class="details-header">
+            <!-- Artist Name: <small *ngIf="song">{{song.artistName}}</small> -->
+            Artist Name: <span *ngIf="song">{{song.artistName}}</span>
+            <br>Album Name: <span *ngIf="song">{{song.albumName}}</span>
+            <br>Release Date: <span *ngIf="song">{{song.releaseDate}}</span>
+        </div>
     </div>
     <div class="search-results">
         <ng-container *ngFor="let song of songs">

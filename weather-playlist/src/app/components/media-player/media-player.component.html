@@ -1,11 +1,21 @@
 <div class="media-player-container">
-    <div class="hoverSearch-div1" >Playing now: <span data-apple-music-now-playing="title"></span></div>
+    <div class="hoverSearch-div1" >
+        <i class="fas fa-headphones-alt" style="color: #1f2833; font-size: 22px; margin-right: 3px;"></i>
+        Playing now:
+        <span data-apple-music-now-playing="title"></span>
+    </div>
     <div class="media-player-buttons">
+        <span (click)="playSong()"><i class="fas fa-play" style="color: #1f2833; font-size: 22px; margin-right: 3px;"></i></span>
+        <span (click)="pauseSong()"><i class="fas fa-pause" style="color: #1f2833; font-size: 22px; margin-right: 3px;"></i></span>
+        
 
-        <button data-apple-music-pause class="button"></button>
+        <!-- <button class="button" (click)="playSong()"><i class="fas fa-play" style="color: #1f2833; font-size: 22px; margin-right: 3px;"></i></button> -->
+        <!-- <button class="button" (click)="pauseSong()"><i class="fas fa-pause" style="color: #1f2833; font-size: 22px; margin-right: 3px;"></i></button> -->
+        
+        <!-- <button data-apple-music-pause class="button"></button>
         <button data-apple-music-play class="button"></button>
         <button data-apple-music-skip-to-previous-item class="button"></button>
-        <button data-apple-music-skip-to-next-item class="button"></button>
+        <button data-apple-music-skip-to-next-item class="button"></button> -->
         
         <!-- <audio controls *ngIf="song">
             <source src="{{song.previewUrl}}" type="audio/ogg">
