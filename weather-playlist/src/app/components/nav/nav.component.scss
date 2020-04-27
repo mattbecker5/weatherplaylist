@@ -175,19 +175,14 @@ nav {
     .searchSong-div-submit{
         display: none;
     }
-    .avatar {
-        display: none;
-    }
-}
 
-/* Small devices (portrait tablets and large phones, 680px and up, 770 and down) */
-@media only screen and (min-width: 680px) and (max-width: 770px){
     .avatar-div {
         display: none;
     }
+
 }
 
-/*  Extra small devices (phones, 322px and up, 680px and down) */
+/*  Extra small devices, Small devices (phones, 322px and up, 680px and down) */
 @media only screen and (min-width: 322px) and (max-width: 680px){
 
     .nav-logo {
@@ -199,9 +194,23 @@ nav {
     }
 }
 
-/* Small devices (portrait tablets and large phones, 650px and up) */
-@media only screen and (min-width: 680px) {
+/* Small devices (portrait tablets and large phones, 680px and up) */
+@media only screen and (min-width: 769px) {
    .drop-down-menu{
        display: none;
    }
+}
+
+/* Extra small devices (phones, 681px and up, 922px and down) */
+@media only screen and (min-width: 681px) and (max-width: 922px) {
+    .avatar-div {
+        display: none;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 856px and down) */
+@media only screen and (max-width: 856px) {
+    .hamburger-menu-button {
+        display: block;
+    }
 }
