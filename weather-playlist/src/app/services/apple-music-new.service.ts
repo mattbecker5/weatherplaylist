@@ -78,6 +78,14 @@ export class AppleMusicNewService {
     this.music.pause();
   }
 
+  public next(){
+    this.music.skipToNextItem();
+  }
+
+  public previous(){
+    this.music.skipToPreviousItem();
+  }
+
   public getGenreById(id:string){
     let api: MusicKit.API = this.music.api;
     api.genre(id).then(reply => {

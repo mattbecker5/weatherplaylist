@@ -27,27 +27,5 @@ export class AppComponent {
     // this.appleNew.playSongByid("1488408568");
     // this.appleNew.playSongByid("1486263180");
     // this.appleNew.getGenreById('11');
-  //   this.musicGlobal.getChartsByTypeAndGenre(['songs'], '31').then(results => {
-  //     console.log(results);
-  //     let charts: AppleMusicChart[] = [];
-  //     let topSongs: AppleMusicSong[] = [];
-
-  //     results.forEach(topChart => {
-  //       // console.log(song)
-  //       charts.push(new AppleMusicChart(topChart));
-  //     });
-
-  //     charts.forEach(elem =>{
-  //       // console.log(elem);
-  //       elem.data.forEach(song =>{
-  //         topSongs.push(new AppleMusicSong(song));
-  //       })
-  //     })
-
-  //     topSongs.forEach(song => {
-  //       // console.log(song);
-  //     });
-      
-  //   });
   }
 }
