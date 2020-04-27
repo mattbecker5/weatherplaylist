@@ -12,15 +12,21 @@ export class AppleMusicAPIService {
 
   private applemusicURL = "https://itunes.apple.com/search?entity=song&limit=15&term=";
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+    ) { }
 
 /** GET songs from the server */
   public getSongs (searchTerm: string): Observable<Song[]> {
+
     return this.http.get<AppleMusicResponse>(this.applemusicURL + searchTerm)
       .pipe(
         map( reply => {
           let songs: Song[] = [];
-          songs = reply.results.map( song => new Song(song) );
+          songs = reply.results.map( song => {
+            let newSong = new Song(song);
+            return newSong;
+          });
           return songs;
         }),
         catchError(this.handleError<Song[]>('getSongs', []))
