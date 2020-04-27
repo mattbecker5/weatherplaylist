@@ -73,7 +73,9 @@ export class MusicListComponent implements OnInit {
               artworkUrl100: artworkURL2,
               previewUrl: topSongs[i].attributes.previews[0].url,
               trackViewUrl: topSongs[i].attributes.url,
-              currentIndex: i
+              currentIndex: i,
+              albumName: topSongs[i].attributes.albumName,
+              releaseDate: topSongs[i].attributes.releaseDate
             }
             let itunesSong = new Song(songConvert);
             
