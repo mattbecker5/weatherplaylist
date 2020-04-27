@@ -40,8 +40,8 @@ export class PickCategoryComponent implements OnInit {
     this.pickSelectedGenreService.genresSelected$.subscribe( genres => this.pickGenres = genres);
   }
 
-  public enableSubmitButton(){
-    let element = document.getElementById('submit-picked');
-    element.classList.remove('submit-button-hidden');
-  }
+  // public enableSubmitButton(){
+  //   let element = document.getElementById('submit-picked');
+  //   element.classList.remove('submit-button-hidden');
+  // }
 }
