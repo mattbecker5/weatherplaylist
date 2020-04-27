@@ -6,6 +6,10 @@ export class Song {
     previewUrl: string;
     trackViewUrl: string;
     currentIndex: number;
+    albumName: string;
+    releaseDate: string;
+
+
 
     constructor(song:any){
         this.trackId = song.trackId;
@@ -15,5 +19,7 @@ export class Song {
         this.previewUrl = song.previewUrl;
         this.trackViewUrl = song.trackViewUrl;
         this.currentIndex = song.currentIndex;
+        this.albumName = song.albumName;
+        this.releaseDate = song.releaseDate;
     }
 }
