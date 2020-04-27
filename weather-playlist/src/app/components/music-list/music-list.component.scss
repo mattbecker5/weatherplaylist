@@ -12,10 +12,24 @@
     margin: 0px 0px 0px 20px;
 }
 
+.search-div-header{
+    display: flex;
+}
+
 .title-header {
     width: 100%;
     color: #2abc6b;
     border-bottom: 1px solid white;
+}
+
+.details-header {
+    // margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 20px;
+    height: auto;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    color: #2abc6b;
+    width: 100%;
 }
 
 .search-div {
