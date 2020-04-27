@@ -6,6 +6,7 @@ import { AppleMusicChart } from 'src/app/models/apple-music-chart';
 import { AppleMusicSong } from 'src/app/models/apple-music-song';
 import { PickSelectedGenreService } from 'src/app/services/pick-selected-genre.service';
 import { Genre } from 'src/app/models/genre';
+import { SongService } from 'src/app/services/song.service';
 
 
 @Component({
@@ -17,14 +18,23 @@ export class MusicListComponent implements OnInit {
 
   public songs: Song[] = [];
   public pickGenres: Genre[] = [];
+  public song: Song;
   
   constructor(
     public app: AppComponent,
     public generateMusicSearch: GenerateMusicSearchService,
-    private pickSelectedGenreService: PickSelectedGenreService
+    private pickSelectedGenreService: PickSelectedGenreService,
+    public songService: SongService
     ) { }
 
   ngOnInit(): void {
+
+    // Getting title for song from songService
+    this.songService.songSelected$.subscribe(track => {
+    this.song = track;
+    });
+
+    // Generating song from genres picked
     this.generateMusicSearch.songsSelected$.subscribe(songs => this.songs = songs);
 
     this.pickSelectedGenreService.genresSelected$.subscribe( genres => {
