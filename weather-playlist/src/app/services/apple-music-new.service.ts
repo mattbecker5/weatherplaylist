@@ -54,7 +54,7 @@ export class AppleMusicNewService {
           if (queue.previousPlayableItem) {
             // console.log(queue.previousPlayableItem);
           }
-          this.music.play();
+          // this.music.play();
         });
   }
 
