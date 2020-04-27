@@ -1,12 +1,13 @@
 <div class="media-player-container">
     <div class="hoverSearch-div1" *ngIf="song">Title: {{song.trackName}}</div>
     <div class="media-player-buttons">
-        <button class="button" (click)="playSong()"><img src="../../../assets/images/playButton.png"></button>
-        <button class="button" (click)="pauseSong()"><img src="../../../assets/images/pauseButton.png"></button>
-        <!-- <button data-apple-music-pause class="button"></button> -->
-        <!-- <button data-apple-music-play class="button"></button> -->
-        <!-- <button data-apple-music-skip-to-next-item class="button"></button> -->
-        <!-- <button data-apple-music-skip-to-previous-item class="button"></button> -->
+        <!-- <button class="button" (click)="playSong()"><img src="../../../assets/images/playButton.png"></button> -->
+        <!-- <button class="button" (click)="pauseSong()"><img src="../../../assets/images/pauseButton.png"></button> -->
+        <button data-apple-music-pause class="button"></button>
+        <button data-apple-music-play class="button"></button>
+        <button data-apple-music-skip-to-next-item class="button"></button>
+        <button data-apple-music-skip-to-previous-item class="button"></button>
+        
         <!-- <audio controls *ngIf="song">
             <source src="{{song.previewUrl}}" type="audio/ogg">
             <source src="{{song.previewUrl}}" type="audio/mpeg">

@@ -35,37 +35,38 @@ export class MusicListComponent implements OnInit {
         console.log(genre.name)
 
         this.app.musicGlobal.getChartsByTypeAndGenre(['songs'], genre.id.toString()).then(results => {
-          // console.log(results);
+          
           let charts: AppleMusicChart[] = [];
           let topSongs: AppleMusicSong[] = [];
     
           results.forEach(topChart => {
-            // console.log(song)
             charts.push(new AppleMusicChart(topChart));
           });
     
           charts.forEach(elem =>{
-            console.log(elem);
             elem.data.forEach(song =>{
               topSongs.push(new AppleMusicSong(song));
             })
           })
     
-          topSongs.forEach(song => {
-            let artworkURL1 = song.attributes.artwork.url.replace("{w}", "100");
+          for(let i = 0; i < topSongs.length; i++){
+            let artworkURL1 = topSongs[i].attributes.artwork.url.replace("{w}", "100");
             let artworkURL2 = artworkURL1.replace("{h}", "100");
             let songConvert = {
-              trackId: song.id,
-              trackName: song.attributes.name,
-              artistName: song.attributes.artistName,
+              trackId: topSongs[i].id,
+              trackName: topSongs[i].attributes.name,
+              artistName: topSongs[i].attributes.artistName,
               artworkUrl100: artworkURL2,
-              previewUrl: song.attributes.previews[0].url,
-              trackViewUrl: song.attributes.url
+              previewUrl: topSongs[i].attributes.previews[0].url,
+              trackViewUrl: topSongs[i].attributes.url,
+              currentIndex: i
             }
             let itunesSong = new Song(songConvert);
             this.songs.push(itunesSong);
-            // console.log(itunesSong);
-          });
+          }
+
+          //load all generated songs to queue here
+          this.app.musicGlobal.setSongsToQueue(this.songs);
         });
       });
     });
