@@ -41,6 +41,12 @@ export class AppleMusicNewService {
     this.playSongByIndex(index);
   }
 
+  public setVolume(volume: number){
+    let player: MusicKit.Player = this.music.player;
+    player.volume = volume;
+    console.log(player.volume);
+  }
+
   public playSongByIndex(index: number){
     let player: MusicKit.Player = this.music.player;
     player.changeToMediaAtIndex(index);
@@ -53,21 +59,21 @@ export class AppleMusicNewService {
 
   public setSongsToQueue(itemsObj: Song[]){
 
-      let items: MusicKit.MediaItem[] = [];
+    let items: MusicKit.MediaItem[] = [];
 
-      itemsObj.forEach(song => {
-        items.push(new MusicKit.MediaItem({attributes:"", id:song.trackId.toString(), type:"song"}))
-      });
+    itemsObj.forEach(song => {
+      items.push(new MusicKit.MediaItem({attributes:"", id:song.trackId.toString(), type:"song"}))
+    });
 
-        this.music.setQueue({items}).then(queue => {
-          if (queue.nextPlayableItem) {
-            // console.log(queue.nextPlayableItem.title);
-          }
-          if (queue.previousPlayableItem) {
-            // console.log(queue.previousPlayableItem);
-          }
-          // this.music.play();
-        });
+    this.music.setQueue({items}).then(queue => {
+      if (queue.nextPlayableItem) {
+        // console.log(queue.nextPlayableItem.title);
+      }
+      if (queue.previousPlayableItem) {
+        // console.log(queue.previousPlayableItem);
+      }
+      // this.music.play();
+    });
   }
 
   public play(){
