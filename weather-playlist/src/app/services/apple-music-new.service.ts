@@ -1,7 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-import { AppleMusicSong } from '../models/apple-music-song';
 import { AppleMusicChart } from '../models/apple-music-chart';
 import { Song } from '../models/song';
 // declare const MusicKit:any;
@@ -32,6 +29,12 @@ export class AppleMusicNewService {
     });
 
     this.music = MusicKit.getInstance();
+
+
+  }
+
+  public getAholdOfMediaState(){
+    return this.music;
   }
 
   public playSongById(songId: number){
@@ -39,6 +42,12 @@ export class AppleMusicNewService {
     const item: MusicKit.MediaItem = new MusicKit.MediaItem({attributes:{}, id:songId.toString(), type:"song"});
     let index = queue.indexForItem(songId.toString());
     this.playSongByIndex(index);
+  }
+
+  public setVolume(volume: number){
+    let player: MusicKit.Player = this.music.player;
+    player.volume = volume;
+    console.log(player.volume);
   }
 
   public playSongByIndex(index: number){
@@ -53,21 +62,21 @@ export class AppleMusicNewService {
 
   public setSongsToQueue(itemsObj: Song[]){
 
-      let items: MusicKit.MediaItem[] = [];
+    let items: MusicKit.MediaItem[] = [];
 
-      itemsObj.forEach(song => {
-        items.push(new MusicKit.MediaItem({attributes:"", id:song.trackId.toString(), type:"song"}))
-      });
+    itemsObj.forEach(song => {
+      items.push(new MusicKit.MediaItem({attributes:"", id:song.trackId.toString(), type:"song"}))
+    });
 
-        this.music.setQueue({items}).then(queue => {
-          if (queue.nextPlayableItem) {
-            // console.log(queue.nextPlayableItem.title);
-          }
-          if (queue.previousPlayableItem) {
-            // console.log(queue.previousPlayableItem);
-          }
-          // this.music.play();
-        });
+    this.music.setQueue({items}).then(queue => {
+      if (queue.nextPlayableItem) {
+        // console.log(queue.nextPlayableItem.title);
+      }
+      if (queue.previousPlayableItem) {
+        // console.log(queue.previousPlayableItem);
+      }
+      // this.music.play();
+    });
   }
 
   public play(){

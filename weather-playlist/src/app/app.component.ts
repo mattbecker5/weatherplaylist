@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import { WeatherApiService } from './services/weather-api.service';
-import { WeatherEvent } from './models/weather-event';
 import { Router } from '@angular/router';
 import { AppleMusicNewService } from './services/apple-music-new.service';
-import { AppleMusicChart } from './models/apple-music-chart';
-import { AppleMusicSong } from './models/apple-music-song';
+
 
 @Component({
   selector: 'app-root',
