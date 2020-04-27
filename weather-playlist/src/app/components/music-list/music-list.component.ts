@@ -38,10 +38,12 @@ export class MusicListComponent implements OnInit {
     this.generateMusicSearch.songsSelected$.subscribe(songs => this.songs = songs);
 
     this.pickSelectedGenreService.genresSelected$.subscribe( genres => {
+      console.log("music-list component: " + genres.length);
+      this.songs = [];
       this.pickGenres = genres
 
       this.pickGenres.forEach(genre => {
-        console.log(genre.name)
+        // console.log(genre.name)
 
         this.app.musicGlobal.getChartsByTypeAndGenre(['songs'], genre.id.toString()).then(results => {
           

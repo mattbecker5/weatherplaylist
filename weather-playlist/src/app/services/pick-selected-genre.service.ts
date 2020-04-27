@@ -33,5 +33,6 @@ export class PickSelectedGenreService {
       }
     }
     this.pickedGenre.splice(index,1);
+    this.selectedGenresSource.next(this.pickedGenre);
   }
 }
