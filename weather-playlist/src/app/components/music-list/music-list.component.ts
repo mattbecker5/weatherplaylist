@@ -30,7 +30,6 @@ export class MusicListComponent implements OnInit {
     this.pickSelectedGenreService.genresSelected$.subscribe( genres => {
       this.pickGenres = genres
 
-      console.log(this.pickGenres);
       this.pickGenres.forEach(genre => {
         console.log(genre.name)
 
@@ -39,16 +38,19 @@ export class MusicListComponent implements OnInit {
           let charts: AppleMusicChart[] = [];
           let topSongs: AppleMusicSong[] = [];
     
+          //converting API respnose to ApplMusicChart Class Objects
           results.forEach(topChart => {
             charts.push(new AppleMusicChart(topChart));
           });
     
+          //converting AppleMusicChart Objects to AppleMusicSong Objects
           charts.forEach(elem =>{
             elem.data.forEach(song =>{
               topSongs.push(new AppleMusicSong(song));
             })
           })
-    
+
+          //converting AppleMusicSong objects to Song class to feed into this.song array
           for(let i = 0; i < topSongs.length; i++){
             let artworkURL1 = topSongs[i].attributes.artwork.url.replace("{w}", "100");
             let artworkURL2 = artworkURL1.replace("{h}", "100");
@@ -62,6 +64,8 @@ export class MusicListComponent implements OnInit {
               currentIndex: i
             }
             let itunesSong = new Song(songConvert);
+            
+            //pushing to this.songs array here
             this.songs.push(itunesSong);
           }
 
