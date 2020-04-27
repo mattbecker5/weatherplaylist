@@ -29,6 +29,6 @@ export class MusicCardComponent implements OnInit {
 
   public onClickSong(){
     //playing song by index
-    this.app.musicGlobal.playSongByIndex(this.song.trackId.toString(), this.song.currentIndex);
+    this.app.musicGlobal.playSongById(this.song.trackId);
   }
 }

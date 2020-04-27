@@ -6,6 +6,7 @@ import { UserService } from 'src/app/services/user.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import { SearchHistory } from 'src/app/models/search-history';
 import { AppleMusicNewService } from 'src/app/services/apple-music-new.service';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-nav',
@@ -20,6 +21,7 @@ export class NavComponent implements OnInit {
   public currentPath: string;
 
   constructor(
+    public app: AppComponent,
     private appleMusicAPIService: AppleMusicAPIService, 
     private generateMusicSearch: GenerateMusicSearchService, 
     public userService: UserService, 
@@ -31,12 +33,27 @@ export class NavComponent implements OnInit {
 
   //function to call getAll() and pass the search term that user entered
   public searchButton(term: string){
-    console.log("Searching for " + this.searchTerm); //logging to console
+    // console.log("Searching for " + this.searchTerm); //logging to console
+
+    //getting the length of songs in queue
+    // let queueLength = this.app.musicGlobal.getCurrentQueueLength();
+    // console.log("queue lenght: " + queueLength)
+
+
     this.appleMusicAPIService.getSongs(this.searchTerm)
     .subscribe( songs => {
+
+      //update queue index on each searched song
+      // songs.forEach(song => {
+      //   song.currentIndex = queueLength;
+      //   queueLength = queueLength + 1;
+      // });
+
+      //save seached song list to this.songs
       this.songs = songs;
+
+      //sending seached song list to make avaiable to other components
       this.generateMusicSearch.createSongList(this.songs);
-      console.log(this.songs);
     });
 
     this.userService.user$.subscribe( data => {

@@ -37,8 +37,12 @@ export class MusicListComponent implements OnInit {
 
     });
 
-    // Generating song from genres picked
-    this.generateMusicSearch.songsSelected$.subscribe(songs => this.songs = songs);
+    // Generating song from search
+    this.generateMusicSearch.songsSelected$.subscribe(songs => {
+      //load all generated songs to queue here
+      this.songs = songs
+      this.app.musicGlobal.setSongsToQueue(this.songs);
+    });
 
     this.pickSelectedGenreService.genresSelected$.subscribe( genres => {
       console.log("music-list component: " + genres.length);
@@ -66,6 +70,10 @@ export class MusicListComponent implements OnInit {
           })
 
           //converting AppleMusicSong objects to Song class to feed into this.song array
+
+          // let queueLength = this.app.musicGlobal.getCurrentQueueLength();
+          // console.log("queue lenght: " + queueLength)
+
           for(let i = 0; i < topSongs.length; i++){
             let artworkURL1 = topSongs[i].attributes.artwork.url.replace("{w}", "100");
             let artworkURL2 = artworkURL1.replace("{h}", "100");
@@ -76,7 +84,6 @@ export class MusicListComponent implements OnInit {
               artworkUrl100: artworkURL2,
               previewUrl: topSongs[i].attributes.previews[0].url,
               trackViewUrl: topSongs[i].attributes.url,
-              currentIndex: i,
               albumName: topSongs[i].attributes.albumName,
               releaseDate: topSongs[i].attributes.releaseDate
             }

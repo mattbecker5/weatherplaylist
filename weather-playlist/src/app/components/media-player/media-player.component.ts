@@ -34,4 +34,12 @@ export class MediaPlayerComponent implements OnInit {
     this.app.musicGlobal.pause();
   }
 
+  public nextSong(){
+    this.app.musicGlobal.next();
+  }
+
+  public previousSong(){
+    this.app.musicGlobal.previous();
+  }
+
 }

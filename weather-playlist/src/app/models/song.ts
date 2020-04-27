@@ -5,7 +5,6 @@ export class Song {
     artworkUrl100: string;
     previewUrl: string;
     trackViewUrl: string;
-    currentIndex: number;
     albumName: string;
     releaseDate: string;
 
@@ -18,7 +17,6 @@ export class Song {
         this.artworkUrl100 = song.artworkUrl100;
         this.previewUrl = song.previewUrl;
         this.trackViewUrl = song.trackViewUrl;
-        this.currentIndex = song.currentIndex;
         this.albumName = song.albumName;
         this.releaseDate = song.releaseDate;
     }
