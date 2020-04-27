@@ -29,6 +29,8 @@ export class AppleMusicNewService {
     });
 
     this.music = MusicKit.getInstance();
+
+    //set default value
     this.setVolume(.5);
 
   }
