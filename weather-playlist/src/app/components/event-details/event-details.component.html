@@ -42,7 +42,7 @@
             </select>
         </div>
         <div class="event-details-border-left"></div>
-        <div>
+        <div class="header-date-div2">
             <select class="event-details-select-input-month" (input)="month=$event.target.value" name="month">
                 <option value="">Month:</option>
                 <option value="1">January</option>
@@ -60,7 +60,7 @@
             </select>
         </div>
         <div class="event-details-border-middle"></div>
-        <div>
+        <div class="header-date-div3">
             <select class="event-details-select-input-year" (input)="year=$event.target.value" name="year">
                 <option value="">Year:</option>
                 <option value="2020">2020</option>
@@ -77,7 +77,7 @@
             </select>
         </div>
         <div class="event-details-border-right"></div>
-        <div>
+        <div class="header-date-div4">
             <input (click)="getDateForEvents(date,month,year)" type="submit" value="Submit"
                 class="event-details-select-input-submit">
         </div>
@@ -121,7 +121,7 @@
                         No events for day yet.
                         <br>Please pick a day you would like to get more details of.
                     </div>
-                    <div class="event-weather">
+                    <div class="no-event-weather">
                         Temperature: 95F
                     </div>
                 </ng-template>
