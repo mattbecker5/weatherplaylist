@@ -195,7 +195,7 @@ nav {
 }
 
 /* Small devices (portrait tablets and large phones, 680px and up) */
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 887px){
    .drop-down-menu{
        display: none;
    }
@@ -209,7 +209,7 @@ nav {
 }
 
 /* Small devices (portrait tablets and large phones, 856px and down) */
-@media only screen and (max-width: 856px) {
+@media only screen and (max-width: 886px) {
     .hamburger-menu-button {
         display: block;
     }
