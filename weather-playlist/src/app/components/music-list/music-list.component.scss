@@ -8,7 +8,8 @@
 }
 
 .search-header {
-    width: 100%;
+    max-width: 250px;
+    min-width: 100px;
     margin: 0px 0px 0px 20px;
 }
 
@@ -21,7 +22,8 @@
 
 .title-header {
     // background-color: orange;
-    width: 50%;
+    max-width: 250px;
+    min-width: 100px;
     color: #2abc6b;
     border-bottom: 1px solid white;
     white-space: nowrap;
