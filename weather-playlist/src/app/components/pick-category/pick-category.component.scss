@@ -49,8 +49,6 @@
     margin: 10px, 10px, 10px, 10px;
 }
 
-
-
 .list-pick-head{
     border-bottom: 1px solid black;
     width: 100%;
@@ -84,5 +82,17 @@
     margin: 10px 5px 0px 0px;
     color: white; 
     font-size: 12px;
+}
+
+/* Extra small devices (phones, 680px and down) */
+@media only screen and (max-width: 680px) {
+    #categories-deck{
+        margin: 0px 0px 10px 5px;
+    }
+
+    .categories-list-pick{
+        margin: 0px 0px 10px 5px;
+    }
+
 }
 
