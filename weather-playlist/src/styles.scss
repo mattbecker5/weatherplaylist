@@ -116,12 +116,17 @@ ul {
     .main {
         flex: 70%;
         background-color: white;
-        padding: 15px 12px 15px 15px;
+        padding: 15px 0px 15px 0px;
     }
 }
 
 /* Extra small devices (phones, 322px and up, 680px and down) */
 @media only screen and (min-width: 322px) and (max-width: 680px) {
+    .main {
+        flex: 70%;
+        background-color: white;
+        padding: 15px 0px 15px 0px;
+    }
     .row, .navbar {   
         flex-direction: column;
     }

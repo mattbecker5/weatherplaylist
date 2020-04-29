@@ -16,9 +16,9 @@
 .search-div-header{
     // background-color: yellow;
     display: flex;
-    flex: 0 0 250px;
+    // flex: 0 0 250px;
     flex-wrap: nowrap;
-    margin: 0px 50px 10px 10px;
+    margin: 0px 0px 10px 10px;
     background-color: #1f2833;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
@@ -28,8 +28,8 @@
 
 .search-div {
     padding: 10px 20px;
-    margin: 0px 50px 10px 10px;
-    flex: 0 0 250px;
+    margin: 0px 0px 10px 10px;
+    // flex: 0 0 250px;
     background-color: #1f2833;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
@@ -44,7 +44,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     padding-top: 10px;
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
 .font-header{
@@ -61,10 +61,21 @@
 
 /* Extra small devices (phones, 680px and down) */
 @media only screen and (max-width: 680px) {
-   
-    .search-header  h2{
-        margin: 0px 0px 20px 0px;
+    .search-header{
+        margin: 0px 5px 10px 5px;
     }
+   
+    .search-div-header{
+        margin: 0px 5px 10px 5px;
+    }
+
+    .search-div {
+        margin: 0px 5px 10px 5px;
+    }
+
+    // .search-header  h2{
+    //     margin: 0px 0px 20px 0px;
+    // }
     .details{
         width: 300px;
     }
