@@ -25,7 +25,7 @@ img{
     background-repeat: no-repeat;
     background-size: 90px 100px;
     background-color: rgba(156, 156, 156, 0.4); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
   }
 
@@ -43,6 +43,6 @@ img{
     background-repeat: no-repeat;
     background-size: 90px 100px;
     background-color: rgba(156, 156, 156, 0.4); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
 }
