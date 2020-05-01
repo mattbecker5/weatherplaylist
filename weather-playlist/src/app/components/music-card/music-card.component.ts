@@ -13,16 +13,39 @@ export class MusicCardComponent implements OnInit {
 
   @Input() song: Song;
 
+  public status: Boolean = false;
+
   constructor(
     private app: AppComponent,
     public songService: SongService
     ) {}
 
   ngOnInit(): void {
+
+    let state = this.app.musicGlobal.getAholdOfMediaState();
+    state.addEventListener(MusicKit.Events.playbackStateDidChange, () => {
+      
+      let player: MusicKit.Player = state.player;
+      let nowPlayingItem: MusicKit.MediaItem;
+      nowPlayingItem = player.nowPlayingItem;
+      // console.log("going to switch color to this: " + nowPlayingItem.id);
+      if(nowPlayingItem.id == this.song.trackId.toString()){
+        this.status = true;
+      } else {
+        this.status = false;
+      }
+    });
+
   }
 
   public over() {
     this.songService.setSong(this.song);
+    this.status = true;
+  }
+
+  public leaveHover(){
+    this.status = false;
+    console.log("am i leaving");
   }
 
   public onClickSong(){
