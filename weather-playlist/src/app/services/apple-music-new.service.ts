@@ -42,7 +42,6 @@ export class AppleMusicNewService {
   public playSongById(songId: number){
     this.music.authorize().then(token => token.charCodeAt(0));
     const queue: MusicKit.Queue = this.music.player.queue;
-    const item: MusicKit.MediaItem = new MusicKit.MediaItem({attributes:{}, id:songId.toString(), type:"song"});
     let index = queue.indexForItem(songId.toString());
     this.playSongByIndex(index);
   }

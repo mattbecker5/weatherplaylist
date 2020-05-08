@@ -1,3 +1,48 @@
+.container{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
 img{
     margin: 0px 7px 5px 0px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.active {
+    position: absolute; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100px; /* Full width (cover the whole page) */
+    height: 100px; /* Full height (cover the whole page) */
+    // top: 0; 
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    background-image: url("../../../assets/images/playing_music_gif.gif");
+    background-repeat: no-repeat;
+    background-size: 90px 100px;
+    background-color: rgba(156, 156, 156, 0.4); /* Black background with opacity */
+    z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+
+
+.normal{
+    position: absolute; /* Sit on top of the page content */
+    display: none;
+    width: 100px; /* Full width (cover the whole page) */
+    height: 100px; /* Full height (cover the whole page) */
+    // top: 0; 
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    background-image: url("../../../assets/images/playing_music_gif.gif");
+    background-repeat: no-repeat;
+    background-size: 90px 100px;
+    background-color: rgba(156, 156, 156, 0.4); /* Black background with opacity */
+    z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
 }
