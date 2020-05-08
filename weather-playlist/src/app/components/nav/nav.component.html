@@ -37,14 +37,14 @@
         <app-weather-display-small></app-weather-display-small>
     </div>
 
-    <!-- <div class="searchSong-div-outer" *ngIf="getPath() === '/musicapp'"> -->
+    <div class="searchSong-div-outer" *ngIf="getPath() === '/musicapp'">
         <div class="searchSong-div">
             <input class="input-field" type="text" placeholder="Search Music.." (input)="searchTerm=$event.target.value">
         </div>
         <div class="searchSong-div-submit">
             <button type="submit" (click)="searchButton(searchTerm)">Search</button>
         </div>
-    <!-- </div> -->
+    </div>
 
 </nav>
 
