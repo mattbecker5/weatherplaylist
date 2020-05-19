@@ -71,3 +71,12 @@
         </ng-template>
     </ul>
 </div>
+
+<div class="phone-search-outer" *ngIf="getPath() === '/musicapp'">
+    <div class="phone-search-div">
+        <input class="input-field" type="text" placeholder="Search Music.." (input)="searchTerm=$event.target.value">
+    </div>
+    <div class="phone-search-submit">
+        <button type="submit" (click)="searchButton(searchTerm)">Search</button>
+    </div>
+</div>

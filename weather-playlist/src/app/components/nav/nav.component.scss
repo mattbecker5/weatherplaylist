@@ -9,6 +9,7 @@ nav {
     
 }
 
+// Search bar for music page
 .searchSong-div{
     position: relative;
     padding: 5px;
@@ -23,6 +24,79 @@ nav {
     padding: 10px;
 }
 
+.searchSong-div-submit button[type=submit]{
+    background-color: #379863;
+    border: none;
+    color: white;
+    padding: 13px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+.searchSong-div input{
+    margin-top: 10px;
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 10px;
+}
+
+
+// Search bar for music page in small devices 
+.phone-search-outer{
+    display: flex;
+    border-bottom: 1px solid white;
+    background-color: #f1f1f1;
+    flex: 15%;
+}
+
+.phone-search-div{
+    display: none;
+    position: relative;
+    padding: 5px;
+    left: 8%;
+}
+
+.phone-search-submit{
+    display: none;
+    position: relative;
+    padding: 10px;
+    left: 8%;
+}
+
+.phone-search-submit button[type=submit]{
+    background-color: #379863;
+    border: none;
+    color: white;
+    padding: 13px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+.phone-search-div input{
+    margin-top: 10px;
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 10px;
+}
+
+
+//Logo on nav bar
 .nav-logo{
     min-width: 75px;
     max-width: 90px;
@@ -74,33 +148,6 @@ nav {
 .nav-links li .active {
     background-color: #379863;
     color: white;
-}
-
-.searchSong-div input {
-    margin-top: 10px;
-}
-
-.searchSong-div-submit button[type=submit]{
-    background-color: #379863;
-    border: none;
-    color: white;
-    padding: 13px 20px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
-}
-
-.searchSong-div input{
-    width: 100%;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    padding: 12px 20px 12px 10px;
 }
 
 .avatar {
@@ -180,6 +227,14 @@ nav {
         display: none;
     }
 
+    .phone-search-div{
+        display: block;
+    }
+
+    .phone-search-submit{
+        display: block;
+    }
+
     .avatar-div {
         display: none;
     }
@@ -189,30 +244,26 @@ nav {
 /*  Extra small devices, Small devices (phones, 322px and up, 680px and down) */
 @media only screen and (min-width: 322px) and (max-width: 680px){
 
-    .nav-logo {
-        
-    }
-
     .nav-logo img {
         margin: 0px 0px 0px 0px;
     }
 }
 
-/* Small devices (portrait tablets and large phones, 680px and up) */
+/* Small devices (portrait tablets and large phones, 887px and up) */
 @media only screen and (min-width: 887px){
    .drop-down-menu{
        display: none;
    }
 }
 
-/* Extra small devices (phones, 681px and up, 922px and down) */
+/* Small and medium devices (phones, 681px and up, 922px and down) */
 @media only screen and (min-width: 681px) and (max-width: 922px) {
     .avatar-div {
         display: none;
     }
 }
 
-/* Small devices (portrait tablets and large phones, 856px and down) */
+/* Medium devices (portrait tablets and large phones, 886px and down) */
 @media only screen and (max-width: 886px) {
     .hamburger-menu-button {
         display: block;
