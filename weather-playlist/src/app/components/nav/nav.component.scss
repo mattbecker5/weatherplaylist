@@ -21,7 +21,7 @@ nav {
 
 .searchSong-div-submit{
     position: relative;
-    padding: 10px;
+    padding: 12px;
 }
 
 .searchSong-div-submit button[type=submit]{
@@ -67,7 +67,7 @@ nav {
 .phone-search-submit{
     display: none;
     position: relative;
-    padding: 10px;
+    padding: 12px 0px;
     left: 8%;
 }
 
@@ -201,6 +201,13 @@ nav {
     background-color: #1f2833;
     top: 0;
     width: 100%;
+}
+
+/* Iphone 5 */
+@media only screen and (max-width: 322px){
+    .phone-search-div{
+        width: 50%;
+    }
 }
 
 /* Extra small devices (phones, 680px and down) */
