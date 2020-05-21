@@ -1,13 +1,11 @@
 <div class="outer">
     <div class="zip-input" [ngClass]="{'hide' : hideShowZip}">
-        <!-- *ngIf="getPath() === '/musicapp'" (input)=""-->
         <input class="input-field" (input)="zip=$event.target.value" type="text" placeholder="Zip.." >
     </div>
     <div class="go-submit-zip-btn" [ngClass]="{'hide' : hideShowZip}">
         <button type="submit" (click)="submitZip(zip)">Go</button>
     </div>
 
-    <!-- [ngClass]="{'myCSSclass' : hideShowTemp}" -->
     <div class="inner-left" [ngClass]="{'hide' : hideShowTemp}" (click)="OnClickTempAndClouds()">
         {{temp}} &deg;
     </div>
