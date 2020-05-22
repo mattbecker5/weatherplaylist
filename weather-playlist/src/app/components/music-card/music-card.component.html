@@ -1,5 +1,5 @@
 <div class="container">
     <div [ngClass]="status ? 'active' : 'nornal'"></div>
-    <img src="{{song.artworkUrl100}}" alt="{{song.trackName}}" title="{{song.trackName}}" (click)="onClickSong()">
+    <img src="{{song.artworkUrl100}}" alt="{{song.trackName}}" title="{{song.trackName}}" on-mouseover='over()' (click)="onClickSong()">
 </div>
 

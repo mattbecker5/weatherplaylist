@@ -40,12 +40,10 @@ export class MusicCardComponent implements OnInit {
 
   public over() {
     this.songService.setSong(this.song);
-    this.status = true;
   }
 
   public leaveHover(){
     this.status = false;
-    console.log("am i leaving");
   }
 
   public onClickSong(){
