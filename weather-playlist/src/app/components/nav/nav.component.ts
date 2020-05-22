@@ -16,6 +16,7 @@ import { AppComponent } from 'src/app/app.component';
 export class NavComponent implements OnInit {
 
   public hideShowMenu: boolean = false;
+  public hideShowMenuSearch: boolean = false;
   public searchTerm: string;
   songs: Song[] = [];
   public currentPath: string;
@@ -72,5 +73,10 @@ export class NavComponent implements OnInit {
   public showHideMenu(){
     this.hideShowMenu = !this.hideShowMenu;
     console.log("Drop down menu" + this.hideShowMenu);
+  }
+
+  public showHideMenuSearch(){
+    this.hideShowMenuSearch = !this.hideShowMenuSearch;
+    console.log("Show search bar" + this.hideShowMenuSearch);
   }
 }

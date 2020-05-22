@@ -5,6 +5,10 @@
     <button class="hamburger-menu-button" (click)="showHideMenu()">
         <i class="fas fa-bars" style="color: white; font-size: 22px; margin-right: 5px;"></i>
     </button>
+
+    <button class="search-phone-button" (click)="showHideMenuSearch()" *ngIf="getPath() === '/musicapp'">
+        <i class="fas fa-search" style="color: white; font-size: 22px; margin-right: 5px;"></i>
+    </button>
     
     <div class="nav-links">
         <ul>
@@ -37,14 +41,14 @@
         <app-weather-display-small></app-weather-display-small>
     </div>
 
-    <!-- <div class="searchSong-div-outer" *ngIf="getPath() === '/musicapp'"> -->
+    <div class="searchSong-div-outer" *ngIf="getPath() === '/musicapp'">
         <div class="searchSong-div">
             <input class="input-field" type="text" placeholder="Search Music.." (input)="searchTerm=$event.target.value">
         </div>
         <div class="searchSong-div-submit">
             <button type="submit" (click)="searchButton(searchTerm)">Search</button>
         </div>
-    <!-- </div> -->
+    </div>
 
 </nav>
 
@@ -70,4 +74,13 @@
             </li>
         </ng-template>
     </ul>
+</div>
+
+<div class="phone-search-outer" *ngIf="hideShowMenuSearch">
+    <div class="phone-search-div">
+        <input class="input-field" type="text" placeholder="Search Music.." (input)="searchTerm=$event.target.value">
+    </div>
+    <div class="phone-search-submit">
+        <button type="submit" (click)="searchButton(searchTerm)">Search</button>
+    </div>
 </div>

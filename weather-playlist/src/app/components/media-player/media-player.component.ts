@@ -76,4 +76,8 @@ export class MediaPlayerComponent implements OnInit {
     console.log('volume', e);
     this.app.musicGlobal.setVolume(e);
   }
+
+  public likeSong(){
+    console.log("Saving to favorite songs playlist.");
+  }
 }
