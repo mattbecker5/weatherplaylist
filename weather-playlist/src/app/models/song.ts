@@ -7,6 +7,8 @@ export class Song {
     trackViewUrl: string;
     albumName: string;
     releaseDate: string;
+    keyOfSong: string;
+    bpm: number;
 
 
 
@@ -19,5 +21,7 @@ export class Song {
         this.trackViewUrl = song.trackViewUrl;
         this.albumName = song.albumName;
         this.releaseDate = song.releaseDate;
+        //key of song here
+        //bpm here
     }
 }
