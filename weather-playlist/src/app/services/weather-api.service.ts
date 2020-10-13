@@ -10,8 +10,6 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class WeatherApiService {
 
-  
-
   constructor(private http: HttpClient) { }
 
   /** GET songs from the server */
