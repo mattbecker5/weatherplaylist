@@ -11,7 +11,11 @@ export class SpotifyService {
     }
     
     public GetSong(){
-        this.http.get("https://api.spotify.com/v1/browse/new-releases").subscribe((data) => {
+        const headers = {
+            
+        }
+        //this.http.get("https://api.spotify.com/v1/browse/new-releases").subscribe((data) => {
+        this.http.get("https://api.spotify.com/v1/search").subscribe((data) => {
             console.log("yay");
             console.log(data);
         }, error =>{
