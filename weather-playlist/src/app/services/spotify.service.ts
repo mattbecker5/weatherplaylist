@@ -43,7 +43,7 @@ export class SpotifyService {
                 "Content-Type": "application/x-www-form-urlencoded"
             })
         };
-        const BODY = {
+        const BODY: any = {
             "grant_type": "authorization_code",
             "code": this.code,
             "redirect_uri": this.redirect_uri,
@@ -51,11 +51,11 @@ export class SpotifyService {
 
         debugger
         this.http.post(url, BODY, HEADERS).subscribe((data) => {
+            console.log(data);
             debugger
         }, error => {
-            debugger
-            console.log("post error");
             console.log(error);
+            debugger
         });
     }
 
