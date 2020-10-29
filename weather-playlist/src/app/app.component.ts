@@ -11,15 +11,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
 
-  public musicGlobal: AppleMusicNewService;
-  public spotify: SpotifyService;
-    public spotify_url: string = "123";
+    public musicGlobal: AppleMusicNewService;
+    public spotify: SpotifyService;
+    //public spotify_url: string = "123";
   
   //constructor(public router: Router, private appleNew: AppleMusicNewService, private http: HttpClient){
   constructor(public router: Router, private http: HttpClient){
 
   }
-
 
   //NOTE: the appleMusicApi service is busted, i think the token is old
   ngOnInit(){
