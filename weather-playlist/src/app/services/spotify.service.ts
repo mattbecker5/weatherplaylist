@@ -49,26 +49,33 @@ export class SpotifyService {
             .append("code", this.code)
             .append("redirect_uri", this.redirect_uri);
 
-        const BODY2 = {
-            "code":this.code
-        };
+        const BODY2 = new HttpParams()
+            .append("grant_type", "authorization_code")
+            .append("code", this.code)
+            .append("redirect_uri", this.redirect_uri)
+            .append("client_id", this.client_id)
+            .append("client_secret", this.client_secret);
 
-        this.http.get("http://localhost:3000/").subscribe((data) => {
-            debugger
-        }, error =>{
-            debugger
-        });
-        
-        //NOTE: might need to do it this way instead?
-        this.http.post("http://localhost:3000/spotify", BODY).subscribe((data) => {
-            debugger
-        }, error => {
-            debugger
-        });
+        debugger
+
+        //this.http.get("http://localhost:3000/").subscribe((data) => {
+        //    debugger
+        //}, error =>{
+        //    debugger
+        //});
+        //
+        ////NOTE: might need to do it this way instead?
+        //this.http.post("http://localhost:3000/spotify", BODY).subscribe((data) => {
+        //    debugger
+        //}, error => {
+        //    debugger
+        //});
 
         //NOTE if we get the access token back this way, this is fine too
-        this.http.post(url, BODY, HEADERS).subscribe((data) => {
+        this.http.post(url, BODY2).subscribe((data) => {
+            this.token = data.access_token;
             debugger
+            this.GetPlaylist();
         }, error => {
             debugger
         });
@@ -80,6 +87,22 @@ export class SpotifyService {
 
     public GetToken(): string{
         return this.token;
+    }
+
+    public GetPlaylist(){
+        const HEADERS = { 
+            headers: new HttpHeaders( { 
+                    "Accept": "application/json",
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + this.token,
+                })
+        };
+        debugger
+        this.http.get("https://api.spotify.com/v1/tracks/6rPO02ozF3bM7NnOV4h6s2", HEADERS).subscribe((data) => {
+            debugger
+        }, error => {
+            debugger
+        });
     }
     
     public GetSong(){
