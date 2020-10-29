@@ -49,11 +49,27 @@ export class SpotifyService {
             .append("code", this.code)
             .append("redirect_uri", this.redirect_uri);
 
-        this.http.post(url, BODY, HEADERS).subscribe((data) => {
-            console.log(data);
+        const BODY2 = {
+            "code":this.code
+        };
+
+        this.http.get("http://localhost:3000/").subscribe((data) => {
+            debugger
+        }, error =>{
+            debugger
+        });
+        
+        //NOTE: might need to do it this way instead?
+        this.http.post("http://localhost:3000/spotify", BODY).subscribe((data) => {
             debugger
         }, error => {
-            console.log(error);
+            debugger
+        });
+
+        //NOTE if we get the access token back this way, this is fine too
+        this.http.post(url, BODY, HEADERS).subscribe((data) => {
+            debugger
+        }, error => {
             debugger
         });
     }
