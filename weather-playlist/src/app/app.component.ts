@@ -29,7 +29,6 @@ export class AppComponent {
         const CODE = urlParams.get('code');
 
         if(CODE){
-            debugger
             this.spotify.SetCode(CODE);
             this.spotify.TokenInit();
             //NOTE: this will give us an access token

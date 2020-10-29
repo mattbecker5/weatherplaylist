@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -34,22 +34,21 @@ export class SpotifyService {
     //NOTE: once we have our spotify code, we can make a request for a token
     public TokenInit(){
         this.code; 
-        var b64Client_id = btoa(this.client_id);
-        var b64Client_secret = btoa(this.client_secret);
-        var Authorization = "Basic " + b64Client_id + ":" + b64Client_secret;
+        let b64Client_id: string = btoa(this.client_id);
+        let b64Client_secret: string = btoa(this.client_secret);
+        let auth: string = "Basic " + b64Client_id + ":" + b64Client_secret;
         var url: string = "https://accounts.spotify.com/api/token";
-        const HEADERS = { headers: new HttpHeaders({ 
-                "Authorization": Authorization,
-                "Content-Type": "application/x-www-form-urlencoded"
-            })
+        const HEADERS = { 
+            headers: new HttpHeaders( { 
+                    "Authorization": auth,
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                })
         };
-        const BODY: any = {
-            "grant_type": "authorization_code",
-            "code": this.code,
-            "redirect_uri": this.redirect_uri,
-        }
+        const BODY = new HttpParams()
+            .append("grant_type", "authorization_code")
+            .append("code", this.code)
+            .append("redirect_uri", this.redirect_uri);
 
-        debugger
         this.http.post(url, BODY, HEADERS).subscribe((data) => {
             console.log(data);
             debugger
