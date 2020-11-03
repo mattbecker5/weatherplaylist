@@ -58,21 +58,8 @@ export class SpotifyService {
 
         debugger
 
-        //this.http.get("http://localhost:3000/").subscribe((data) => {
-        //    debugger
-        //}, error =>{
-        //    debugger
-        //});
-        //
-        ////NOTE: might need to do it this way instead?
-        //this.http.post("http://localhost:3000/spotify", BODY).subscribe((data) => {
-        //    debugger
-        //}, error => {
-        //    debugger
-        //});
-
         //NOTE if we get the access token back this way, this is fine too
-        this.http.post(url, BODY2).subscribe((data) => {
+        this.http.post(url, BODY2).subscribe((data: any) => {
             this.token = data.access_token;
             debugger
             this.GetPlaylist();

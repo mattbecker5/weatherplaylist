@@ -13,7 +13,7 @@ export class AppComponent {
 
     public musicGlobal: AppleMusicNewService;
     public spotify: SpotifyService;
-    //public spotify_url: string = "123";
+    public spotify_url: string = "";
   
   //constructor(public router: Router, private appleNew: AppleMusicNewService, private http: HttpClient){
   constructor(public router: Router, private http: HttpClient){
@@ -30,7 +30,6 @@ export class AppComponent {
         if(CODE){
             this.spotify.SetCode(CODE);
             this.spotify.TokenInit();
-            //NOTE: this will give us an access token
         }
 
     //get ahold of the music api instance! we can only do this once in the app
