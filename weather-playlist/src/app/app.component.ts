@@ -24,5 +24,6 @@ export class AppComponent {
     // this.appleNew.playSongByid("1488408568");
     // this.appleNew.playSongByid("1486263180");
     // this.appleNew.getGenreById('11');
+
   }
 }
