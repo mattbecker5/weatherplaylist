@@ -1,23 +1,24 @@
-
-<div class="search-header">
-    <h2>
-        <i class="far fa-list-alt" style="color: #1f2833; font-size: 22px; margin-right: 2px;"></i>
-        Generated Music
-    </h2>
-</div>
-<div class="search-div-header">
-    <div class="details">
-        <span class="font-header">Title: </span>
-        <span class="font" *ngIf="song">{{song.trackName}}</span>
-        <br><span class="font-header">Artist: </span> <span class="font" *ngIf="song">{{song.artistName}}</span>
-        <br><span class="font-header">Album: </span> <span class="font" *ngIf="song">{{song.albumName}}</span>
-        <br><span class="font-header">Release: </span> <span class="font" *ngIf="song">{{song.releaseDate}}</span>
+<div class="search-results-outer">
+    <div class="search-header">
+        <h2>
+            <i class="far fa-list-alt" style="color: #1f2833; font-size: 22px; margin-right: 2px;"></i>
+            Generated Music
+        </h2>
     </div>
-</div>
-<div class="search-div">
-    <div class="search-results">
-        <ng-container *ngFor="let song of songs">
-            <app-music-card [song]="song" ></app-music-card>
-        </ng-container>
+    <div class="search-div-header">
+        <div class="details">
+            <span class="font-header">Title: </span>
+            <span class="font" *ngIf="song">{{song.trackName}}</span>
+            <br><span class="font-header">Artist: </span> <span class="font" *ngIf="song">{{song.artistName}}</span>
+            <br><span class="font-header">Album: </span> <span class="font" *ngIf="song">{{song.albumName}}</span>
+            <br><span class="font-header">Release: </span> <span class="font" *ngIf="song">{{song.releaseDate}}</span>
+        </div>
+    </div>
+    <div class="search-div">
+        <div class="search-results">
+            <ng-container *ngFor="let song of songs">
+                <app-music-card [song]="song" ></app-music-card>
+            </ng-container>
+        </div>
     </div>
 </div>

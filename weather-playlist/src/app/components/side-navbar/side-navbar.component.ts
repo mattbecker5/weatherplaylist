@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-navbar.component.scss']
 })
 export class SideNavbarComponent implements OnInit {
+  public currentPath: string;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public getPath() {
+    this.currentPath = window.location.pathname;
+    return this.currentPath;
   }
 
 }
