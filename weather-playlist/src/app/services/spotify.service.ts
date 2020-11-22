@@ -12,6 +12,7 @@ export class SpotifyService {
     private redirect_uri: string = "http://localhost:4200/create-account";
     private response_type: string = "code";
     private code: string = "";
+    private tracks: any = [];
 
     constructor(private http: HttpClient) { 
 
@@ -56,13 +57,14 @@ export class SpotifyService {
             .append("client_id", this.client_id)
             .append("client_secret", this.client_secret);
 
-        debugger
+        //debugger
 
         //NOTE if we get the access token back this way, this is fine too
         this.http.post(url, BODY2).subscribe((data: any) => {
             this.token = data.access_token;
-            debugger
+            //debugger
             this.GetPlaylist();
+            //this.GetUserProfile();
         }, error => {
             debugger
         });
@@ -76,6 +78,22 @@ export class SpotifyService {
         return this.token;
     }
 
+    //NOTE: currently not being used, thought we might need it for something though
+    public GetUserProfile(){
+        const HEADERS = { 
+            headers: new HttpHeaders( { 
+                    "Accept": "application/json",
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + this.token,
+                })
+        };
+        this.http.get("https://api.spotify.com/v1/me", HEADERS).subscribe((data) => {
+            debugger
+        }, error => {
+            debugger
+        });
+    }
+
     public GetPlaylist(){
         const HEADERS = { 
             headers: new HttpHeaders( { 
@@ -84,27 +102,56 @@ export class SpotifyService {
                     "Authorization": "Bearer " + this.token,
                 })
         };
-        debugger
-        this.http.get("https://api.spotify.com/v1/tracks/6rPO02ozF3bM7NnOV4h6s2", HEADERS).subscribe((data) => {
-            debugger
+        //debugger
+        this.http.get("https://api.spotify.com/v1/me/playlists", HEADERS).subscribe((data) => {
+            var path = data.items[0].tracks.href;
+
+            //NOTE: get playlist data for individual tracks
+            this.http.get(path, HEADERS).subscribe((playlistData) => {
+                //NOTE: items should be in itteration of http requests.  Then cache to object so we don't keep making http requests.
+                    var trackID = playlistData.items[0].track.id;
+                    this.GetTrack(trackID);
+                debugger
+            }, e => {
+                debugger
+            });
         }, error => {
             debugger
         });
     }
     
-    public GetSong(){
-        //this.GetToken();
+    //NOTE: pass in track?
+    public GetTrack(trackID: string){
+        const HEADERS = { 
+            headers: new HttpHeaders( { 
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + this.token,
+            })
+        };
 
-        //const headers = {
-        //    
-        //}
-
-        //this.http.get("https://api.spotify.com/v1/audio-features/{id}").subscribe((data) => {
-        //    console.log("yay");
-        //    console.log(data);
-        //}, error =>{
-        //    console.log("error error");
-        //    console.log(error);
-        //});
+        this.http.get("https://api.spotify.com/v1/audio-features/" + trackID, HEADERS).subscribe((data) => {
+            this.tracks.push(data);
+            debugger
+        }, error =>{
+            debugger
+        });
     }
+
+    //NOTE: getting top songs is not possible
+    //public GetTopSongs(){
+    //    const HEADERS = { 
+    //        headers: new HttpHeaders( { 
+    //                "Accept": "application/json",
+    //                "Content-Type": "application/json",
+    //                "Authorization": "Bearer " + this.token,
+    //            })
+    //    };
+    //    debugger
+    //    this.http.get("https://api.spotify.com/v1/tracks/6rPO02ozF3bM7NnOV4h6s2", HEADERS).subscribe((data) => {
+    //        debugger
+    //    }, error => {
+    //        debugger
+    //    });
+    //}
 }
