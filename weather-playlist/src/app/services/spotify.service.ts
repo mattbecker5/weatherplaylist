@@ -13,6 +13,7 @@ export class SpotifyService {
     private response_type: string = "code";
     private code: string = "";
     private tracks: any = [];
+    private currentSong: any = null;
 
     constructor(private http: HttpClient) { 
 
@@ -103,15 +104,17 @@ export class SpotifyService {
                 })
         };
         //debugger
-        this.http.get("https://api.spotify.com/v1/me/playlists", HEADERS).subscribe((data) => {
+        this.http.get("https://api.spotify.com/v1/me/playlists", HEADERS).subscribe((data: any) => {
             var path = data.items[0].tracks.href;
 
             //NOTE: get playlist data for individual tracks
-            this.http.get(path, HEADERS).subscribe((playlistData) => {
-                //NOTE: items should be in itteration of http requests.  Then cache to object so we don't keep making http requests.
-                    var trackID = playlistData.items[0].track.id;
+            this.http.get(path, HEADERS).subscribe((playlistData: any) => {
+                for(var i=0; i < playlistData.items.length; i++){
+                    //debugger
+                    var trackID = playlistData.items[i].track.id;
                     this.GetTrack(trackID);
-                debugger
+                }
+                console.log("done");
             }, e => {
                 debugger
             });
@@ -132,26 +135,68 @@ export class SpotifyService {
 
         this.http.get("https://api.spotify.com/v1/audio-features/" + trackID, HEADERS).subscribe((data) => {
             this.tracks.push(data);
+            console.log("adding");
             debugger
         }, error =>{
             debugger
         });
     }
 
-    //NOTE: getting top songs is not possible
-    //public GetTopSongs(){
-    //    const HEADERS = { 
-    //        headers: new HttpHeaders( { 
-    //                "Accept": "application/json",
-    //                "Content-Type": "application/json",
-    //                "Authorization": "Bearer " + this.token,
-    //            })
-    //    };
-    //    debugger
-    //    this.http.get("https://api.spotify.com/v1/tracks/6rPO02ozF3bM7NnOV4h6s2", HEADERS).subscribe((data) => {
-    //        debugger
-    //    }, error => {
-    //        debugger
-    //    });
-    //}
+    public WeatherToSong(description: string){
+        switch(description){
+            case "clear sky":{
+                debugger
+                this.SelectSong(0);
+            }
+            case "few clouds":{
+                debugger
+                this.SelectSong(1);
+            }
+            case "scattered clouds":{
+                debugger
+                this.SelectSong(2);
+            }
+            case "broken clouds":{
+                debugger
+                this.SelectSong(3);
+            }
+            case "shower rain":{
+                debugger
+                this.SelectSong(4);
+            }
+            case "rain":{
+                debugger
+                this.SelectSong(5);
+            }
+            case "thunder storm":{
+                debugger
+                this.SelectSong(6);
+            }
+            case "snow":{
+                debugger
+                this.SelectSong(7);
+            }
+            case "mist":{
+                debugger
+                this.SelectSong(8);
+            }
+        }
+    }
+
+    private SelectSong(key: number){
+        //NOTE: if we can't find a song based on weather, we just pick the first song and play it
+        this.currentSong = this.tracks[0];
+
+        //NOTE: if a song is found, this will rewrite our default track
+        this.tracks.forEach(function(track){
+            if(track.key == key){
+                this.currentSong = track;
+            }
+        });
+        debugger
+    }
+
+    public GetCurrentSong(): number{
+       return this.currentSong.id; 
+    }
 }
