@@ -108,7 +108,6 @@ export class SpotifyService {
         this.http.get("https://api.spotify.com/v1/me/playlists", HEADERS).subscribe((data: any) => {
             var path = data.items[0].tracks.href;
 
-
             //NOTE: get playlist data for individual tracks
             this.http.get(path, HEADERS).subscribe((playlistData: any) => {
                 localStorage.setItem("playListLength", playlistData.items.length);
@@ -118,8 +117,6 @@ export class SpotifyService {
                     this.GetTrack(trackID);
                     //debugger
                 }
-
-                //console.log("done");
             }, e => {
                 debugger
             });

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { HttpClient } from '@angular/common/http';
 import { SpotifyService } from '../../services/spotify.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-side-navbar',
@@ -13,8 +14,9 @@ export class SideNavbarComponent implements OnInit {
     public spotify: SpotifyService;
     public spotify_url: string = "";
     public showSpotify: boolean = false;
+    public trackURL: string = ""
 
-    constructor(public app: AppComponent, public http: HttpClient) { }
+    constructor(public app: AppComponent, public http: HttpClient, public sanitizer: DomSanitizer) { }
 
     ngOnInit(): void {
         this.spotify = new SpotifyService(this.http);
@@ -43,9 +45,10 @@ export class SideNavbarComponent implements OnInit {
 
     public TrackToWeather(){
         this.showSpotify = true;
+        var url = "https://open.spotify.com/embed/track/" + localStorage.getItem("trackID")
+        this.trackURL = this.sanitizer.bypassSecurityTrustResourceUrl(url);
         localStorage.setItem("play", true);
         debugger
-        //this.spotify.WeatherToSong(localStorage.getItem("weatherDescription"));
     }
 
 }

@@ -30,8 +30,9 @@
 
 </div>
 
-<div class="side-navbar-music-links-spotify" style="margin-top:200px;">
+<div class="side-navbar-music-links-spotify" style="margin-top:38px;" *ngIf="getPath() === '/musicapp'">
     <button style="width:100%; height:100%; cursor:pointer;" (click)="TrackToWeather()">
         Play Track Based On Weather
     </button>
+    <iframe *ngIf="showSpotify" [src]="trackURL" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 </div>
