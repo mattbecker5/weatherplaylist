@@ -107,6 +107,7 @@ export class SpotifyService {
         //debugger
         this.http.get("https://api.spotify.com/v1/me/playlists", HEADERS).subscribe((data: any) => {
             var path = data.items[0].tracks.href;
+            debugger
 
             //NOTE: get playlist data for individual tracks
             this.http.get(path, HEADERS).subscribe((playlistData: any) => {
@@ -194,6 +195,9 @@ export class SpotifyService {
                     debugger
                     this.SelectSong(8);
                     break;
+                }default:{
+                    debugger
+                    localStorage.setItem("trackID", this.tracks[0].id);
                 }
             }
     }
@@ -201,11 +205,12 @@ export class SpotifyService {
     private SelectSong(key: number){
         //NOTE: if we can't find a song based on weather, we just pick the first song and play it
         localStorage.setItem("trackID", this.tracks[0].id);
+        debugger
 
         for(var i=0; i < this.tracks.length; i++){
             if(this.tracks[i].key == key){
                 localStorage.setItem("trackID", this.tracks[i].id);
-                localStorage.setItem("play", false);
+                localStorage.setItem("play", "false");
                 break;
             }
         }

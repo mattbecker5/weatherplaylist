@@ -14,7 +14,7 @@ export class SideNavbarComponent implements OnInit {
     public spotify: SpotifyService;
     public spotify_url: string = "";
     public showSpotify: boolean = false;
-    public trackURL: string = ""
+    public trackURL: any;
 
     constructor(public app: AppComponent, public http: HttpClient, public sanitizer: DomSanitizer) { }
 
@@ -47,7 +47,8 @@ export class SideNavbarComponent implements OnInit {
         this.showSpotify = true;
         var url = "https://open.spotify.com/embed/track/" + localStorage.getItem("trackID")
         this.trackURL = this.sanitizer.bypassSecurityTrustResourceUrl(url);
-        localStorage.setItem("play", true);
+        debugger
+        localStorage.setItem("play", "true");
         debugger
     }
 

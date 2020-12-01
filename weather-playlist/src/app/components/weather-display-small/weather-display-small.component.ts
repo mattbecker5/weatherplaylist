@@ -43,7 +43,7 @@ export class WeatherDisplaySmallComponent implements OnInit {
       this.temp = Math.floor(weather.temp).toString();
       this.icon = weather.weatherIcon;
       //this.description = weather.description;
-      localStorage.setItem("weatherDescription", weather.description);
+      localStorage.setItem("weatherDescription", weather.description.toString());
     })
   }
 
