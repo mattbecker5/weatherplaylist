@@ -15,8 +15,8 @@ export class AppComponent {
     public spotify: SpotifyService;
     public spotify_url: string = "";
   
-  //constructor(public router: Router, private appleNew: AppleMusicNewService, private http: HttpClient){
-  constructor(public router: Router, private http: HttpClient){
+  constructor(public router: Router, private appleNew: AppleMusicNewService, private http: HttpClient){
+//   constructor(public router: Router, private http: HttpClient){
 
   }
 
@@ -33,7 +33,7 @@ export class AppComponent {
         }
 
     //get ahold of the music api instance! we can only do this once in the app
-    //this.musicGlobal = new AppleMusicNewService();
+    this.musicGlobal = new AppleMusicNewService();
     
     // this.appleNew.playSongByid("1488408568");
     // this.appleNew.playSongByid("1486263180");
