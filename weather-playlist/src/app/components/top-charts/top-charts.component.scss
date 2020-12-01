@@ -1,0 +1,16 @@
+.top-charts-card {
+    padding: 10px 20px;
+    margin: 10px;
+    flex: 0 0 250px;
+    background-color: #379863;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    flex-grow: 1;
+    color: white;
+}
+
+.top-charts-header {
+    border-bottom: 1px solid black;
+    width: 100%;
+    color: white;
+}

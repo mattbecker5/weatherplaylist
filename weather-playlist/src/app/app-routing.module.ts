@@ -8,6 +8,7 @@ import { ViewMusicappComponent } from './pages/view-musicapp/view-musicapp.compo
 import { ViewEventsDetailComponent } from './pages/view-events-detail/view-events-detail.component';
 import { ViewCreateEventComponent } from './pages/view-create-event/view-create-event.component';
 import { ViewProfilePageComponent } from './pages/view-profile-page/view-profile-page.component';
+import { ViewAppFunctionalityComponent } from './pages/view-app-functionality/view-app-functionality.component';
 import { AuthGuard } from './services/auth-guard.service';
 
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path:'events-detail', component: ViewEventsDetailComponent, canActivate: [AuthGuard] },
   { path:'create-event', component: ViewCreateEventComponent, canActivate: [AuthGuard] },
   { path:'profile-page', component: ViewProfilePageComponent, canActivate: [AuthGuard] },
+  { path:'app-functionality', component: ViewAppFunctionalityComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/create-account' }
 ];
 

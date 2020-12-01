@@ -4,7 +4,10 @@
             <app-side-navbar></app-side-navbar>
         </div>
         <div class="main">
-            <app-functionality></app-functionality>
+            <!-- <ng-container *ngFor="let chart of charts">
+                <app-top-charts [chart]="chart"></app-top-charts>
+            </ng-container> -->
+            <app-top-charts></app-top-charts>
         </div>
     </div>
 </section>
