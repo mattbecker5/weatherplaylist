@@ -40,20 +40,24 @@ export class AppleMusicNewService {
     return this.music;
   }
 
-  public playSongById(songId: number){
+  public playSongById(song: Song){
+
+    let songId = song.trackId
 
     //will make edits here for checking if Spotify or apple music or iTunes
 
     if(this.music.isAuthorized){
         console.log("made it here");
+        this.music.authorize().then(token => token.charCodeAt(0));
+        const queue: MusicKit.Queue = this.music.player.queue;
+        let index = queue.indexForItem(songId.toString());
+        this.playSongByIndex(index);
     } else {
         console.log("the user has not been auth by apple music!");
+        console.log(song.previewUrl);
+        var myaudio = new Audio(song.previewUrl);
+        myaudio.play(); //- This will play the music.
     }
-
-    this.music.authorize().then(token => token.charCodeAt(0));
-    const queue: MusicKit.Queue = this.music.player.queue;
-    let index = queue.indexForItem(songId.toString());
-    this.playSongByIndex(index);
 
   }
 
