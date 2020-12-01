@@ -3,6 +3,11 @@
 </header>
 <main>
     <router-outlet></router-outlet>
+    <a href="{{spotify_url}}">
+        <button (click)="GetSpotifyCode()">
+            <i class="fa fa-spotify"></i>
+        </button>
+    </a>
 
     <!-- <section>
         <div class="row">
