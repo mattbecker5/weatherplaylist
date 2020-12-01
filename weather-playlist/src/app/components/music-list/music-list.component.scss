@@ -5,6 +5,12 @@
     margin-bottom: 10px;
 }
 
+.search-results-outer {
+    // display: flex;
+    // flex-wrap: wrap;
+    margin: 0px 10px 10px 10px;
+}
+
 .search-results img{
     margin: 0px 7px 5px 0px;
 }
@@ -64,7 +70,7 @@
 /* Extra small devices (phones, 680px and down) */
 @media only screen and (max-width: 680px) {
     .search-header{
-        margin: 0px 5px 10px 5px;
+        margin: 0px 5px 10px 10px;
     }
    
     .search-div-header{
@@ -75,9 +81,6 @@
         margin: 0px 5px 10px 5px;
     }
 
-    // .search-header  h2{
-    //     margin: 0px 0px 20px 0px;
-    // }
     .details{
         width: 300px;
     }

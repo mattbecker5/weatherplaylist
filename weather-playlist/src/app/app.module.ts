@@ -38,6 +38,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { AuthGuard } from './services/auth-guard.service';
+import { ViewAppFunctionalityComponent } from './pages/view-app-functionality/view-app-functionality.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { AuthGuard } from './services/auth-guard.service';
     ViewCreateEventComponent,
     ViewProfilePageComponent,
     LargeCalendarCardComponent,
+    ViewAppFunctionalityComponent
   ],
   imports: [
     BrowserModule,
