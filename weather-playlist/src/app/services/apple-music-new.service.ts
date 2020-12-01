@@ -8,10 +8,11 @@ import { Song } from '../models/song';
 })
 export class AppleMusicNewService {
 
-  private jwtToken = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkwyUzlSNEEyRzMifQ.eyJpYXQiOjE1ODc3NTYyMDUsImV4cCI6MTYwMzMwODIwNSwiaXNzIjoiWkZIQjlVNURIOSJ9.zsGtXrqpSnvd3d4F63jJiNvTWiYrFEN7O8UCr_BXKhQ0impJVzW-T3qsvCagryj8UM8XSBgggNITckmTX08-Dw";
+  private jwtToken = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjNQOTdKOTlCTUoifQ.eyJpYXQiOjE2MDUwNTE4ODAsImV4cCI6MTYyMDYwMzg4MCwiaXNzIjoiWkZIQjlVNURIOSJ9.YujNhz6xtMZUFNHAabCTe6Svs-6FRvVFpEO2IcqXw4moHKGvrRdaAvO4jeRrdmqfkDQeBhwDXzqB0to9qP_6IQ";
   private music: MusicKit.MusicKitInstance;
 
   constructor() {
+
     //this stuff only get called once in the app: Its a Singleton!
     let appConfig: MusicKit.AppConfiguration = {
       build: '1.0',
@@ -39,11 +40,25 @@ export class AppleMusicNewService {
     return this.music;
   }
 
-  public playSongById(songId: number){
-    this.music.authorize().then(token => token.charCodeAt(0));
-    const queue: MusicKit.Queue = this.music.player.queue;
-    let index = queue.indexForItem(songId.toString());
-    this.playSongByIndex(index);
+  public playSongById(song: Song){
+
+    let songId = song.trackId
+
+    //will make edits here for checking if Spotify or apple music or iTunes
+
+    if(this.music.isAuthorized){
+        console.log("made it here");
+        this.music.authorize().then(token => token.charCodeAt(0));
+        const queue: MusicKit.Queue = this.music.player.queue;
+        let index = queue.indexForItem(songId.toString());
+        this.playSongByIndex(index);
+    } else {
+        console.log("the user has not been auth by apple music!");
+        console.log(song.previewUrl);
+        var myaudio = new Audio(song.previewUrl);
+        myaudio.play(); //- This will play the music.
+    }
+
   }
 
   public setVolume(volume: number){

@@ -38,6 +38,7 @@ export class AppComponent {
     // this.appleNew.playSongByid("1488408568");
     // this.appleNew.playSongByid("1486263180");
     // this.appleNew.getGenreById('11');
+
   }
  
     //NOTE: before we get a token, we need a code

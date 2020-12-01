@@ -23,7 +23,7 @@ export class MediaPlayerComponent implements OnInit {
     this.songService.songSelected$.subscribe(track => {
       this.song = track;
       // console.log('Track: ' + this.song.trackName);
-      // console.log('preview url: ' + this.song.previewUrl);
+      //console.log('preview url: ' + this.song.previewUrl);
     });
 
     let state = this.app.musicGlobal.getAholdOfMediaState();
