@@ -5,12 +5,12 @@
     flex-wrap: wrap;
 }
 
-#categories-deck{
+.categories-deck{
     // flex: 0 0 250px;
     display: flex;
     flex-wrap: wrap;
     // align-items: stretch;
-    margin: 0px 0px 10px 10px;
+    // margin: 0px 0px 10px 10px;
 }
 
 .categories-div{
@@ -24,23 +24,19 @@
     color: white;
     margin: 10px;
     // padding: 10px, 10px, 10px, 10px;
-    padding: 20px;
+    padding: 10px 20px 20px 20px;
 }
 
 .categories-list-pick{
     flex: 0 0 250px;
-    // width: 100%;
-    // max-width: 300px;
     background-color: #379863;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
     flex-grow: 1;
     color: white;
     position: relative;
-    // margin: 30px,10px,10px,10px;
-    // padding: 10px, 10px, 10px, 10p
-    margin: 10px;
-    padding: 20px;
+    margin: 10px 0px 10px 0px;
+    padding: 10px 20px 20px 20px;
 }
 
 .category-head {
@@ -86,12 +82,12 @@
 
 /* Extra small devices (phones, 680px and down) */
 @media only screen and (max-width: 680px) {
-    #categories-deck{
+    .categories-deck{
         margin: 0px 5px 10px 5px;
     }
 
     .categories-list-pick{
-        margin: 0px 5px 10px 5px;
+        margin: 0px 10px 10px 10px;
     }
 
 }

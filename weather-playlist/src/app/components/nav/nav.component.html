@@ -31,6 +31,11 @@
                     <a routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Login</a>
                 </li>
             </ng-template>
+            
+            <!-- iTunes -->
+            <li>
+                <a><i class="fab fa-itunes" style="font-size: 19px; margin-right: 3px;"></i>iTunes</a>
+            </li>
         </ul>
     </div>
     <div class="avatar-div" *ngIf="userService.user$ | async as user">
@@ -73,6 +78,11 @@
                 <a routerLink="/login-account" routerLinkActive="active"><i class="fas fa-user-circle"></i> Login</a>
             </li>
         </ng-template>
+
+        <!-- iTunes -->
+        <li *ngIf="getPath() === '/musicapp'">
+            <a><i class="fab fa-itunes" style="font-size: 19px; margin-right: 3px;"></i>iTunes</a>
+        </li>
     </ul>
 </div>
 

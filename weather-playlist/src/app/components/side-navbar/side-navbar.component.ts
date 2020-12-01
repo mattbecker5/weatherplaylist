@@ -7,6 +7,7 @@ import { AppComponent } from 'src/app/app.component';
     styleUrls: ['./side-navbar.component.scss']
 })
 export class SideNavbarComponent implements OnInit {
+  public currentPath: string;
 
     constructor(public app: AppComponent) { }
 
@@ -17,5 +18,10 @@ export class SideNavbarComponent implements OnInit {
         console.log("tryin to signout of apple music");
         this.app.musicGlobal.getAholdOfMediaState().unauthorize();
     }
+
+  public getPath() {
+    this.currentPath = window.location.pathname;
+    return this.currentPath;
+  }
 
 }
