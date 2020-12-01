@@ -13,17 +13,21 @@ export class MediaPlayerComponent implements OnInit {
   public song: Song; //song that was passed in from mediaPlayerService
   public playOrPause: boolean = false;
   public loadingIcon: boolean = false;
+    //public spotifyTrackID: string = "1DFixLWuPkv3KT3TnV35m3";
+    public spotifyTrackIDBase: string = "https://open.spotify.com/embed/album/"
+    public spotifyTrackID: string = "";
+    public showSpotify: boolean = false;
 
   constructor(
     private app: AppComponent,
     public songService: SongService
     ) {}
 
-  ngOnInit(): void {
-    this.songService.songSelected$.subscribe(track => {
-      this.song = track;
-      // console.log('Track: ' + this.song.trackName);
-      //console.log('preview url: ' + this.song.previewUrl);
+    ngOnInit(): void {
+        this.songService.songSelected$.subscribe(track => {
+        this.song = track;
+        //console.log('Track: ' + this.song.trackName);
+        //console.log('preview url: ' + this.song.previewUrl);
     });
 
     let state = this.app.musicGlobal.getAholdOfMediaState();
@@ -76,6 +80,12 @@ export class MediaPlayerComponent implements OnInit {
     console.log('volume', e);
     this.app.musicGlobal.setVolume(e);
   }
+
+    public getTrack(): string{
+        this.showSpotify = true;
+        this.spotifyTrackID = this.spotifyTrackIDBase + localStorage.getItem("trackID");
+        return this.spotifyTrackID;
+    }
 
   public likeSong(){
     console.log("Saving to favorite songs playlist.");

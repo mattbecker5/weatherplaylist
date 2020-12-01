@@ -12,6 +12,7 @@ export class ViewHomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+      //debugger
   }
 
 }
