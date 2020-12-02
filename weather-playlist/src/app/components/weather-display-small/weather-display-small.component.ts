@@ -14,6 +14,7 @@ export class WeatherDisplaySmallComponent implements OnInit {
   public hideShowTemp: boolean = false;
   public hideShowZip: boolean = true;
   public zip: string;
+  public description: String = "";
 
   constructor(private weatherApi: WeatherApiService) { }
 
@@ -41,6 +42,8 @@ export class WeatherDisplaySmallComponent implements OnInit {
       // console.log(weather);
       this.temp = Math.floor(weather.temp).toString();
       this.icon = weather.weatherIcon;
+      //this.description = weather.description;
+      localStorage.setItem("weatherDescription", weather.description.toString());
     })
   }
 
@@ -63,5 +66,9 @@ export class WeatherDisplaySmallComponent implements OnInit {
     // console.log(inputZip);
     this.getWeatherByZip(inputZip);
   }
+
+    public GetDescription(): String{
+        return this.description;
+    }
 
 }

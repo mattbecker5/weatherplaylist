@@ -23,6 +23,7 @@ export class SpotifyService {
     public CodeInit(): string{
         let url: string = "https://accounts.spotify.com/authorize?client_id=" + this.client_id + "&response_type=" + this.response_type + "&redirect_uri=" + this.redirect_uri;
         return url;
+        //debugger
     }
 
     public SetCode(code: string){
@@ -106,15 +107,17 @@ export class SpotifyService {
         //debugger
         this.http.get("https://api.spotify.com/v1/me/playlists", HEADERS).subscribe((data: any) => {
             var path = data.items[0].tracks.href;
+            debugger
 
             //NOTE: get playlist data for individual tracks
             this.http.get(path, HEADERS).subscribe((playlistData: any) => {
+                localStorage.setItem("playListLength", playlistData.items.length);
                 for(var i=0; i < playlistData.items.length; i++){
                     //debugger
                     var trackID = playlistData.items[i].track.id;
                     this.GetTrack(trackID);
+                    //debugger
                 }
-                console.log("done");
             }, e => {
                 debugger
             });
@@ -136,65 +139,83 @@ export class SpotifyService {
         this.http.get("https://api.spotify.com/v1/audio-features/" + trackID, HEADERS).subscribe((data) => {
             this.tracks.push(data);
             console.log("adding");
-            debugger
+            if(this.tracks.length == localStorage.getItem("playListLength")){
+                this.WeatherToSong();    
+            }
         }, error =>{
             debugger
         });
     }
 
-    public WeatherToSong(description: string){
-        switch(description){
-            case "clear sky":{
-                debugger
-                this.SelectSong(0);
+    public WeatherToSong(){
+            this.tracks;
+            debugger
+            switch(localStorage.getItem("weatherDescription")){
+                case "clear sky":{
+                    debugger
+                    this.SelectSong(0);
+                    break;
+                }
+                case "few clouds":{
+                    debugger
+                    this.SelectSong(1);
+                    break;
+                }
+                case "scattered clouds":{
+                    debugger
+                    this.SelectSong(2);
+                    break;
+                }
+                case "broken clouds":{
+                    debugger
+                    this.SelectSong(3);
+                    break;
+                }
+                case "shower rain":{
+                    debugger
+                    this.SelectSong(4);
+                    break;
+                }
+                case "rain":{
+                    debugger
+                    this.SelectSong(5);
+                    break;
+                }
+                case "thunder storm":{
+                    debugger
+                    this.SelectSong(6);
+                    break;
+                }
+                case "snow":{
+                    debugger
+                    this.SelectSong(7);
+                    break;
+                }
+                case "mist":{
+                    debugger
+                    this.SelectSong(8);
+                    break;
+                }default:{
+                    debugger
+                    localStorage.setItem("trackID", this.tracks[0].id);
+                }
             }
-            case "few clouds":{
-                debugger
-                this.SelectSong(1);
-            }
-            case "scattered clouds":{
-                debugger
-                this.SelectSong(2);
-            }
-            case "broken clouds":{
-                debugger
-                this.SelectSong(3);
-            }
-            case "shower rain":{
-                debugger
-                this.SelectSong(4);
-            }
-            case "rain":{
-                debugger
-                this.SelectSong(5);
-            }
-            case "thunder storm":{
-                debugger
-                this.SelectSong(6);
-            }
-            case "snow":{
-                debugger
-                this.SelectSong(7);
-            }
-            case "mist":{
-                debugger
-                this.SelectSong(8);
-            }
-        }
     }
 
     private SelectSong(key: number){
         //NOTE: if we can't find a song based on weather, we just pick the first song and play it
-        this.currentSong = this.tracks[0];
-
-        //NOTE: if a song is found, this will rewrite our default track
-        this.tracks.forEach(function(track){
-            if(track.key == key){
-                this.currentSong = track;
-            }
-        });
+        localStorage.setItem("trackID", this.tracks[0].id);
         debugger
+
+        for(var i=0; i < this.tracks.length; i++){
+            if(this.tracks[i].key == key){
+                localStorage.setItem("trackID", this.tracks[i].id);
+                localStorage.setItem("play", "false");
+                break;
+            }
+        }
     }
+
 
     public GetCurrentSong(): number{
        return this.currentSong.id; 

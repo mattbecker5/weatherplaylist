@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Song } from 'src/app/models/song';
 import { SongService } from 'src/app/services/song.service';
 import { AppComponent } from 'src/app/app.component';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-media-player',
@@ -13,17 +14,24 @@ export class MediaPlayerComponent implements OnInit {
   public song: Song; //song that was passed in from mediaPlayerService
   public playOrPause: boolean = false;
   public loadingIcon: boolean = false;
+    //public spotifyTrackID: string = "1DFixLWuPkv3KT3TnV35m3";
+    public spotifyTrackIDBase: string = "https://open.spotify.com/embed/track/"
+    public spotifyTrackID: string = "";
+    public showSpotify: boolean = false;
 
   constructor(
     private app: AppComponent,
-    public songService: SongService
+    public songService: SongService,
+    private sanitizer:DomSanitizer
     ) {}
 
-  ngOnInit(): void {
-    this.songService.songSelected$.subscribe(track => {
-      this.song = track;
-      // console.log('Track: ' + this.song.trackName);
-      //console.log('preview url: ' + this.song.previewUrl);
+    ngOnInit(): void {
+        this.songService.songSelected$.subscribe(track => {
+        this.song = track;
+        this.getTrack();
+        debugger
+        //console.log('Track: ' + this.song.trackName);
+        //console.log('preview url: ' + this.song.previewUrl);
     });
 
     let state = this.app.musicGlobal.getAholdOfMediaState();
@@ -76,6 +84,14 @@ export class MediaPlayerComponent implements OnInit {
     console.log('volume', e);
     this.app.musicGlobal.setVolume(e);
   }
+
+    //public getTrack(): string{
+    public getTrack() {
+        //this.showSpotify = true;
+        //this.spotifyTrackID = this.DomSanitizer.bypassSecurityTrustUrl(this.spotifyTrackIDBase + localStorage.getItem("trackID"));
+        //debugger
+        //return this.spotifyTrackID;
+    }
 
   public likeSong(){
     console.log("Saving to favorite songs playlist.");
