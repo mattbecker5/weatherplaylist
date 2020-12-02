@@ -16,13 +16,15 @@ export class AppComponent {
     public spotify_url: string = "";
   
   constructor(public router: Router, private appleNew: AppleMusicNewService, private http: HttpClient){
-//   constructor(public router: Router, private http: HttpClient){
 
   }
 
   //NOTE: the appleMusicApi service is busted, i think the token is old
   ngOnInit(){
         //NOTE: this spotify code checks the page for url parameters to pull back the code query so we can trade it for a token
+        if(localStorage.play == true){
+            localStorage.play = false;
+        }
         this.spotify = new SpotifyService(this.http);
         const urlParams = new URLSearchParams(window.location.search);
         const CODE = urlParams.get('code');
@@ -31,6 +33,7 @@ export class AppComponent {
             this.spotify.SetCode(CODE);
             this.spotify.TokenInit();
         }
+      //debugger
 
     //get ahold of the music api instance! we can only do this once in the app
     this.musicGlobal = new AppleMusicNewService();
