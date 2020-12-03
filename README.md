@@ -10,7 +10,7 @@ Project report
 
 A. Executive Summary 
     
-    In this README.md document you will be able to find out more about our web app which is also known as smart-weather-playlist. Our web app is made with the intention to generate music playlist based on the weather forecast and also the genres picked by user. We have also some other feature in our app such as the calendar where you can create, view and delete an event. Users will be able to login to Spotify and Apple Music to play songs. Furthermore, in this document you will know more about what was our initial and final requirements, initial and final timeline, project results compared with our expectations, project process review and if we had more time what would be our work to be done. 
+    In this README.md document you will be able to find out more about our web app which is also known as smart-weather-playlist. Our web app is made with the        <br />intention to generate music playlist based on the weather forecast and also the genres picked by user. We have also some other feature in our app such as the <br />calendar where you can create, view and delete an event. Users will be able to login to Spotify and Apple Music to play songs. Furthermore, in this document <br />you will know more about what was our initial and final requirements, initial and final timeline, project results compared with our expectations, project <br />process review and if we had more time what would be our work to be done. 
 
 B. Final Requirements and comparison with initial requirements 
 
