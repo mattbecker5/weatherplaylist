@@ -9,6 +9,8 @@ https://smart-weather-playlist.web.app/musicapp
 Project report
 
 A. Executive Summary 
+    
+    In this README.md document you will be able to find out more about our web app which is also known as smart-weather-playlist. Our web app is made with the intention to generate music playlist based on the weather forecast and also the genres picked by user. We have also some other feature in our app such as the calendar where you can create, view and delete an event. Users will be able to login to Spotify and Apple Music to play songs. Furthermore, in this document you will know more about what was our initial and final requirements, initial and final timeline, project results compared with our expectations, project process review and if we had more time what would be our work to be done. 
 
 B. Final Requirements and comparison with initial requirements 
 
@@ -60,7 +62,18 @@ B. Final Requirements and comparison with initial requirements
             - Notify user of weather at event’s location in advance
 
 
-C. Final time line and comparison with the initial time line 
+C. Final timeline and comparison with the initial timeline 
+
+    - Initial Timeline
+            - 10/12/2020 – 10/26/2020 (2 weeks)
+                * Phase 1: Spotify API, Apple Music API, Basic UI
+            - 10/26/2020 – 11/09/2020 (2 weeks)
+                * Phase 2: Weather API
+            - 11/09/2020 – 11/23/2020 (2 weeks)
+                * Phase 3: Java Backend API, Google Authentication, Advance UI
+            - 11/23/2020 – 12/04/2020 (2 weeks)
+                * Phase 4: Integration of all services
+
 
 D. Project results compared with expectations 
 
