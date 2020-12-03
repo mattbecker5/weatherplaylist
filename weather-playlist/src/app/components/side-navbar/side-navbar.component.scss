@@ -51,14 +51,30 @@ a:link {
     border-radius: 8px;
 }
 
-.side-navbar-music-links-spotify {
+.spotify-button-div {
     margin: 10px;
+}
+
+.side-navbar-music-links-spotify {
     text-align: center;
     color: #1DB954; //spotify hex code color
-    font-size: 20px;
+    font-size: 22px;
     background-color: black;
     height: 40px;
+    width: 100%;
     border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.spotify-weather-button-div {
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: #1f2833;
+    color: #1DB954;
+    margin: 0px 0px 0px 10px;
+    cursor: pointer;
 }
 
 .side-navbar-music-links-outer {
@@ -81,10 +97,8 @@ a:link {
 }
 
 .icon-spotify{
-    // color: #1DB954;
     font-size: 23px; 
     margin-right: 3px; 
-    margin-top: 8px;
 }
 
 /* Iphone 5 (phones, 321px and down) */
@@ -120,7 +134,7 @@ a:link {
 }
 
 /* Extra small devices (phones, 681 and up ,910px and down) */
-@media only screen and (min-width: 681px) and (max-width: 905px) {
+@media only screen and (min-width: 681px) and (max-width: 915px) {
 
     .spotify-music-label, .apple-music-label{
         display: none;
