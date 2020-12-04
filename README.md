@@ -6,6 +6,7 @@ See the url below for the active site
 https://smart-weather-playlist.web.app/musicapp
 
 
+
 Project report
 
 A. Executive Summary 
