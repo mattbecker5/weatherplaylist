@@ -10,3 +10,4 @@ export class SearchHistory {
         this.time = new Date().toISOString();
     }
 }
+

@@ -12,4 +12,5 @@ export class AppleMusicChart {
         this.name = chart.name;
         this.next = chart.next;
     }
+    
 }

@@ -14,6 +14,7 @@ export class GenerateMusicSearchService {
   public songsSelected$ = this.selectedSongsSource.asObservable();
 
   constructor() { }
+  
 
   // Service commands
   public createSongList(songs: Song[]) {

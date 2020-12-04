@@ -25,3 +25,4 @@ export class Song {
         //bpm here
     }
 }
+

@@ -5,3 +5,4 @@ describe('UserEvent', () => {
     expect(new UserEvent()).toBeTruthy();
   });
 });
+

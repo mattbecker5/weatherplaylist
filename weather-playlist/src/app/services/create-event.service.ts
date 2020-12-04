@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 @Injectable({
   providedIn: 'root'
 })
+
 export class CreateEventService {
 
     // Observable sources

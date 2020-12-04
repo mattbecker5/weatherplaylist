@@ -5,3 +5,4 @@ describe('WeatherEvent', () => {
     expect(new WeatherEvent()).toBeTruthy();
   });
 });
+

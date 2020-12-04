@@ -5,3 +5,4 @@ describe('Genre', () => {
     expect(new Genre()).toBeTruthy();
   });
 });
+

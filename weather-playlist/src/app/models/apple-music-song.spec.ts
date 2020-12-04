@@ -5,3 +5,4 @@ describe('AppleMusicSong', () => {
     expect(new AppleMusicSong()).toBeTruthy();
   });
 });
+

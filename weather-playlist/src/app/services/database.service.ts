@@ -28,6 +28,7 @@ export class DatabaseService {
         map( history => history.map( searchObj => new SearchHistory(searchObj) ))
       );
   }
+  
 
   public deleteUserEvent(eventId: string){
     let event = this.firestore.collection('events', ref => ref.where('eventId', '==', eventId));

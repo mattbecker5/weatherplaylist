@@ -28,6 +28,7 @@ export class AppleMusicNewService {
       declarativeMarkup: true,
       bitrate: MusicKit.PlaybackBitrate.HIGH,
     });
+    
 
     this.music = MusicKit.getInstance();
 

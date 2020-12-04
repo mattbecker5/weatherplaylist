@@ -9,6 +9,7 @@ import { AppleMusicResponse } from '../interfaces/apple-music-response';
   providedIn: 'root'
 })
 export class AppleMusicAPIService {
+    
 
   private applemusicURL = "https://itunes.apple.com/search?entity=song&limit=15&term=";
 //   private applemusicURL = "https://itunes.apple.com/search?entity=song&limit=30&attribute=genreTerm";

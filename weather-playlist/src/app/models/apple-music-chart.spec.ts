@@ -5,3 +5,4 @@ describe('AppleMusicChart', () => {
     expect(new AppleMusicChart()).toBeTruthy();
   });
 });
+

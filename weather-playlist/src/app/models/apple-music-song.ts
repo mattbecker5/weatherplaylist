@@ -35,4 +35,5 @@ export class AppleMusicSong {
         this.id = song.id;
         this.type = song.type;
     }
+    
 }

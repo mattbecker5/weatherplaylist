@@ -9,6 +9,7 @@ describe('GenerateMusicSearchService', () => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(GenerateMusicSearchService);
   });
+  
 
   it('should be created', () => {
     expect(service).toBeTruthy();

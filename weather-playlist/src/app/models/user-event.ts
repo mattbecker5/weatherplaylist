@@ -24,3 +24,4 @@ export class UserEvent {
         this.eventId = event.eventId;
     }
 }
+

@@ -5,3 +5,4 @@ describe('SearchHistory', () => {
     expect(new SearchHistory()).toBeTruthy();
   });
 });
+
