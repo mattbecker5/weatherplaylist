@@ -9,7 +9,7 @@ export class SpotifyService {
     private token: string = "";
     private client_id: string = "04e4f782722f4fc58cc158440a73917a";
     private client_secret: string = "3e009c6ee6c948bb858d2dd29e225d34";
-    private redirect_uri: string = "https://smart-weather-playlist.web.app/musicapp";
+    private redirect_uri: string = "https://smart-weather-playlist.web.app/musicapp/";
     private response_type: string = "code";
     private code: string = "";
     private tracks: any = [];
