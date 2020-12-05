@@ -34,10 +34,10 @@ export class SideNavbarComponent implements OnInit {
         this.app.musicGlobal.getAholdOfMediaState().unauthorize();
     }
 
-  public getPath() {
-    this.currentPath = window.location.pathname;
-    return this.currentPath;
-  }
+    public getPath() {
+        this.currentPath = window.location.pathname;
+        return this.currentPath;
+    }
 
     public GetSpotifyCode(){
         this.spotify_url = this.spotify.CodeInit();

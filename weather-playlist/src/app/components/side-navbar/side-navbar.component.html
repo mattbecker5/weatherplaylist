@@ -31,8 +31,11 @@
 </div>
 
 <div style="margin-top:38px;" *ngIf="getPath() === '/musicapp'">
-    <button class="spotify-weather-button-div" (click)="TrackToWeather()">
-        Play Track Based On Weather
-    </button>
+    <div class="side-navbar-links">
+        <a (click)="TrackToWeather()">Play Based On Weather</a>
+    </div>
+    <div class="side-navbar-links">
+        <a (click)="appleMusicSignout();">Signout Apple Music</a>
+    </div>
     <iframe *ngIf="showSpotify" [src]="trackURL" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 </div>
