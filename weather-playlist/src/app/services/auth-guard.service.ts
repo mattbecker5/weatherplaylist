@@ -11,8 +11,6 @@ export class AuthGuard implements CanActivate {
 
   /** Lets the router know whether the user can visit the route */
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-
-    
       return this.userService.user$.pipe(
            take(1),
            map(user => !!user), // <-- map to boolean

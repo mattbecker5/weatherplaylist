@@ -8,7 +8,7 @@ import { Song } from '../models/song';
 })
 export class AppleMusicNewService {
 
-  private jwtToken = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjNQOTdKOTlCTUoifQ.eyJpYXQiOjE2MDUwNTE4ODAsImV4cCI6MTYyMDYwMzg4MCwiaXNzIjoiWkZIQjlVNURIOSJ9.YujNhz6xtMZUFNHAabCTe6Svs-6FRvVFpEO2IcqXw4moHKGvrRdaAvO4jeRrdmqfkDQeBhwDXzqB0to9qP_6IQ";
+  private jwtToken = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhHMjVINFY4MzcifQ.eyJpYXQiOjE2MjA2NTY0ODEsImV4cCI6MTYzNjIwODQ4MSwiaXNzIjoiWkZIQjlVNURIOSJ9.iTxdubwQ0VCh63Xbx_qY3Ia6Pf_m235v47SDa1WWVNFRBFELtV6cniUigJmaozPn7YMh-iPZvc_1edZEAaREPA";
   private music: MusicKit.MusicKitInstance;
 
   constructor() {
@@ -16,8 +16,8 @@ export class AppleMusicNewService {
     //this stuff only get called once in the app: Its a Singleton!
     let appConfig: MusicKit.AppConfiguration = {
       build: '1.0',
-      icon: 'icon.png',
-      name: 'music-weather-playlist',
+      icon: 'https://pacmotor.com/img/smart-weather/smart-icon.png',
+      name: 'smart-weather-playlist',
       version: '1.0.0',
     };
 

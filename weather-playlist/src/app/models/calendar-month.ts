@@ -8,6 +8,6 @@ export class CalendarMonth {
         public days: CalendarDay[], 
         public bufferDays: CalendarDay[], 
         public year: number
-        ){}
+    ){}
 }
 

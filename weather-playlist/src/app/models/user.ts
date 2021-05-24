@@ -12,4 +12,3 @@ export class User {
         this.displayName = userObj.displayName;
     }
 }
-
