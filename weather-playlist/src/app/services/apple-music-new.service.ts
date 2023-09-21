@@ -8,7 +8,7 @@ import { Song } from '../models/song';
 })
 export class AppleMusicNewService {
 
-  private jwtToken = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhHMjVINFY4MzcifQ.eyJpYXQiOjE2MjA2NTY0ODEsImV4cCI6MTYzNjIwODQ4MSwiaXNzIjoiWkZIQjlVNURIOSJ9.iTxdubwQ0VCh63Xbx_qY3Ia6Pf_m235v47SDa1WWVNFRBFELtV6cniUigJmaozPn7YMh-iPZvc_1edZEAaREPA";
+  private jwtToken = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IktXRDM3RlZBQzYifQ.eyJpYXQiOjE2OTUyNTk5NDksImV4cCI6MTcxMDgxMTk0OSwiaXNzIjoic21hcnR3ZWF0aGVyMiJ9.8WEhz1EQMgFNGPkFkKX1NdBNIdOBvaTimK8EdptzFFFBXaEfp9Go-Wuq-Bxl02UvgSZRUqTm8hK3FtxIpfbc9w";
   private music: MusicKit.MusicKitInstance;
 
   constructor() {
